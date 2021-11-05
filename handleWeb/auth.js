@@ -95,8 +95,8 @@ btnRegisterGo.onclick = () => {
 const login = document.querySelector('.form-phone-password a')
 const formLoginGoogle = document.querySelector('.btn-form-first')
 btnLoginGo.onclick = () => {
-    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPass.value === 0) {
-        login.setAttribute('href', './index.html')
+    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPass.value === '0') {
+        login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
     }else if(valueLoginPass.value === ''){
         setTimeout(() =>{
             alert('Bạn chưa nhập mật khẩu...')
