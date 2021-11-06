@@ -95,7 +95,7 @@ btnRegisterGo.onclick = () => {
 const login = document.querySelector('.form-phone-password a')
 const formLoginGoogle = document.querySelector('.btn-form-first')
 btnLoginGo.onclick = () => {
-    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPass.value === '0') {
+    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '0' && valueLoginPass.value === '0') {
         login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
     }else if(valueLoginPass.value === ''){
         setTimeout(() =>{
