@@ -640,3 +640,8 @@ header {
 .footer_address_active {
     color: var(--white-color)
 }
+
+
+.storage-film {
+    display: none;
+}

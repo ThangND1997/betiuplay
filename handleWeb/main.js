@@ -5,6 +5,7 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const slideNodes = $$('.slides-dot_item')
+const slides = $('.slides:not(.slides-manual)')
 const slide = $('.slide')
 const slideContent = $('.slide-content')
 const slideContentApp = $('.slide-content-app')
@@ -137,6 +138,37 @@ slidesNext.onclick = function() {
         indexSlideCurrent = 0;
     }
     slideNodes[indexSlideCurrent].onclick()
+}
+// mouse move event
+var startClient;
+var endClient;
+slides.onmousedown = function(e) {
+    startClient = e.clientX;
+}
+slides.onmouseup = function(e) {
+    endClient = e.clientX;
+    console.log(startClient, endClient);
+}
+if(startClient - endClient > 50) {
+    slidesNext.onclick();
+}
+else if(startClient - endClient <= 50) {
+    slidesPrev.onclick();
+}
+
+// touch mobile move event
+slides.ontouchstart = function(e) {
+    startClient = e.touches[0].clientX;
+}
+slides.ontouchend = function(e) {
+    endClient = e.changedTouches[0].clientX;
+    const aboutClient = startClient - endClient;
+    if(aboutClient > 50) {
+        slidesNext.onclick();
+    }
+    else if(aboutClient < -50) {
+        slidesPrev.onclick();
+    }
 }
 
 
