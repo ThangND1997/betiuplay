@@ -190,9 +190,9 @@ if(audio.play()) {
 }
 //handle radom music
 const listMusic = [
-    '../assets/music/kloi1.mp3',
-    '../assets/music/kloi2.mp3',
-    '../assets/music/piano-chil.mp3'
+    './assets/music/kloi1.mp3',
+    './assets/music/kloi2.mp3',
+    './assets/music/piano-chil.mp3'
 ]
 
 var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
