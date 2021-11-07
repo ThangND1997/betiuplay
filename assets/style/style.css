@@ -100,6 +100,7 @@ header {
 }
 
 .slides {
+    cursor: pointer;
     
 }
 
@@ -186,6 +187,7 @@ header {
     font-size: 2rem;
     font-weight: bold;
     color: var(--sub-text-color);
+    cursor: pointer;
 }
 
 .slides-manual li {

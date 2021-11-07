@@ -40,8 +40,14 @@ btnLogin.onclick = () => {
 }
 // button login countinus when import phone
 btnFormCounti.onclick = () => {
-    loginPhone.classList.remove('on-form');
-    loginPhonePass.classList.add('on-form');
+    const isNaN = Number(valueLoginPhone.value) - 0;
+    console.log(isNaN);
+    if(valueLoginPhone.value === '' || !isNaN) {
+        toastError();
+    }else{
+        loginPhone.classList.remove('on-form');
+        loginPhonePass.classList.add('on-form');
+    }
 }
 // button register footer
 btnRegister.onclick = () => {
@@ -95,7 +101,7 @@ btnRegisterGo.onclick = () => {
 const login = document.querySelector('.form-phone-password a')
 const formLoginGoogle = document.querySelector('.btn-form-first')
 btnLoginGo.onclick = () => {
-    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '0' && valueLoginPass.value === '0') {
+    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '1' && valueLoginPass.value === '1') {
         login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
     }else if(valueLoginPass.value === ''){
         setTimeout(() =>{
@@ -161,3 +167,33 @@ function toastAram () {
         },4000)
     }
 }
+//handle music 
+const audio = document.querySelector('audio');
+const music = document.querySelector('#music');
+if(audio.play()) {
+    var htmlMusic = `<i class="fas fa-volume-up music-img"></i>`;
+    audio.volume = 0.6;
+    setTimeout(() => {
+        music.innerHTML = htmlMusic;
+        const musicImg = document.querySelector('.music-img')
+        musicImg.style.animation = 'toastIn ease 1s'
+        musicImg.onclick = function() {
+            htmlMusic = `<i class="fas fa-volume-mute music-img"></i>`;
+             music.innerHTML = htmlMusic;
+            audio.pause();
+            music.style.animation = 'toastOut ease 1s 2s forwards'
+            setTimeout(function(){
+                music.innerHTML = '';
+            },3000)
+        }
+    }, 1000)
+}
+//handle radom music
+const listMusic = [
+    '../assets/music/kloi1.mp3',
+    '../assets/music/kloi2.mp3',
+    '../assets/music/piano-chil.mp3'
+]
+
+var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
+audio.setAttribute('src', listMusic[indexRandomMusic]);

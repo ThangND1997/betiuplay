@@ -26,12 +26,16 @@ slideNodes[0].onclick = () => {
     slide.classList.remove('active-3')
     slide.classList.remove('active-4')
     slideContent.classList.add('active-5')
-    slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
-    slideContent.style.animation =  'fadeSlide ease 0.8s'
+    slideContent.style.display = 'none';
+    slideContentApp.style.display = 'none';
+    slideContent.style.animation = 'none'
+    slideContentApp.style.animation = 'none'
     setTimeout(function() {
-        slideContent.style.animation = 'none'
-        slideContentApp.style.animation = 'none'
-    }, 2000)
+        slideContent.style.display = 'block';
+         slideContentApp.style.display = 'block';
+        slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
+        slideContent.style.animation =  'fadeSlide ease 0.8s'
+    }, 500)
     slideContent.classList.remove('active-6')
     slideContent.classList.remove('active-7')
     slideContent.classList.remove('active-8')
@@ -47,14 +51,17 @@ slideNodes[1].onclick = () => {
     slide.classList.remove('active-1')
     slide.classList.remove('active-3')
     slide.classList.remove('active-4')
-
-    slideContent.classList.add('active-6')
-    slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
-    slideContent.style.animation =  'fadeSlide ease 0.8s'
+    slideContent.style.display = 'none';
+    slideContentApp.style.display = 'none';
+    slideContent.style.animation = 'none'
+    slideContentApp.style.animation = 'none'
     setTimeout(function() {
-        slideContent.style.animation = 'none'
-        slideContentApp.style.animation = 'none'
-    }, 2000)
+        slideContent.style.display = 'block';
+         slideContentApp.style.display = 'block';
+        slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
+        slideContent.style.animation =  'fadeSlide ease 0.8s'
+    }, 500)
+    slideContent.classList.add('active-6')
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-7')
     slideContent.classList.remove('active-8')
@@ -72,12 +79,16 @@ slideNodes[2].onclick = () => {
     slide.classList.remove('active-4')
 
     slideContent.classList.add('active-7')
-    slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
-    slideContent.style.animation =  'fadeSlide ease 0.8s'
+    slideContent.style.display = 'none';
+    slideContentApp.style.display = 'none';
+    slideContent.style.animation = 'none'
+    slideContentApp.style.animation = 'none'
     setTimeout(function() {
-        slideContent.style.animation = 'none'
-        slideContentApp.style.animation = 'none'
-    }, 2000)
+        slideContent.style.display = 'block';
+         slideContentApp.style.display = 'block';
+        slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
+        slideContent.style.animation =  'fadeSlide ease 0.8s'
+    }, 500)
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-6')
     slideContent.classList.remove('active-8')
@@ -95,12 +106,16 @@ slideNodes[3].onclick = () => {
     slide.classList.remove('active-1')
 
     slideContent.classList.add('active-8')
-    slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
-    slideContent.style.animation =  'fadeSlide ease 0.8s'
+    slideContent.style.display = 'none';
+    slideContentApp.style.display = 'none';
+    slideContent.style.animation = 'none'
+    slideContentApp.style.animation = 'none'
     setTimeout(function() {
-        slideContent.style.animation = 'none'
-        slideContentApp.style.animation = 'none'
-    }, 2000)
+        slideContent.style.display = 'block';
+         slideContentApp.style.display = 'block';
+        slideContentApp.style.animation =  'fadeSlideSub ease 1.8s'
+        slideContent.style.animation =  'fadeSlide ease 0.8s'
+    }, 500)
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-6')
     slideContent.classList.remove('active-7')
@@ -147,13 +162,12 @@ slides.onmousedown = function(e) {
 }
 slides.onmouseup = function(e) {
     endClient = e.clientX;
-    console.log(startClient, endClient);
-}
-if(startClient - endClient > 50) {
-    slidesNext.onclick();
-}
-else if(startClient - endClient <= 50) {
-    slidesPrev.onclick();
+    if(startClient - endClient > 50) {
+        slidesNext.onclick();
+    }
+    else if(startClient - endClient <= -50) {
+        slidesPrev.onclick();
+    }
 }
 
 // touch mobile move event
@@ -213,3 +227,4 @@ arrowBtn.onclick = () => {
         arrowBtn.classList.toggle('ti-plus')
         arrowBtn.classList.toggle('ti-minus')
 }
+

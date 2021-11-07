@@ -1,0 +1,15 @@
+
+.storage-app {
+    width: 100%;
+    height: 1200px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    width: 60%;
+    height: 500px;
+    border-radius: 20px;
+}
