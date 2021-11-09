@@ -12,11 +12,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <title>BeTiu Play - Phim Hay, Xem Ngay !! </title>
     <link rel="shortcut icon" href="https://assets.glxplay.io/web/images/fav_icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/style/film.css">
     <link rel="stylesheet" href="./assets/style/grid.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/reponsive.css">
+    <link rel="stylesheet" href="./assets/style/film.css">
+    <link rel="stylesheet" href="./assets/style/reponsiveFilm.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
@@ -96,14 +97,32 @@
     <div class="slideshow">
         <div class="slides">
             <div class="slide slide-first"></div>
-            <div class="slide-content slide-content-first">
-                <div class="slide-content-app">
-                    <a href="./auth.html">
-                        <button class="btn btn-slide">Đăng ký ngay</button>
-                    </a>
-                    <h3 class="slide-content-text">Bạn có tài khoản chưa? Hãy đăng ký ngay!</h3>
+            <div class="slide-content slide-content-first"></div>
+            <div class="slide-content-app">
+                <div class="btn-slide-film">
+                    <button class="btn btn-slide btn-film js-btn-film-play">
+                        <i class="fas fa-video"></i>
+                        Xem Ngay
+                    </button>
+                    <button class="btn btn-slide btn-film js-btn-trailer-play">
+                        <i class="fas fa-film"></i>
+                        Xem Trailer
+                    </button>
                 </div>
-
+                <div class="film-select-op">
+                    <button class="film-select hidden-pc-tablet-film">
+                        <i class="ti-info-alt"></i>
+                        <span>Chi tiết</span>
+                    </button>
+                    <button class="film-select hidden-pc-tablet-film">
+                        <i class="ti-time"></i>
+                        <span>Xem sau</span>
+                    </button>
+                </div>
+                <h3 class="slide-content-text visi-slide-film">Vô tình mang thai ở tuổi 19 nhưng không được mẹ đẻ và bố dượng chấp thuận, To Il quyết tâm đi tìm bố ruột như một điểm tựa về vật chất và tinh thần để bước tiếp trên cuộc đời chông gai..</h3>
+                <h3 class="slide-content-text">Cua lại vợ bầu là một trong những phim ăn khách của năm 2019 với doanh thu gần 200 tỷ, với dàn diễn viên nổi tiếng Trấn Thành, Ninh Dương Lan Ngọc, Anh Tú và cốt truyện hợp thời..</h3>
+                <h3 class="slide-content-text">Dựa trên câu chuyện đồng thoại Hàn Quốc về mối nhân duyên của nàng tiên cá và gã lừa đảo. Bộ phim đã khuynh đảo màn ảnh châu Á bởi sự tham gia của Jun Ji Hyun và Lee Min Ho..</h3>
+                <h3 class="slide-content-text">High Class tiếp tục khai thác đề tài "hot" về giới thượng lưu, về cuộc sống đẳng cấp của những người phụ nữ quyền lực, những người vì danh tiếng của gia đình mà có thể làm tất cả..</h3>
             </div>
             <ul class="slides-dot">
                 <li class="slides-dot_item active"></li>
@@ -113,16 +132,21 @@
             </ul>
             <ul class="slides-manual">
                 <li class="slides-prev">
-                    <i class="ti-angle-left"></i>
+                    <i class="ti-arrow-circle-left"></i>
                 </li>
                 <li class="slides-next">
-                    <i class="ti-angle-right"></i>
+                    <i class="ti-arrow-circle-right"></i>
                 </li>
             </ul>
         </div>
     </div>
     <!-- end slideshow -->
-
+    <div class="film-app">
+        <div class="modal-film"></div>
+        <!-- <video controls src=""></video> -->
+        <div class="film"></div>
+        <div class="trailer"></div>
+    </div>
     <!-- start Body Content -->
     <div class="container">
         <div class="row grid wide version mobile-padding storage-film">
@@ -372,6 +396,6 @@
             </li>
         </ul>
     </div>
-    <script type="text/javascript" src="./handleWeb/main.js"></script>
+    <script type="text/javascript" src="./handleWeb/film.js"></script>
 </body>
 </html>

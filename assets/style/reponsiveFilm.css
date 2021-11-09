@@ -1,0 +1,148 @@
+
+@media (min-width: 740px) {
+    .hidden-pc-tablet-film {
+        display: none;
+    }
+}
+
+@media (max-width: 739px) {
+    .slides-manual {
+        display: none;  
+    }
+
+    .slides-dot {
+        background-size: contain;
+        background-position: center;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10%;
+    }
+
+    .slides-dot_item {
+        padding: 4px;
+    }
+
+    .slides-dot_item.active {
+        padding: 4px 14px;
+    }
+
+    .slide-content {
+        width: 60%;
+        background-size: contain;
+        background-position: center;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 45%;
+    }
+
+    .slide-content.active-6 {
+    }
+
+    .slide-content.slide-content-first {
+        background-image: url('../img/slide-content/boGia.png');
+    }
+    .slide-content.active-5 {
+        background-image: url('../img/slide-content/boGia.png');
+    
+        transition: 0.6s;
+    }
+    
+    .slide-content.active-6 {
+        background-image: url('../img/slide-film-content/cuaLaiVoBau (1).png');
+        transition: 0.6s;
+    }
+    
+    .slide-content.active-7 {
+        background-image: url('../img/slide-film-content/dangCapThuongLuu (1).png');
+        transition: 0.6s;
+    }
+    
+    .slide-content.active-8 {
+        background-image: url('../img/slide-film-content/bienXanh (1).png');
+        transition: 0.6s;
+    }
+
+    .slide-content-text {
+        display: none;
+    }
+
+    .slide-content-app {
+        width: 100%;
+        background-position: center;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        top: 74%;
+    }
+    .btn-film {
+        margin-right: unset;
+        width: 150px;
+    }
+
+    .slide-content-app .btn-film:first-child {
+        margin-right: 16px;
+        padding: 14px 1px;
+    }
+
+    .slide::before {
+       position: absolute;
+        content: "";
+        width: 100%;
+        height: 20%;
+        bottom: 27%;
+        z-index: 2;
+        background-image: linear-gradient(to top, black, transparent);
+    }
+    
+    .slide::after {
+        height: 28%;
+        background-color: black;
+    }
+
+    .slide-content.active-6 {
+        top: 39%;
+    }
+
+    .film-select-op {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin: 20px 30px 10px 30px;
+    }
+    
+    .film-select {
+        font-size: 1.2rem;
+        font-weight:300;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: var(--sub-text-color);
+    }
+
+    .film-select span {
+        font-size: 0.9rem;
+    }
+
+    .trailer, .film {
+        width: 100%;
+        height: 305px;
+    }
+
+    .video-wptangtoc {
+        position:relative;
+        overflow:hidden;
+        padding-bottom:56.25%;
+        height:0;
+        max-width: 100% !important;
+    }
+    .video-wptangtoc iframe, .video-wptangtoc object, .video-wptangtoc embed {
+        position:absolute;
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+    }
+    .video {max-width: 100%;}
+}

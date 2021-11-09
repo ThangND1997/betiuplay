@@ -41,7 +41,6 @@ btnLogin.onclick = () => {
 // button login countinus when import phone
 btnFormCounti.onclick = () => {
     const isNaN = Number(valueLoginPhone.value) - 0;
-    console.log(isNaN);
     if(valueLoginPhone.value === '' || !isNaN) {
         toastError();
     }else{
