@@ -11,7 +11,20 @@ const slideContent = $('.slide-content')
 const slideContentApp = $('.slide-content-app')
 const slidesPrev = $('.slides-prev');
 const slidesNext = $('.slides-next');
-
+const imgApp = [
+    {
+        img: "url('./assets/img/slide/slide1.jpg')",
+    },
+    {
+        img: "url('./assets/img/slide/slide2.jpg')",
+    },
+    {
+        img: "url('./assets/img/slide/slide3.jpg')",
+    },
+    {
+        img: "url('./assets/img/slide/slide5.jpg')",
+    },
+];
 // handle when onclick dot slide
 slideNodes[0].onclick = () => {
     //Reset interval with indexSlideCurrent
@@ -21,10 +34,7 @@ slideNodes[0].onclick = () => {
     // Add and remove class node, slide, content
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[0].classList.add('active')
-    slide.classList.add('active-1')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-4')
+    slide.style.backgroundImage = imgApp[indexSlideCurrent].img
     slideContent.classList.add('active-5')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
@@ -47,10 +57,7 @@ slideNodes[1].onclick = () => {
 
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[1].classList.add('active')
-    slide.classList.add('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-4')
+    slide.style.backgroundImage = imgApp[indexSlideCurrent].img
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
     slideContent.style.animation = 'none'
@@ -73,11 +80,7 @@ slideNodes[2].onclick = () => {
 
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[2].classList.add('active')
-    slide.classList.add('active-3')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-4')
-
+    slide.style.backgroundImage = imgApp[indexSlideCurrent].img
     slideContent.classList.add('active-7')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
@@ -97,14 +100,9 @@ slideNodes[3].onclick = () => {
     clearInterval(loopSlider)
     indexSlideCurrent = 3;
     loopSlider = setInterval(loopSlide, 6000)
-
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[3].classList.add('active')
-    slide.classList.add('active-4')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-1')
-
+    slide.style.backgroundImage = imgApp[indexSlideCurrent].img
     slideContent.classList.add('active-8')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';

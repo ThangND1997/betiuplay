@@ -119,30 +119,6 @@ header {
     background-image: url('../img/slide/slide1.jpg');
     transition: 0.6s;
 }
-
-.slide.active-1 {
-    background-image: url('../img/slide/slide1.jpg');
-    transition: 0.6s;
-}
-
-.slide.active-2 {
-    background-image: url('../img/slide/slide2.jpg');
-    transition: 0.6s;
-}
-
-
-.slide.active-3 {
-    background-image: url('../img/slide/slide3.jpg');
-    transition: 0.6s;
-}
-
-.slide.active-4 {
-    background-image: url('../img/slide/slide5.jpg');
-    transition: 0.6s;
-}
-
-
-
     /* Dot  Css */
 
 .slides-dot{

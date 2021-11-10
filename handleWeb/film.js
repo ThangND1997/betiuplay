@@ -9,17 +9,36 @@ const slideContentApp = $('.slide-content-app')
 const slidesPrev = $('.slides-prev');
 const slidesNext = $('.slides-next');
 const slideContentTextAll = $$('.slide-content-text');
+const film = [
+    {
+        img: "url('./assets/img/slide/slide4.jpg')",
+        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/oA-BhGNK7qw?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+    {
+        img: "url('./assets/img/slide-film/film2.jpg')",
+        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/pBSv1ZJWSAY?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/l8vTMxuvz6Y?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+    {
+        img: "url('./assets/img/slide-film/film3.jpg')",
+        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/3mR_pRuEVQo?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+    {
+        img: "url('./assets/img/slide-film/film4.jpg')",
+        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/zX9CB1m99Gc?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    },
+];
 // handle when onclick dot slide
 slideNodes[0].onclick = () => {
     //Reset interval with indexSlideCurrent
     indexSlideCurrent = 0;
-    // Add and remove class node, slide, content
+    // Add and remove class node, slide, content    
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[0].classList.add('active')
-    slide.classList.add('active-1')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-4')
+    slide.style.backgroundImage = film[indexSlideCurrent].img
     slideContent.classList.add('active-5')
     slideContent.classList.remove('active-6')
     slideContent.classList.remove('active-7')
@@ -32,10 +51,7 @@ slideNodes[1].onclick = () => {
     indexSlideCurrent = 1;
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[1].classList.add('active')
-    slide.classList.add('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-4')
+    slide.style.backgroundImage = film[indexSlideCurrent].img
     slideContent.classList.add('active-6')
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-7')
@@ -45,13 +61,10 @@ slideNodes[1].onclick = () => {
     slideContentTextAll[1].classList.add('visi-slide-film')
 }
 slideNodes[2].onclick = () => {
-
+    indexSlideCurrent = 2;
     $('.slides-dot_item.active').classList.remove('active')
     slideNodes[2].classList.add('active')
-    slide.classList.add('active-3')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-4')
+    slide.style.backgroundImage = film[indexSlideCurrent].img
     slideContent.classList.add('active-7')
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-6')
@@ -60,12 +73,10 @@ slideNodes[2].onclick = () => {
     slideContentTextAll[2].classList.add('visi-slide-film')
 }
 slideNodes[3].onclick = () => {
+    indexSlideCurrent = 3;
     $('.slides-dot_item.active').classList.remove('active')
+    slide.style.backgroundImage = film[indexSlideCurrent].img
     slideNodes[3].classList.add('active')
-    slide.classList.add('active-4')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-1')
     slideContent.classList.add('active-8')
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-6')
@@ -180,24 +191,6 @@ arrowBtn.onclick = () => {
 
 // handle button play film
 
-const film = [
-    {
-        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/oA-BhGNK7qw?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
-    {
-        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/pBSv1ZJWSAY?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/l8vTMxuvz6Y?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
-    {
-        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/3mR_pRuEVQo?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
-    {
-        path: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/zX9CB1m99Gc?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        subPath: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
-];
 
 const btnFilm = document.querySelector('.js-btn-film-play')
 const btnTrailer = document.querySelector('.js-btn-trailer-play')

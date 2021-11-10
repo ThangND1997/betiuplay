@@ -62,7 +62,7 @@
     transition: 0.6s;
 }
 
-.slide.active-1 {
+/* .slide.active-1 {
     background-image: url('../img/slide/slide4.jpg');
     transition: 0.6s;
 }
@@ -81,7 +81,7 @@
 .slide.active-4 {
     background-image: url('../img/slide-film/film4.jpg');
     transition: 0.6s;
-}
+} */
 
 
 
