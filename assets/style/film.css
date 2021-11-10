@@ -32,7 +32,7 @@
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
-    background-position: 67% 33%;
+    background-position: 73% 33%;
     background-size: cover;
     position: relative;
     transition: 0.6s;
@@ -58,17 +58,17 @@
 }
 
 .slide.slide-first {
-    background-image: url('../img/slide/slide4.jpg');
+    background-image: url('../img/slide-film/film5.jpg');
     transition: 0.6s;
 }
 
-/* .slide.active-1 {
-    background-image: url('../img/slide/slide4.jpg');
+.slide.active-1 {
+    background-image: url('../img/slide-film/film5.jpg');
     transition: 0.6s;
 }
 
 .slide.active-2 {
-    background-image: url('../img/slide-film/film2.jpg');
+    background-image: url('../img/slide/slide4.jpg');
     transition: 0.6s;
 }
 
@@ -81,7 +81,7 @@
 .slide.active-4 {
     background-image: url('../img/slide-film/film4.jpg');
     transition: 0.6s;
-} */
+}
 
 
 
@@ -154,25 +154,25 @@
     top: 20%;
     left: 90px;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: left;
+    background-size: contain;
 }
 
 .slide-content.slide-content-first {
-    background-image: url('../img/slide-content/boGia.png');
+    background-image: url('../img/slide-film-content/spider-man.png');
     transition: 0.6s;
     z-index: 1;
 }
 
 .slide-content.active-5 {
-    background-image: url('../img/slide-content/boGia.png');
-
+    background-image: url('../img/slide-film-content/spider-man.png');
     transition: 0.6s;
 }
 
 .slide-content.active-6 {
-    background-image: url('../img/slide-film-content/cuaLaiVoBau (1).png');
+    background-image: url('../img/slide-content/boGia.png');
     transition: 0.6s;
+    height: 196px;
 }
 
 .slide-content.active-7 {

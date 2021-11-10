@@ -119,6 +119,26 @@ header {
     background-image: url('../img/slide/slide1.jpg');
     transition: 0.6s;
 }
+.slide.active-1 {
+    background-image: url('../img/slide/slide1.jpg');
+    transition: 0.6s;
+}
+
+.slide.active-2 {
+    background-image: url('../img/slide/slide2.jpg');
+    transition: 0.6s;
+}
+
+
+.slide.active-3 {
+    background-image: url('../img/slide/slide3.jpg');
+    transition: 0.6s;
+}
+
+.slide.active-4 {
+    background-image: url('../img/slide/slide5.jpg');
+    transition: 0.6s;
+}
     /* Dot  Css */
 
 .slides-dot{
@@ -186,7 +206,7 @@ header {
     left: 35px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .slide-content.slide-content-first {
