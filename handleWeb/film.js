@@ -234,3 +234,310 @@ btnTrailer.onclick = function () {
     trailer.style.display = 'block';
     filmPlay.style.display = 'none';
 }
+
+
+
+
+const appItemsFilm = [
+    {
+        id: 1,
+        src: '../assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
+        path: 'https://assets.glxplay.io/images/w400/title/dont-look-back-2021_web_posterLandscape_8e9f994b33e6f58f9ba26f6f11ceb941.jpg',
+        name: 'Những kẻ vô cảm',
+        category: 'Kinh dị',
+        duration: '85 phút',
+        age: '19+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 2,
+        src: '../assets/trailer/Thor- Ragnarok Teaser Trailer [HD].mp4',
+        path: '../assets/img/poster-film/hala-thor1.jpg',
+        name: 'Thor Tận Thế Ragnarok',
+        category: 'Viễn tưởng',
+        duration: '142 phút',
+        age: '18+',
+        premidum: 'Đặc biệt',
+    },
+    {
+        id: 3,
+        path: 'https://assets.glxplay.io/images/w400/title/death-by-zero_web_posterLandscape_aa9462fbddee226ccf0f060bb8371c01.jpg',
+        name: 'Sát thủ',
+        category: 'Hành động',
+        duration: '30 Tập',
+        age: '18+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 4,
+        path: 'https://assets.glxplay.io/images/w400/title/life-of-pi_web_posterLandscape_4454549f9219a2457f9514c61c26d785.jpg',
+        name: 'Cuộc Đời Của Pi',
+        category: 'Tâm lý',
+        duration: '120 phut',
+        age: '7+',
+        premidum: 'Cao Cấp',
+    },
+    {
+        id: 5,
+        path: 'https://assets.glxplay.io/images/w400/title/childs-play_web_posterLandscape_d13c22059d5c04dfa4e19eb2ae0ca0df.jpg',
+        name: 'Búp Bê Sát Nhân',
+        category: 'Kinh dị',
+        duration: '90 phút',
+        age: '13+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 6,
+        path: 'https://assets.glxplay.io/images/w400/title/zootopia_web_posterLandscape_3faccca8bbd905cc91f657f11bf86ae7.jpg',
+        name: 'Phi Vụ Động Trời',
+        category: 'Gia Đình',
+        duration: '120 phut',
+        age: '7+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 7,
+        path: 'https://assets.glxplay.io/images/w400/title/john-wick-chapter-3-parabellum_web_posterLandscape_8720a29a126ba538f88b8869101d516a.jpg',
+        name: 'Sát Thủ John Wick 3',
+        category: 'Hành Động',
+        duration: '132 phút',
+        age: '18+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 8,
+        path: 'https://assets.glxplay.io/images/w400/title/doraemon-stand-by-me_web_posterLandscape_370b8686dbb61311f09a718f43c6e9d2.jpg',
+        name: 'Đô Rê Mon: Đôi Bạn Thân',
+        category: 'Gia Đình',
+        duration: '95 phút',
+        age: 'Mọi lứa tuổi',
+        premidum: 'Đặc biệt',
+    },
+    {
+        id: 1,
+        path: 'https://assets.glxplay.io/images/w400/title/dont-look-back-2021_web_posterLandscape_8e9f994b33e6f58f9ba26f6f11ceb941.jpg',
+        name: 'Những kẻ vô cảm',
+        category: 'Kinh dị',
+        duration: '85 phút',
+        age: '19+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 2,
+        path: 'https://assets.glxplay.io/images/w400/title/the-amityville-horror_web_posterLandscape_33b44c16ed48b15697779d6400c05379.jpg',
+        name: 'Ngôi Nhà Rùng Rợn',
+        category: 'Kinh dị',
+        duration: '120 phut',
+        age: '21+',
+        premidum: 'Đặc biệt',
+    },
+    {
+        id: 3,
+        path: 'https://assets.glxplay.io/images/w400/title/death-by-zero_web_posterLandscape_aa9462fbddee226ccf0f060bb8371c01.jpg',
+        name: 'Sát thủ',
+        category: 'Hành động',
+        duration: '30 Tập',
+        age: '18+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 4,
+        path: 'https://assets.glxplay.io/images/w400/title/life-of-pi_web_posterLandscape_4454549f9219a2457f9514c61c26d785.jpg',
+        name: 'Cuộc Đời Của Pi',
+        category: 'Tâm lý',
+        duration: '120 phut',
+        age: '7+',
+        premidum: 'Cao Cấp',
+    },
+    {
+        id: 5,
+        path: 'https://assets.glxplay.io/images/w400/title/childs-play_web_posterLandscape_d13c22059d5c04dfa4e19eb2ae0ca0df.jpg',
+        name: 'Búp Bê Sát Nhân',
+        category: 'Kinh dị',
+        duration: '90 phút',
+        age: '13+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 6,
+        path: 'https://assets.glxplay.io/images/w400/title/zootopia_web_posterLandscape_3faccca8bbd905cc91f657f11bf86ae7.jpg',
+        name: 'Phi Vụ Động Trời',
+        category: 'Gia Đình',
+        duration: '120 phut',
+        age: '7+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 7,
+        path: 'https://assets.glxplay.io/images/w400/title/john-wick-chapter-3-parabellum_web_posterLandscape_8720a29a126ba538f88b8869101d516a.jpg',
+        name: 'Sát Thủ John Wick 3',
+        category: 'Hành Động',
+        duration: '132 phút',
+        age: '18+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 8,
+        path: 'https://assets.glxplay.io/images/w400/title/doraemon-stand-by-me_web_posterLandscape_370b8686dbb61311f09a718f43c6e9d2.jpg',
+        name: 'Đô Rê Mon: Đôi Bạn Thân',
+        category: 'Gia Đình',
+        duration: '95 phút',
+        age: 'Mọi lứa tuổi',
+        premidum: 'Đặc biệt',
+    },
+    {
+        id: 5,
+        path: 'https://assets.glxplay.io/images/w400/title/childs-play_web_posterLandscape_d13c22059d5c04dfa4e19eb2ae0ca0df.jpg',
+        name: 'Búp Bê Sát Nhân',
+        category: 'Kinh dị',
+        duration: '90 phút',
+        age: '13+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 6,
+        path: 'https://assets.glxplay.io/images/w400/title/zootopia_web_posterLandscape_3faccca8bbd905cc91f657f11bf86ae7.jpg',
+        name: 'Phi Vụ Động Trời',
+        category: 'Gia Đình',
+        duration: '120 phut',
+        age: '7+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 7,
+        path: 'https://assets.glxplay.io/images/w400/title/john-wick-chapter-3-parabellum_web_posterLandscape_8720a29a126ba538f88b8869101d516a.jpg',
+        name: 'Sát Thủ John Wick 3',
+        category: 'Hành Động',
+        duration: '132 phút',
+        age: '18+',
+        premidum: 'Cao cấp',
+    },
+    {
+        id: 8,
+        path: 'https://assets.glxplay.io/images/w400/title/doraemon-stand-by-me_web_posterLandscape_370b8686dbb61311f09a718f43c6e9d2.jpg',
+        name: 'Đô Rê Mon: Đôi Bạn Thân',
+        category: 'Gia Đình',
+        duration: '95 phút',
+        age: 'Mọi lứa tuổi',
+        premidum: 'Đặc biệt',
+    },
+];
+
+const storContainer = document.querySelector('.storage-items');
+function renderFilm () {
+    var htmls = appItemsFilm.map(function (item, index) {
+        return `<div class="storage-item" data-index="${index}">
+        <img src="${item.path}" alt="">
+        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+        <div class="storage-item-icon">
+        <i class="far fa-play-circle"></i>
+        </div>
+        <div class="storage-item-description">
+        <h3 class="storage-item-description_header">${item.name}</h3>
+        <div class="storage-item-description_body">
+        <span>${item.category}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.duration}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.age}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.premidum}</span>
+        </div>
+        </div>
+        </div>
+        </div>`;
+    })
+    storContainer.innerHTML = htmls.join('');
+}
+renderFilm();
+const stoItems = document.querySelectorAll('.storage-item');
+const stoImg = document.querySelector('.storage-item > img');
+const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+// handle items poster film
+stoItems.forEach(function(stoItems, index) {
+    stoItems.onmouseover = function () {
+        stoItems.classList.add('storage-item-change')
+        stoOverlay[index].classList.add('onOverlayFilm')
+    }
+    stoItems.onmouseout = function () {
+        stoItems.classList.remove('storage-item-change')
+        stoOverlay[index].classList.remove('onOverlayFilm')
+    }
+})
+// handle click on poster film
+var currentFilm;
+const modalPlayFilm = document.querySelector('.storage-body-modal');
+storContainer.onclick = function (e) {
+    const filmNode = e.target.closest('.storage-item');
+    const storageDesHearder = document.querySelector('.storage-desciption_header');
+    if(filmNode) {
+        currentFilm = Number(filmNode.dataset.index);
+        video.src = appItemsFilm[currentFilm].src;
+        storageDesHearder.textContent = appItemsFilm[currentFilm].name;
+        modalPlayFilm.style.display = 'flex'
+        video.play();
+    }
+}
+
+// handle click close modal film
+const btnloseModalFilm = document.querySelector('.storage-body-modal_overlay i');
+const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
+btnloseModalFilm.onclick = function () {
+    video.pause();
+    modalPlayFilm.style.display = 'none'
+}
+overlayModalFilm.onclick = function () {
+    video.pause();
+    modalPlayFilm.style.display = 'none'
+}
+window.onkeyup = function (e) {
+    if(e.which == 27) {
+        video.pause();
+        modalPlayFilm.style.display = 'none'
+    }
+}
+
+// const offset = stoImg.offsetWidth * 3.7;
+// storContainer.style.transform = `translateX(-${offset}px)`
+const btnNextFilm = document.querySelector('.storage-items-next');
+const iconNext = document.querySelector('.storage-items-next i');
+const btnPrevFilm = document.querySelector('.storage-items-prev');
+const iconPrev = document.querySelector('.storage-items-prev i');
+const stoContainer = document.querySelector('.storage-items_container');
+    var index = 0;
+    var offset = stoImg.offsetWidth + 14;
+    btnPrevFilm.onmouseover = function() {
+        iconPrev.style.fontSize = '3rem'
+    }
+    btnPrevFilm.onmouseout = function() {
+        iconPrev.style.fontSize = '2rem'
+    }
+    btnNextFilm.onmouseover = function() {
+        iconNext.style.fontSize = '3rem'
+    }
+    btnNextFilm.onmouseout = function() {
+        iconNext.style.fontSize = '2rem'
+    }
+    btnNextFilm.onclick = function () {
+        if(index < (3.94)) {
+            index++;
+            if(index == 4) {
+                index = 3.94
+                btnNextFilm.style.display = 'none';
+            }
+            storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
+            btnPrevFilm.style.display = 'block';
+    }}
+
+    btnPrevFilm.onclick = function () {
+        if(index > (0)) {
+            if(index === 3.94) {
+                index = 4
+            }
+            index--;
+            if(index == 0) {
+                btnPrevFilm.style.display = 'none';
+            }
+            storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
+            btnNextFilm.style.display = 'block';
+    }}

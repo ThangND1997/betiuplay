@@ -36,4 +36,5 @@ html {
     height: 40px;
     border-radius: 26px;
     border: none;
+    cursor: pointer;
 }

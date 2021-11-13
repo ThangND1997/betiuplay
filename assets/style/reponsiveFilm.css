@@ -5,7 +5,16 @@
     }
 }
 
+@media (max-width: 1023px) {
+    .hidden-on-mobile-tablet-film {
+        display: none;
+    }
+}
+
 @media (max-width: 739px) {
+    .hidden-on-mobile-film {
+        display: none;
+    }
     .slides-manual {
         display: none;  
     }
@@ -128,6 +137,35 @@
     .trailer, .film {
         width: 100%;
         height: 270px;
+    }
+
+    /* css item film */
+    .storage-items {
+        width: 950%;
+    }
+
+    .storage-item {
+        height: unset;
+    }
+
+    .storage-items-next {
+        display: none;
+    }
+
+    .storage-wrap {
+        padding: 50px 10px 20px 10px;
+    }
+
+    .storage-item_header {
+        padding-bottom: unset;
+    }
+    .storage-items {
+        padding: 10px 0;
+    }
+
+    .storage-item-change {
+        width: calc(100% / 5);
+        top: 0;
     }
 
 }
