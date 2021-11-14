@@ -241,7 +241,7 @@ btnTrailer.onclick = function () {
 const appItemsFilm = [
     {
         id: 1,
-        src: '../assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
+        src: './assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
         path: 'https://assets.glxplay.io/images/w400/title/dont-look-back-2021_web_posterLandscape_8e9f994b33e6f58f9ba26f6f11ceb941.jpg',
         name: 'Những kẻ vô cảm',
         category: 'Kinh dị',
@@ -251,8 +251,8 @@ const appItemsFilm = [
     },
     {
         id: 2,
-        src: '../assets/trailer/Thor- Ragnarok Teaser Trailer [HD].mp4',
-        path: '../assets/img/poster-film/hala-thor1.jpg',
+        src: './assets/trailer/Thor- Ragnarok Teaser Trailer [HD].mp4',
+        path: './assets/img/poster-film/hala-thor1.jpg',
         name: 'Thor Tận Thế Ragnarok',
         category: 'Viễn tưởng',
         duration: '142 phút',
