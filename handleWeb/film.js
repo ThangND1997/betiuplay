@@ -242,8 +242,8 @@ const appItemsFilm = [
     {
         id: 1,
         src: './assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
-        path: 'https://assets.glxplay.io/images/w400/title/dont-look-back-2021_web_posterLandscape_8e9f994b33e6f58f9ba26f6f11ceb941.jpg',
-        name: 'Những kẻ vô cảm',
+        path: 'https://i0.wp.com/teaser-trailer.com/wp-content/uploads/Ghost-House-movie.jpg?ssl=1',
+        name: 'Ngôi Nhà Ma Ám',
         category: 'Kinh dị',
         duration: '85 phút',
         age: '19+',
@@ -541,3 +541,29 @@ const stoContainer = document.querySelector('.storage-items_container');
             storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
             btnNextFilm.style.display = 'block';
     }}
+
+// handle click btn film modal
+const btnModalTrailer = document.querySelector('.btn-trailer')
+const btnModalFilm = document.querySelector('.btn-film-play')
+const notiFilm = document.querySelector('.notiFilm')
+btnModalTrailer.onclick = () => {
+        if(btnModalFilm.closest('.btn-film-play.active-play')) {
+        console.log(123)
+        video.load();
+        video.play();
+        video.style.display = 'block';
+        notiFilm.style.display = 'none';
+        btnModalTrailer.classList.add('active-play');
+        btnModalFilm.classList.remove('active-play');
+    }
+}
+btnModalFilm.onclick = () => {
+        if(btnModalTrailer.closest('.btn-trailer.active-play')) {
+        video.pause();
+        video.style.display = 'none';
+        notiFilm.style.display = 'flex';
+        btnModalTrailer.classList.remove('active-play');
+        btnModalFilm.classList.add('active-play');
+    }
+}
+

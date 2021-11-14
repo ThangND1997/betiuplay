@@ -450,7 +450,7 @@
     color: rgba(255, 255, 255, 0.2);
     position: absolute;
     top: 10px;
-    left: 49%;
+    right: 10px;
     font-size: 1.4rem;
     padding: 8px;
     transition: transform 0.6s;
@@ -480,13 +480,31 @@ video {
     background-color: black;
 }
 
+.notiFilm {
+    display: none;
+    width: 80%;
+    height: 500px;
+    border-radius: 4px;
+    background-color: black;
+    color: #666;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.notiFilm a {
+    color: rgba(13, 104, 223, 0.932);
+    text-decoration: none;
+}
+
 .storage-modal_container_see-descriptio {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #111;
-    width: 100%;
+    width: 187px;
 }
 
 .storage-desciption_header {
@@ -514,4 +532,9 @@ video {
     margin: 40px 0 150px;
     width: 110px;
     height:55px;
+}
+
+.storage-desciption_btnm {
+    width: 100%;
+    text-align: center
 }
