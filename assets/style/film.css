@@ -521,6 +521,7 @@ video {
 
 .btn-trailer, .btn-film-play {
     font-weight: bold;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .active-play {
