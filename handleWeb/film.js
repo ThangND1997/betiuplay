@@ -181,13 +181,11 @@ arrowBtn.onclick = () => {
 
 const film = [
     {
-        path: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/qDJqdC2z-Qk?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
         subPath: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/O6E_45lsxBE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     },
-    {
-        path: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/pBSv1ZJWSAY?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-        subPath: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/l8vTMxuvz6Y?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-    },
+    // {
+    //     subPath: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/l8vTMxuvz6Y?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    // },
     // {
     //     path: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/3mR_pRuEVQo?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     //     subPath: '<iframe width="100%" height="100%" src="" data-src="https://www.youtube.com/embed/jluSu8Rw6YE?autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
@@ -205,19 +203,19 @@ const filmModal = document.querySelector('.modal-film')
 const trailer = document.querySelector('.trailer')
 const filmPlay = document.querySelector('.film')
 const video = document.querySelector('video')
-btnFilm.onclick = function () {
-    // video.src = source;
-    // video.play();
-    // filmApp.classList.add('on-film')
-    // video.style.display = 'block';
-    // trailer.style.display = 'none';
-    filmPlay.innerHTML = film[indexSlideCurrent].path;
-    let iframe = document.querySelector('iframe')
-    iframe.setAttribute('src', iframe.getAttribute('data-src'))
-    filmApp.classList.add('on-film')
-    trailer.style.display = 'none';
-    filmPlay.style.display = 'block';
-}
+// btnFilm.onclick = function () {
+//     // video.src = source;
+//     // video.play();
+//     // filmApp.classList.add('on-film')
+//     // video.style.display = 'block';
+//     // trailer.style.display = 'none';
+//     filmPlay.innerHTML = film[indexSlideCurrent].path;
+//     let iframe = document.querySelector('iframe')
+//     iframe.setAttribute('src', iframe.getAttribute('data-src'))
+//     filmApp.classList.add('on-film')
+//     trailer.style.display = 'none';
+//     filmPlay.style.display = 'block';
+// }
 filmModal.onclick = function () {
     filmApp.classList.remove('on-film')
     // video.pause();
@@ -242,7 +240,7 @@ const appItemsFilm = [
     {
         id: 1,
         src: './assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
-        path: 'https://i0.wp.com/teaser-trailer.com/wp-content/uploads/Ghost-House-movie.jpg?ssl=1',
+        path: 'https://lh3.googleusercontent.com/proxy/t0ZdXBFoJOdJVMzG75We3KEAzLKHEFMkOStNabv9nUhaXONfRgDgmpU8Itktsdk06f6eHVumzb-vwBLdFBldOGAif17HRxMlIQmEQrNRMKO82gyhHcL_9tv8evuNyrpkOxvvHCtOs_RFSvyJkpVJbSm2ZUDEWTawOPdA8pIgGziKuJA_NZh6o6B_pk0EOktfHKvZJBvPvRPAbuG60CXlb94n0jSetmzl',
         name: 'Ngôi Nhà Ma Ám',
         category: 'Kinh dị',
         duration: '85 phút',
@@ -261,18 +259,20 @@ const appItemsFilm = [
     },
     {
         id: 3,
-        path: 'https://assets.glxplay.io/images/w400/title/death-by-zero_web_posterLandscape_aa9462fbddee226ccf0f060bb8371c01.jpg',
-        name: 'Sát thủ',
-        category: 'Hành động',
-        duration: '30 Tập',
+        src: './assets/trailer/Thor- The Dark World Official Trailer HD.mp4',
+        path: 'https://wallpaperaccess.com/full/645154.jpg',
+        name: 'Thor Thế Giới Bóng Tối',
+        category: 'Viễn tưởng',
+        duration: '148 phút',
         age: '18+',
         premidum: 'Cao cấp',
     },
     {
         id: 4,
-        path: 'https://assets.glxplay.io/images/w400/title/life-of-pi_web_posterLandscape_4454549f9219a2457f9514c61c26d785.jpg',
-        name: 'Cuộc Đời Của Pi',
-        category: 'Tâm lý',
+        src: './assets/trailer//VENOM 2 Official Trailer (2021).mp4',
+        path: 'https://photo-baomoi.zadn.vn/w700_r1/2021_05_11_329_38800919/2440c180dfc2369c6fd3.jpg',
+        name: 'Venom 2 Đối Mặt Tử Thù',
+        category: 'Viễn Tưởng',
         duration: '120 phut',
         age: '7+',
         premidum: 'Cao Cấp',
@@ -476,6 +476,7 @@ storContainer.onclick = function (e) {
         storageDesHearder.textContent = appItemsFilm[currentFilm].name;
         modalPlayFilm.style.display = 'flex'
         video.play();
+        btnModalTrailer.onclick();
     }
 }
 
