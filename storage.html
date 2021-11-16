@@ -99,7 +99,7 @@
             <div class="slide slide-first"></div>
             <div class="slide-content slide-content-first"></div>
             <div class="slide-content-app">
-                <div class="btn-slide-film">
+                <div class="btn-slide-film hidden-on-mobile-tablet-film">
                     <button class="btn btn-slide btn-film js-btn-film-play">
                         <i class="fas fa-video"></i>
                         Xem Ngay
@@ -111,16 +111,20 @@
                 </div>
                 <div class="film-select-op">
                     <button class="film-select hidden-pc-tablet-film">
-                        <i class="ti-info-alt"></i>
-                        <span>Chi tiết</span>
+                        <i class="ti-plus"></i>
+                        <span>Danh sách</span>
+                    </button>
+                    <button class="js-btn-trailer-play btn-mobile-slide hidden-pc-film">
+                        <i class="fas fa-play"></i>
+                        Phát
                     </button>
                     <button class="film-select hidden-pc-tablet-film">
-                        <i class="ti-time"></i>
-                        <span>Xem sau</span>
+                        <i class="ti-info-alt"></i>
+                        <span>Thông tin</span>
                     </button>
                 </div>
-                <h3 class="slide-content-text visi-slide-film">Đánh dấu chính thức sự quay về ngôi nhà Marvel của Người Nhện dưới sự hóa thân của diễn viên trẻ Tom Holland. Màn tái xuất của cậu bé Peter Parker đã thu về 880 triệu đô doanh thu phòng vé...</h3>
-                <h3 class="slide-content-text">Cua lại vợ bầu là một trong những phim ăn khách của năm 2019 với doanh thu gần 200 tỷ, với dàn diễn viên nổi tiếng Trấn Thành, Ninh Dương Lan Ngọc, Anh Tú và cốt truyện hợp thời..</h3>
+                <h3 class="slide-content-text visi-slide-film">Sau khi trở thành "giải thưởng lớn" của giới sát thủ, John Wick cùng chú chó cưng phải lên đường chạy trốn. Với giá 14 triệu đô, John Wick trở thành mục tiêu béo bở của bất cứ kẻ săn đầu người nào....</h3>
+                <h3 class="slide-content-text">Đánh dấu chính thức sự quay về ngôi nhà Marvel của Người Nhện dưới sự hóa thân của diễn viên trẻ Tom Holland. Màn tái xuất của cậu bé Peter Parker đã thu về 880 triệu đô doanh thu phòng vé...</h3>
                 <h3 class="slide-content-text">Dựa trên câu chuyện đồng thoại Hàn Quốc về mối nhân duyên của nàng tiên cá và gã lừa đảo. Bộ phim đã khuynh đảo màn ảnh châu Á bởi sự tham gia của Jun Ji Hyun và Lee Min Ho..</h3>
                 <h3 class="slide-content-text">High Class tiếp tục khai thác đề tài "hot" về giới thượng lưu, về cuộc sống đẳng cấp của những người phụ nữ quyền lực, những người vì danh tiếng của gia đình mà có thể làm tất cả..</h3>
             </div>
@@ -299,16 +303,33 @@
         <!-- storage body -->
         <div class="storage-body">
             <div class="storage-wrap grid wide version">
-                <h3 class="storage-item_header">Phim mới mỗi ngày</h3>
-                <div class="storage-items-next">
-                    <i class="fas fa-chevron-right"></i>
-                    <div class="storage-items_overlay"></div>
-                </div>
-                <div class="storage-items-next storage-items-prev">
-                    <i class="fas fa-chevron-left"></i>
+                <div class="storage-item_header">
+                    <h2>Top phim hôm nay</h2> 
+                    <div class="storage-items-next">
+                        <i class="fas fa-chevron-right"></i>
+                        <div class="storage-items_overlay"></div>
+                    </div>
+                    <div class="storage-items-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
                 </div>
                 <div class="storage-items_container">
                     <div class="storage-items"></div>
+                </div>
+            </div>
+            <div class="storage-wrap grid wide version">
+                <div class="storage-item_header">
+                    <h2>Loạt phim kinh dị</h2> 
+                    <div class="storage-items-next">
+                        <i class="fas fa-chevron-right"></i>
+                        <div class="storage-items_overlay"></div>
+                    </div>
+                    <div class="storage-items-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                </div>
+                <div class="storage-items_container">
+                    <div class="storage-items-1"></div>
                 </div>
             </div>
         </div>

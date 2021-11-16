@@ -50,17 +50,17 @@
 }
 
 .slide.slide-first {
-    background-image: url('../img/slide-film/film5.jpg');
+    background-image: url('../img/slide-film/film6.jpg');
     transition: 0.6s;
 }
 
 .slide.active-1 {
-    background-image: url('../img/slide-film/film5.jpg');
+    background-image: url('../img/slide-film/film6.jpg');
     transition: 0.6s;
 }
 
 .slide.active-2 {
-    background-image: url('../img/slide/slide4.jpg');
+    background-image: url('../img/slide-film/film5.jpg');
     transition: 0.6s;
 }
 
@@ -151,18 +151,18 @@
 }
 
 .slide-content.slide-content-first {
-    background-image: url('../img/slide-film-content/spider-man.png');
+    background-image: url('../img/slide-film-content/jonwich3.png');
     transition: 0.6s;
     z-index: 1;
 }
 
 .slide-content.active-5 {
-    background-image: url('../img/slide-film-content/spider-man.png');
+    background-image: url('../img/slide-film-content/jonwich3.png');
     transition: 0.6s;
 }
 
 .slide-content.active-6 {
-    background-image: url('../img/slide-content/boGia.png');
+    background-image: url('../img/slide-film-content/spider-man.png');
     transition: 0.6s;
     height: 196px;
 }
@@ -274,6 +274,10 @@
 }
 
 .storage-wrap {
+    padding-top: 20px;
+}
+
+.storage-wrap:first-child {
     padding-top: 50px;
 }
 
@@ -292,8 +296,8 @@
 
 .storage-items-next {
     position: absolute;
-    top: 92px;
-    right: 39px;
+    right: 0;
+    top: 48px;
     z-index: 999;
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(0, 0, 0, 0.2);
@@ -317,16 +321,37 @@
 }
 
 .storage-items-prev {
-    right: unset;
-    left: 43px;
+    left: 0;
     display: none;
+    position: absolute;
+    top: 38px;
+    z-index: 999;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.6s;
+    height: 168px;
+    width: 70px;
 }
 
-.storage-items {
+.storage-items-prev i {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    /* transform: translateX(-50%); */
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 1);
+    font-size: 2rem;
+    transition: all ease 0.4s;
+}
+
+.storage-items, .storage-items-1 {
     display: flex;
     /* width: 188%; */
     width: 472%;
-    height: 150%;
+    height: 208px;
     padding: 20px 0;
     transition: all ease 1s;
 }
@@ -347,7 +372,7 @@
 
 .storage-item-change {
     width: calc(100% / 4);
-    top: -20px;
+    top: -18px;
     height: 200px;
 }
 

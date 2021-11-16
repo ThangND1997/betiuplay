@@ -5,6 +5,12 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .hidden-pc-film {
+        display: none;
+    }
+}
+
 @media (max-width: 1023px) {
     .hidden-on-mobile-tablet-film {
         display: none;
@@ -24,7 +30,7 @@
         background-position: center;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 10%;
+        bottom: 20px;
     }
 
     .slides-dot_item {
@@ -48,19 +54,23 @@
         top: 45%;
     }
 
+    .slide {
+        height: 75vh;
+    }
+
     .slide-content.active-6 {
     }
 
     .slide-content.slide-content-first {
-        background-image: url('../img/slide-film-content/spider-man.png');
+        background-image: url('../img/slide-film-content/jonwich3.png');
     }
     .slide-content.active-5 {
-        background-image: url('../img/slide-film-content/spider-man.png');
+        background-image: url('../img/slide-film-content/jonwich3.png');
         transition: 0.6s;
     }
     
     .slide-content.active-6 {
-        background-image: url('../img/slide-content/boGia.png');
+        background-image: url('../img/slide-film-content/spider-man.png');
         transition: 0.6s;
     }
     
@@ -84,7 +94,7 @@
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        top: 74%;
+        top: 80%;
     }
     .btn-film {
         margin-right: unset;
@@ -102,13 +112,13 @@
         content: "";
         width: 100%;
         height: 20%;
-        bottom: 27%;
-        z-index: 2;
+        bottom: 20%;
+        z-index: 1;
         background-image: linear-gradient(to top, black, transparent);
     }
     
     .slide::after {
-        height: 28%;
+        height: 20%;
         background-color: black;
     }
 
@@ -120,11 +130,11 @@
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
-        margin: 20px 50px 10px 50px;
+        margin: 20px 34px 10px 34px;
     }
     
     .film-select {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight:300;
         display: flex;
         flex-direction: column;
@@ -132,7 +142,7 @@
         background-color: transparent;
         border: none;
         /* color: var(--sub-text-color); */
-        color: #045697;
+        color: white;
     }
 
     .container::after {
@@ -141,6 +151,7 @@
 
     .film-select span {
         font-size: 0.9rem;
+        margin-top: 6px;
     }
 
     .trailer, .film {
@@ -149,8 +160,9 @@
     }
 
     /* css item film */
-    .storage-items {
+    .storage-items, .storage-items-1 {
         width: 950%;
+        height: 150px;
     }
 
     .storage-item {
@@ -165,15 +177,19 @@
         display: none;
     }
 
+    .storage-items-prev {
+        display: none;
+    }
+
     .storage-wrap {
-        padding: 50px 10px 20px 10px;
+        padding: 0 10px 0 10px;
     }
 
     .storage-item_header {
         padding-bottom: unset;
     }
     .storage-items {
-        padding: 10px 0;
+        padding: 20px 0;
     }
 
     .storage-item-change {
@@ -187,6 +203,10 @@
     
     .storage-modal_container_see {
         flex-direction: column;
+    }
+
+    .storage-body {
+        background-color: #000;
     }
 
 
@@ -254,5 +274,18 @@
 
     .storage-desciption_btnm {
         margin-bottom: 16px;
+    }
+
+    .btn-mobile-slide {
+        padding: 9px 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 3px;
+        
+    }
+
+    .btn-mobile-slide i {
+        margin-right: 10px;
     }
 }
