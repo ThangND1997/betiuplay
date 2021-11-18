@@ -306,7 +306,7 @@ const appItemsFilm = {
             name: 'Đô Rê Mon: Đôi Bạn Thân',
             category: 'Gia Đình',
             duration: '95 phút',
-            age: 'Mọi lứa tuổi',
+            age: '16+',
             premidum: 'Đặc biệt',
         },
         {
@@ -376,7 +376,7 @@ const appItemsFilm = {
             name: 'Đô Rê Mon: Đôi Bạn Thân',
             category: 'Gia Đình',
             duration: '95 phút',
-            age: 'Mọi lứa tuổi',
+            age: '16+',
             premidum: 'Đặc biệt',
         },
         {
@@ -420,7 +420,6 @@ const appItemsFilm = {
             premidum: 'Cao Cấp',
         }
     ],
-
     horrorFilm: [
         {
             id: 1,
@@ -509,7 +508,7 @@ const appItemsFilm = {
             name: 'Song Sinh',
             category: 'Kinh dị',
             duration: '95 phút',
-            age: 'Mọi lứa tuổi',
+            age: '16+',
             premidum: 'Đặc biệt',
         },
         {
@@ -579,7 +578,7 @@ const appItemsFilm = {
             name: 'Lời Nguyền Trên Biển',
             category: 'Kinh dị',
             duration: '95 phút',
-            age: 'Mọi lứa tuổi',
+            age: '16+',
             premidum: 'Đặc biệt',
         },
         {
@@ -623,10 +622,510 @@ const appItemsFilm = {
             premidum: 'Cao Cấp',
         }
     ],
+    blockbusterFilm: [
+        {
+            id: 1,
+            src: '',
+            path: './assets/img/poster-film/endgame.jpg',
+            name: 'Avengers: Endgame',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao Cấp',
+        },
+        {
+            id: 2,
+            src: './assets/trailer/(Official Trailer)  SONG SINH (ROPES) - KC- 08.01.2021.mp4',
+            path: './assets/img/poster-film/The-Last-Knight-New-Banner-03 (1).jpg',
+            name: 'Transformers 3',
+            category: 'Viễn Tưởng',
+            duration: '95 phút',
+            age: '18+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 3,
+            src: './assets/trailer/MUSE- NÀNG THƠ CỦA QUỶ- KHỞI CHIẾU MÙNG 8 TẾT (23.02.2018) OFFICIAL TRAILER.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/spider-man-homecoming_web_posterLandscape_89e703b5ff9ed401a44cc32747c5b72c.jpg',
+            name: 'Người Nhện: Trở Về Nhà',
+            category: 'Viễn Tưởng',
+            duration: '148 phút',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 4,
+            src: './assets/trailer/(Official Trailer) MẸ QUỶ - KC- 19.06.2020.mp4',
+            path: './assets/img/poster-film/tranformer5.jpg',
+            name: 'Transformers 5: Kỵ sĩ cuối cùng',
+            category: 'Viễn Tưởng',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 5,
+            src: './assets/trailer/Annabelle- Tạo Vật Quỷ Dữ - Official Trailer.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-last-witch-hunter_web_posterLandscape_646ca2643cfaaed1aaefd1d4500d6111.jpg',
+            name: 'Chiến Binh Săn Phù Thủy',
+            category: 'Viễn Tưởng',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 6,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/doctor-strange-2016_web_banner_31c2a78f1a132f8be1cbd7540dd14e67.jpg',
+            name: 'Phù Thủy Tối Thượng',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 7,
+            src: './assets/trailer/NGÀY ĐẪM MÁU- XÁC SỐNG TRỖI DẬY - Trailer chính thức.mp4',
+            path: './assets/img/poster-film/wonderWoman.jpg',
+            name: 'WonderWoman 2017',
+            category: 'Viễn Tưởng',
+            duration: '90 phút',
+            age: '13+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 8,
+            src: './assets/trailer/Phim kinh dị -LUẬT QUỶ- Trailer.mp4',
+            path: './assets/img/poster-film/loki.jpg',
+            name: 'Loki: vị thần lừa lọc',
+            category: 'Viễn Tưởng',
+            duration: '132 phút',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 9,
+            src: './assets/trailer/Phim kinh dị -LUẬT QUỶ- Trailer.mp4',
+            path: './assets/img/poster-film/nguoidepVaquaiVat.jpg',
+            name: 'Người Đẹp Và Quái Vật',
+            category: 'Viễn Tưởng',
+            duration: '142 phút',
+            age: '18+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 10,
+            src: './assets/trailer/(Official Trailer) PATIENTS OF A SAINT- THÍ NGHIỆM XÁC SỐNG - KC- 28.02.2020.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/hellboy_web_posterLandscape_79ad6e42eb2e6d15f16546f0f0150df0.jpg',
+            name: 'Cậu Bé Địa Ngục',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '21+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 11,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/faster_web_posterLandscape_ef34fabb5489349106dd66b6208dfb34.jpg',
+            name: 'Thần Tốc',
+            category: 'Viễn Tưởng',
+            duration: '30 Tập',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 12,
+            src: './assets/trailer/(Official Trailer) PATIENTS OF A SAINT- THÍ NGHIỆM XÁC SỐNG - KC- 28.02.2020.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/x-men-first-class_web_posterLandscape_7a90038a7a8451b8a03caad281162b13.jpg',
+            name: 'X-Men: Thế Hệ Đầu',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao Cấp',
+        },
+        {
+            id: 13,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/power-rangers_web_posterLandscape_c4fb3604e7c14e84bf0cd54c219de145.jpg',
+            name: 'Năm Anh Em Siêu Nhân',
+            category: 'Viễn Tưởng',
+            duration: '90 phút',
+            age: '13+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 14,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/a-x-l_web_posterLandscape_ecbd5d6c9035d119bb15f30c0e320f07.jpg',
+            name: 'A-X-L Chú Chó Robot',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 15,
+            src: './assets/trailer/LAKE PLACID- LEGACY Official Trailer (2018) Horror Movie.mp4',
+            path: 'https://cdna.artstation.com/p/assets/images/images/000/344/552/large/enrique-martin-funez-deadpool-mi-dibujo.jpg?1418083572',
+            name: 'Deadpool 1',
+            category: 'Viễn Tưởng',
+            duration: '132 phút',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 16,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/deadpool_web_posterLandscape_fbcc52e4e89e3626f4575a1fa8e3c91d.jpg',
+            name: 'Deadpool 2',
+            category: 'Viễn Tưởng',
+            duration: '95 phút',
+            age: '16+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 17,
+            src: './assets/trailer/(Official Trailer) MẸ QUỶ - KC- 19.06.2020.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/sin-city_web_posterLandscape_9f09fd1bbdebf4032af49e6baadf9585.jpg',
+            name: 'Thành Phố Tội Lỗi',
+            category: 'Viễn Tưởng',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 18,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/next_web_posterLandscape_d0dce882be10b4b6b0a17cbae03b984b.jpg',
+            name: 'Người Nhìn Thấy Tương Lai',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '21+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 19,
+            src: './assets/trailer/(Official Trailer) MẸ QUỶ - KC- 19.06.2020.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/ghost-rider_web_posterLandscape_8b0b0fda30cc2c7638cedf802626d272.jpg',
+            name: 'Ma Tốc Độ',
+            category: 'Viễn Tưởng',
+            duration: '30 Tập',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 20,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/maleficent_web_posterLandscape_c5397aadc5ac2f8086b6eaa7d407f243.jpg',
+            name: 'Tiên Hắc Ám',
+            category: 'Viễn Tưởng',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao Cấp',
+        }
+    ],
+    actFilm: [
+        {
+            id: 1,
+            src: './assets/trailer/TRÙM, CỚM VÀ ÁC QUỶ - MAIN TRAILER - Khởi chiếu toàn quốc ngày 31.05.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-gangster-the-cop-the-devil_web_posterLandscape_1bcfbf2c8b5d766ef64ea4b122fed640.jpg',
+            name: 'Trùm, Cớm Và Ác Quỷ',
+            category: 'Hành động',
+            duration: '132 phút',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 2,
+            src: './assets/trailer/VỤ CƯỚP TRONG TÂM BÃO - OFFICIAL TRAILER - 30.03.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-hurricane-heist_web_posterLandscape_99b464e8ead5a445a5fd73a4934222bb.jpg',
+            name: 'Vụ Cướp Trong Tâm Bão',
+            category: 'Hành động',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 3,
+            src: './assets/trailer/THẦN CHẾT - OFFICIAL TRAILER - 04.05.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/death-wish_web_posterLandscape_582c343edc2d494d76d80deacb26d915.jpg',
+            name: 'Thần Chết',
+            category: 'Hành động',
+            duration: '148 phút',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 9,
+            src: './assets/trailer/Phim Hành Động -PHI VỤ TIỀN GIẢ- Trailer 02.11.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/project-gutenberg_web_posterLandscape_43ffcfb86ca0328e30bd76e18e57ad6a.jpg',
+            name: 'Phi Vụ Tiền Giả',
+            category: 'Hành động',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 5,
+            src: './assets/trailer/THẦN CHẾT - OFFICIAL TRAILER - 04.05.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/destruction-los-angeles_web_posterLandscape_f854e692be4276ff41ecc4a3a108cce2.jpg',
+            name: 'Tàn Phá Los Angeles',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 6,
+            src: './assets/trailer/Phim hành động - Atomic Blonde _ Điệp Viên Báo Thù- Trailer.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-hitmans-bodyguard_web_posterLandscape_8f16b3c8ff210f3a797419a0fdf9e59a.jpg',
+            name: 'Vệ Sĩ Sát Thủ',
+            category: 'Hành động',
+            duration: '90 phút',
+            age: '13+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 7,
+            src: './assets/trailer/GĂNG TƠ TÁI XUẤT - Main Trailer - Khởi chiếu- 28.12.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/unstoppable-2019_web_posterLandscape_9c4a89f01956904688de85c8c4d94288.jpg',
+            name: 'Găng Tơ Tái Xuất',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao Cấp',
+        },
+        {
+            id: 9,
+            src: './assets/trailer/Deepwater Horizon- Thảm Họa Giàn Khoan - Trailer 1.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/deepwater-horizon_web_posterLandscape_c995c067cf0cc6998b763222ad2d17fa.jpg',
+            name: 'Thảm Họa Giàn Khoan',
+            category: 'Hành động',
+            duration: '142 phút',
+            age: '18+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 8,
+            src: './assets/trailer/Phim Hành Động Hài -Oceans 8-  Trailer 22.06.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/brothers-in-arms_web_posterLandscape_1f729196e943844b2a09563ccfcac120.jpg',
+            name: 'Băng Cướp Say Xỉn',
+            category: 'Hành động',
+            duration: '95 phút',
+            age: '16+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 10,
+            src: './assets/trailer/Deepwater Horizon- Thảm Họa Giàn Khoan - Trailer 1.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-real-fast-and-furious_web_posterLandscape_ad628c4015c329a06de12bc81bf12f7d.jpg',
+            name: 'Quá Nhanh Quá Nguy Hiểm',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '21+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 11,
+            src: './assets/trailer/Phim Hành Động -PHI VỤ TIỀN GIẢ- Trailer 02.11.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/shock-wave_web_posterLandscape_5e74acab50ca05a8587c7ac8555bc878.jpg',
+            name: 'Sóng Dữ',
+            category: 'Hành động',
+            duration: '30 Tập',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 12,
+            src: './assets/trailer/VỤ CƯỚP TRONG TÂM BÃO - OFFICIAL TRAILER - 30.03.2018.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/stranger_web_posterLandscape_cc625a40d6f94e306a9f1338b2d740fb.jpg',
+            name: 'Khu Rừng Bí Mật',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao Cấp',
+        },
+        {
+            id: 13,
+            src: './assets/trailer/Phim hành động hay- The Transporter -Người vận chuyển  Trailer #1.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-transporter-refueled_web_posterLandscape_d15fc498eda289ce12f600021c84fe41.jpg',
+            name: 'Người Vận Chuyển 4',
+            category: 'Hành động',
+            duration: '90 phút',
+            age: '13+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 14,
+            src: './assets/trailer/Phim hành động hay- The Transporter -Người vận chuyển  Trailer #1.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/fury_web_posterLandscape_d1f586f4b0d3326b8013474363ed341a.jpg',
+            name: 'Cuồng Nộ',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 15,
+            src: './assets/trailer/LAKE PLACID- LEGACY Official Trailer (2018) Horror Movie.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/30-minutes-or-less_web_posterLandscape_bf89b20ab91a00870294fd244ea3cd98.jpg',
+            name: '30 Phút Hoặc Ít Hơn',
+            category: 'Hành động',
+            duration: '132 phút',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 16,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/hanna_web_posterLandscape_6ff6067c92293d6f16af6d0836a6f878.jpg',
+            name: 'Hanna Bí Ẩn',
+            category: 'Hành động',
+            duration: '95 phút',
+            age: '16+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 17,
+            src: './assets/trailer/(Official Trailer) MẸ QUỶ - KC- 19.06.2020.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-tower_web_posterLandscape_f8476ca7b079e3b807d781f3cea7d71f.jpg',
+            name: 'Tháp Lửa',
+            category: 'Hành động',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 18,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/three-musketeers_web_posterLandscape_7b5ec00662827ce858e12f11e6e2d619.jpg',
+            name: 'Ba Chàng Lính Ngự Lâm',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '21+',
+            premidum: 'Đặc biệt',
+        },
+        {
+            id: 19,
+            src: './assets/trailer/(Official Trailer) MẸ QUỶ - KC- 19.06.2020.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/the-punisher-war-zone_web_posterLandscape_def9b3d35bf054eca51ca1b22174beec.jpg',
+            name: 'Kẻ Trừng Phạt 2: Vùng Chiến Sự',
+            category: 'Hành động',
+            duration: '30 Tập',
+            age: '18+',
+            premidum: 'Cao cấp',
+        },
+        {
+            id: 20,
+            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            path: 'https://assets.glxplay.io/images/w400/title/elite-squad-2008_web_posterLandscape_4d4b142a7b1fd40d115867e00f5c2075.jpg',
+            name: 'Cảnh Sát Tinh Nhuệ',
+            category: 'Hành động',
+            duration: '120 phut',
+            age: '7+',
+            premidum: 'Cao Cấp',
+        }
+    ],
+
+    filmContent: [
+        {
+            src: './assets/trailer/ĐẲNG CẤP THÚ CƯNG 2 - TRAILER LỒNG TIẾNG - KC- 07.06.2019.mp4',
+            path: './assets/img/poster-film/end.jpg',
+            name: 'Đẳng Cấp Thú Cưng 2'
+        },
+        {
+            src: '',
+            path: './assets/img/poster-film/end1.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end2.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end3.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end4.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end5.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end6.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end7.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end8.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end9.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end10.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end11.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end15.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end13.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end14.jpg'
+        }
+        ,
+        {
+            src: '',
+            path: './assets/img/poster-film/end16.jpg'
+        }
+    ]
+
 };
+const zeroEnd = document.querySelector('.zero-end');
+function renderContentFilmEnd() {
+    var htmls = appItemsFilm.filmContent.map(function(filmContent, index) {
+        return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}">
+        <img src="${filmContent.path}" alt="">
+        </div>`;
+    })
+    zeroEnd.innerHTML = htmls.join('');
+}
+renderContentFilmEnd();
+
 
 const storContainer = document.querySelector('.storage-items');
 const storContainer1 = document.querySelector('.storage-items-1');
+const storContainer2 = document.querySelector('.storage-items-2');
+const storContainer3 = document.querySelector('.storage-items-3');
 function renderFilm () {
     var htmls = appItemsFilm.newFilm.map(function (item, index) {
         return `<div class="storage-item" data-index="${index}">
@@ -677,8 +1176,60 @@ function renderFilm1 () {
     })
     storContainer1.innerHTML = htmls.join('');
 }
+function renderFilm2 () {
+    var htmls = appItemsFilm.blockbusterFilm.map(function (item, index) {
+        return `<div class="storage-item" data-index="${index}">
+        <img src="${item.path}" alt="">
+        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+        <div class="storage-item-icon">
+        <i class="far fa-play-circle"></i>
+        </div>
+        <div class="storage-item-description">
+        <h3 class="storage-item-description_header">${item.name}</h3>
+        <div class="storage-item-description_body">
+        <span>${item.category}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.duration}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.age}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.premidum}</span>
+        </div>
+        </div>
+        </div>
+        </div>`;
+    })
+    storContainer2.innerHTML = htmls.join('');
+}
+function renderFilm3 () {
+    var htmls = appItemsFilm.actFilm.map(function (item, index) {
+        return `<div class="storage-item" data-index="${index}">
+        <img src="${item.path}" alt="">
+        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+        <div class="storage-item-icon">
+        <i class="far fa-play-circle"></i>
+        </div>
+        <div class="storage-item-description">
+        <h3 class="storage-item-description_header">${item.name}</h3>
+        <div class="storage-item-description_body">
+        <span>${item.category}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.duration}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.age}</span>
+        <i class="fas fa-circle"></i>
+        <span>${item.premidum}</span>
+        </div>
+        </div>
+        </div>
+        </div>`;
+    })
+    storContainer3.innerHTML = htmls.join('');
+}
 renderFilm();
 renderFilm1();
+renderFilm2();
+renderFilm3();
 const stoItems = document.querySelectorAll('.storage-item');
 const stoImg = document.querySelector('.storage-item > img');
 const stoOverlay = document.querySelectorAll('.storage-item-overlay');
@@ -720,7 +1271,42 @@ storContainer1.onclick = function (e) {
         btnModalTrailer.onclick();
     }
 }
-
+storContainer2.onclick = function (e) {
+    const filmNode = e.target.closest('.storage-item');
+    const storageDesHearder = document.querySelector('.storage-desciption_header');
+    if(filmNode) {
+        currentFilm = Number(filmNode.dataset.index);
+        video.src = appItemsFilm.blockbusterFilm[currentFilm].src;
+        storageDesHearder.textContent = appItemsFilm.blockbusterFilm[currentFilm].name;
+        modalPlayFilm.style.display = 'flex'
+        video.play();
+        btnModalTrailer.onclick();
+    }
+}
+storContainer3.onclick = function (e) {
+    const filmNode = e.target.closest('.storage-item');
+    const storageDesHearder = document.querySelector('.storage-desciption_header');
+    if(filmNode) {
+        currentFilm = Number(filmNode.dataset.index);
+        video.src = appItemsFilm.actFilm[currentFilm].src;
+        storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
+        modalPlayFilm.style.display = 'flex'
+        video.play();
+        btnModalTrailer.onclick();
+    }
+}
+zeroEnd.onclick = function (e) {
+    const filmNode = e.target.closest('.storage-content');
+    const storageDesHearder = document.querySelector('.storage-desciption_header');
+    if(filmNode) {
+        currentFilm = Number(filmNode.dataset.index);
+        video.src = appItemsFilm.filmContent[currentFilm].src;
+        storageDesHearder.textContent = appItemsFilm.filmContent[currentFilm].name;
+        modalPlayFilm.style.display = 'flex'
+        video.play();
+        btnModalTrailer.onclick();
+    }
+}
 // handle click close modal film
 const btnloseModalFilm = document.querySelector('.storage-body-modal_overlay i');
 const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
@@ -747,6 +1333,8 @@ const btnPrevFilm = document.querySelectorAll('.storage-items-prev');
 const iconPrev = document.querySelectorAll('.storage-items-prev i');
     var index = 0;
     var index1 = 0;
+    var index2 = 0;
+    var index3 = 0;
     var offset = stoImg.offsetWidth + 14;
     // css for node move slide film
     // newFilm
@@ -775,7 +1363,33 @@ const iconPrev = document.querySelectorAll('.storage-items-prev i');
     btnNextFilm[1].onmouseout = function() {
         iconNext[1].style.fontSize = '2rem'
     }
-    // newFilm  click prev next
+    // blockBusketFilm
+    btnPrevFilm[2].onmouseover = function() {
+        iconPrev[2].style.fontSize = '3rem'
+    }
+    btnPrevFilm[2].onmouseout = function() {
+        iconPrev[2].style.fontSize = '2rem'
+    }
+    btnNextFilm[2].onmouseover = function() {
+        iconNext[2].style.fontSize = '3rem'
+    }
+    btnNextFilm[2].onmouseout = function() {
+        iconNext[2].style.fontSize = '2rem'
+    }
+    // actFilm
+    btnPrevFilm[3].onmouseover = function() {
+        iconPrev[3].style.fontSize = '3rem'
+    }
+    btnPrevFilm[3].onmouseout = function() {
+        iconPrev[3].style.fontSize = '2rem'
+    }
+    btnNextFilm[3].onmouseover = function() {
+        iconNext[3].style.fontSize = '3rem'
+    }
+    btnNextFilm[3].onmouseout = function() {
+        iconNext[3].style.fontSize = '2rem'
+    }
+    // newFilm  click prev-next
     btnNextFilm[0].onclick = function () {
         if(index < (3.94)) {
             index++;
@@ -799,7 +1413,7 @@ const iconPrev = document.querySelectorAll('.storage-items-prev i');
             storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
             btnNextFilm[0].style.display = 'block';
     }}
-    // horrorFilm click prev next
+    // horrorFilm click prev-next
     btnNextFilm[1].onclick = function () {
         if(index1 < (3.94)) {
             index1++;
@@ -822,6 +1436,54 @@ const iconPrev = document.querySelectorAll('.storage-items-prev i');
             }
             storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
             btnNextFilm[1].style.display = 'block';
+    }}
+    // blockbusterFilm click prev-next
+    btnNextFilm[2].onclick = function () {
+        if(index2 < (3.94)) {
+            index2++;
+            if(index2 == 4) {
+                index2 = 3.94
+                btnNextFilm[2].style.display = 'none';
+            }
+            storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
+            btnPrevFilm[2].style.display = 'block';
+    }}
+
+    btnPrevFilm[2].onclick = function () {
+        if(index2 > (0)) {
+            if(index2 === 3.94) {
+                index2 = 4
+            }
+            index2--;
+            if(index2 == 0) {
+                btnPrevFilm[2].style.display = 'none';
+            }
+            storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
+            btnNextFilm[2].style.display = 'block';
+    }}
+    // actFilm click prev-next
+    btnNextFilm[3].onclick = function () {
+        if(index3 < (3.94)) {
+            index3++;
+            if(index3 == 4) {
+                index3 = 3.94
+                btnNextFilm[3].style.display = 'none';
+            }
+            storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
+            btnPrevFilm[3].style.display = 'block';
+    }}
+
+    btnPrevFilm[3].onclick = function () {
+        if(index3 > (0)) {
+            if(index3 === 3.94) {
+                index3 = 4
+            }
+            index3--;
+            if(index3 == 0) {
+                btnPrevFilm[3].style.display = 'none';
+            }
+            storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
+            btnNextFilm[3].style.display = 'block';
     }}
 
 // handle click btn film modal

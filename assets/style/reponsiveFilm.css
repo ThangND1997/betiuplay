@@ -30,7 +30,7 @@
         background-position: center;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 20px;
+        bottom: 12px;
     }
 
     .slides-dot_item {
@@ -160,7 +160,7 @@
     }
 
     /* css item film */
-    .storage-items, .storage-items-1 {
+    .storage-items, .storage-items-1, .storage-items-2, .storage-items-3 {
         width: 950%;
         height: 150px;
     }
@@ -182,7 +182,7 @@
     }
 
     .storage-wrap {
-        padding: 0 10px 0 10px;
+        padding: 20px 10px 0 10px;
     }
 
     .storage-item_header {
@@ -282,10 +282,20 @@
         font-weight: bold;
         border: none;
         border-radius: 3px;
+        background-color: white;
+        color: black;
         
     }
 
     .btn-mobile-slide i {
         margin-right: 10px;
+    }
+
+    .storage-content {
+        height: 260px;
+    }
+
+    .storage-content:last-child{
+        display: block;
     }
 }

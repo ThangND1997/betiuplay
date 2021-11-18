@@ -18,7 +18,7 @@ header {
     background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.8), transparent);
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 99999;
     transition: 0.5s;
 }
 

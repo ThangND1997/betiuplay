@@ -270,7 +270,7 @@
 
 .storage-body {
     background-color: #111111;
-    height: 1200px
+    height: unset;
 }
 
 .storage-wrap {
@@ -284,6 +284,7 @@
 .storage-item_header {
     color: white;
     position: relative;
+    font-size: 0.9rem;
 }
 
 .storage-items_container {
@@ -347,7 +348,7 @@
     transition: all ease 0.4s;
 }
 
-.storage-items, .storage-items-1 {
+.storage-items, .storage-items-1, .storage-items-2, .storage-items-3{
     display: flex;
     /* width: 188%; */
     width: 472%;
@@ -379,7 +380,7 @@
 .storage-item > img {
     width: 100%;
     height: 100%;
-    border-radius: 11px;
+    border-radius: 6px;
 }
 
 .storage-item-overlay {
@@ -391,7 +392,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     animation: overOn ease 0.4s;
     display: none;
-    border-radius: 10px;
+    border-radius: 6px;
     justify-content: center;
     align-items: center;
 
@@ -458,7 +459,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 99999;
     display: none;
 }
 
@@ -563,4 +564,46 @@ video {
 .storage-desciption_btnm {
     width: 100%;
     text-align: center
+}
+
+.storage-item_header-content {
+    margin-bottom: 20px;
+}
+
+.storage-content {
+    height: 330px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.storage-content:last-child{
+    display: none;
+}
+
+.zero-end {
+    width: 100%;
+}
+
+.storage-content img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    transition: all 0.4s;
+}
+
+.storage-content img:hover {
+    transform: translateY(-6px);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.content-end {
+    padding-bottom: 20px;
+}
+
+.footer::before {
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(0, transparent, #111 95%);
 }
