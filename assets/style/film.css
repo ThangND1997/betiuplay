@@ -148,6 +148,7 @@
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
+    animation: unset;
 }
 
 .slide-content.slide-content-first {
@@ -189,6 +190,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    animation: unset;
     z-index: 1;
 }
 
@@ -606,4 +608,9 @@ video {
     left: 0;
     top: 0;
     background-image: linear-gradient(0, transparent, #111 95%);
+}
+
+#toast {
+    z-index: 999999;
+    position: fixed;
 }

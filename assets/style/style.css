@@ -207,6 +207,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    animation: fadeSlide ease 0.8s;
 }
 
 .slide-content.slide-content-first {
@@ -254,6 +255,29 @@ header {
     }
 }
 
+@-webkit-keyframes fadeSlide {
+    from{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeSlideSub {
+    from{
+        transform: translate(-50%, 80%);
+        opacity: 0;
+
+    }
+    to{
+        transform: translate(-50%, 0%);
+        opacity: 1;
+    }
+}
+
 
 /* slide context css */
 
@@ -264,6 +288,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     transform: 0.4s;
+    animation: fadeSlideSub ease 1.8s;
 }
 
 .btn-slide {
@@ -642,4 +667,9 @@ header {
 
 .storage-film {
     display: none;
+}
+
+#toast {
+    z-index: 999999;
+    position: fixed;
 }

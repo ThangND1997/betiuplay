@@ -222,3 +222,27 @@ arrowBtn.onclick = () => {
         arrowBtn.classList.toggle('ti-minus')
 }
 
+
+function toastAram () {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if(toastMain) {
+        toast.classList.add('toast', 'toastAram')
+        toast.innerHTML = `
+            <i class="ti-settings aram"></i>
+            <p class="toast-text">Chức năng đang được cập nhật</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function(){
+            toastMain.removeChild(toast);
+        },4000)
+    }
+}
+
+const updateBefore = document.querySelectorAll('.js-update-before');
+updateBefore.forEach((updateBefore)=>{
+    updateBefore.onclick = function(){
+        toastAram();
+    }
+})
+

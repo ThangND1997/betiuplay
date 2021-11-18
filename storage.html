@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./assets/style/grid.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/form.css">
     <link rel="stylesheet" href="./assets/style/reponsive.css">
     <link rel="stylesheet" href="./assets/style/film.css">
     <link rel="stylesheet" href="./assets/style/reponsiveFilm.css">
@@ -70,19 +71,19 @@
                         <a href="#" class="nav-item_link nav-item-active">Kho Phim</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-item_link">Phim Điện Ảnh</a>
+                        <a href="#" class="nav-item_link js-update-before">Phim Điện Ảnh</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-item_link">Phim Bộ</a>
+                        <a href="#" class="nav-item_link js-update-before">Phim Bộ</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-item_link">Phim Thuê</a>
+                        <a href="#" class="nav-item_link js-update-before">Phim Thuê</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-item_link">Khuyến Mãi</a>
+                        <a href="#" class="nav-item_link js-update-before">Khuyến Mãi</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-item_link">Hỗ Trợ</a>
+                        <a href="#" class="nav-item_link js-update-before">Hỗ Trợ</a>
                     </li>
                 </ul>
             </div>
@@ -385,7 +386,7 @@
                     <p class="footer_address footer_address_mb">Nơi cấp: Sở kế hoạch và đầu tư thành phố Hà Nội, Việt Nam.</p>
                     <img src="./assets/img/footer-img/informed.png" alt="">
                 </div>
-                <div class="col l-2-4 m-12 c-12 mobile-col-padding_item">
+                <div class="col l-2 m-12 c-12 mobile-col-padding_item">
                     <p class="footer_address footer_address_mb footer_address_active">GIỚI THIỆU</p>
                     <p class="footer_address">Quy chế sử dụng Dịch vụ</p>
                     <p class="footer_address">Khuyến mãi</p>
@@ -443,10 +444,10 @@
     <div class="mobile-menu hidden-on-tablet hidden-on-pc">
         <ul class="mobie-menu-nav">
             <li class="nav-item mobile-menu-item">
-                <a href="#" class="nav-item_link mobile-menu-item_link nav-item-active">Trang Chủ</a>
+                <a href="./index.html" class="nav-item_link mobile-menu-item_link">Trang Chủ</a>
             </li>
             <li class="nav-item mobile-menu-item">
-                <a href="./storage.html" class="nav-item_link mobile-menu-item_link">
+                <a href="./storage.html" class="nav-item_link mobile-menu-item_link nav-item-active">
                     Kho Phim
                 </a>
                 <i class="ti-plus mobile-arrow"></i>
@@ -488,6 +489,7 @@
             </li>
         </ul>
     </div>
+    <div id="toast"></div>
     <script type="text/javascript" src="./handleWeb/film.js"></script>
 </body>
 </html>

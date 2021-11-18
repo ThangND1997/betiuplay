@@ -213,22 +213,14 @@ btnTrailer.forEach(function (btnTrailer) {
         filmPlay.style.display = 'none';
     }
 })
-
+btnFilm.onclick = () => {
+    toastAram()
+}
 
 
 
 const appItemsFilm = {
     newFilm: [
-        {
-            id: 1,
-            src: './assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
-            path: 'https://i0.wp.com/teaser-trailer.com/wp-content/uploads/Ghost-House-movie.jpg?ssl=1',
-            name: 'Ngôi Nhà Ma Ám',
-            category: 'Kinh dị',
-            duration: '85 phút',
-            age: '19+',
-            premidum: 'Cao cấp',
-        },
         {
             id: 2,
             src: './assets/trailer//VENOM 2 Official Trailer (2021).mp4',
@@ -340,10 +332,20 @@ const appItemsFilm = {
             premidum: 'Cao Cấp',
         },
         {
+            id: 1,
+            src: './assets/trailer/(Official Trailer) NGÔI NHÀ MA ÁM.mp4',
+            path: 'https://i0.wp.com/teaser-trailer.com/wp-content/uploads/Ghost-House-movie.jpg?ssl=1',
+            name: 'Ngôi Nhà Ma Ám',
+            category: 'Kinh dị',
+            duration: '85 phút',
+            age: '19+',
+            premidum: 'Cao cấp',
+        },
+        {
             id: 13,
             src: './assets/trailer/BÚP BÊ SÁT NHÂN (Child’s Play 2019) - Official Trailer - KC- 26.07.2019.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/childs-play_web_posterLandscape_d13c22059d5c04dfa4e19eb2ae0ca0df.jpg',
-            name: 'Búp Bê Sát Nhân',
+            path: 'https://assets.glxplay.io/images/w400/title/10-minutes-gone_web_posterLandscape_cab03e38e008e1d2e8fc107abf04f457.jpg',
+            name: '10 Phút Sống Còn',
             category: 'Kinh dị',
             duration: '90 phút',
             age: '13+',
@@ -352,8 +354,8 @@ const appItemsFilm = {
         {
             id: 14,
             src: './assets/trailer/ZOOTOPIA- PHI VỤ ĐỘNG TRỜI - Trailer D -Chú Lười-.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/zootopia_web_posterLandscape_3faccca8bbd905cc91f657f11bf86ae7.jpg',
-            name: 'Phi Vụ Động Trời',
+            path: 'https://assets.glxplay.io/images/w400/title/monster-hunter_web_posterLandscape_f220b5bf0eb4fa8030e8d5d4160ca4a9.jpg',
+            name: 'Thợ Săn Quái Vật',
             category: 'Gia Đình',
             duration: '120 phut',
             age: '7+',
@@ -362,8 +364,8 @@ const appItemsFilm = {
         {
             id: 15,
             src: './assets/trailer/John Wick_ Chapter 3 - Parabellum (2019 Movie) New Trailer – Keanu Reeves, Halle Berry.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/john-wick-chapter-3-parabellum_web_posterLandscape_8720a29a126ba538f88b8869101d516a.jpg',
-            name: 'Sát Thủ John Wick 3',
+            path: 'https://assets.glxplay.io/images/w400/title/moana_web_posterLandscape_c540d02b72f9e5ac2bf6bb6108b70c4a.jpg',
+            name: 'Hành Trình Của Moana',
             category: 'Hành Động',
             duration: '132 phút',
             age: '18+',
@@ -372,8 +374,8 @@ const appItemsFilm = {
         {
             id: 16,
             src: './assets/trailer/DORAEMON ĐÔI BẠN THÂN [STAND BY ME] (TRAILER) - ĐÔRÊMON THÁI NGUYÊN.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/doraemon-stand-by-me_web_posterLandscape_370b8686dbb61311f09a718f43c6e9d2.jpg',
-            name: 'Đô Rê Mon: Đôi Bạn Thân',
+            path: 'https://assets.glxplay.io/images/w400/title/50-first-dates_web_posterLandscape_c6fe039db02d12360d5e894c57bfdd10.jpg',
+            name: '50 Lần Hẹn Đầu Tiên',
             category: 'Gia Đình',
             duration: '95 phút',
             age: '16+',
@@ -382,8 +384,8 @@ const appItemsFilm = {
         {
             id: 17,
             src: './assets/trailer/NHỮNG KẺ VÔ CẢM - TRAILER CHÍNH THỨC - KHỞI CHIẾU 06.11.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/dont-look-back-2021_web_posterLandscape_8e9f994b33e6f58f9ba26f6f11ceb941.jpg',
-            name: 'Những kẻ vô cảm',
+            path: 'https://assets.glxplay.io/images/w400/title/black-swan_web_posterLandscape_e271cae64ac421a1f327f596cef44b89.jpg',
+            name: 'Thiên Nga Đen',
             category: 'Kinh dị',
             duration: '85 phút',
             age: '19+',
@@ -392,8 +394,8 @@ const appItemsFilm = {
         {
             id: 18,
             src: './assets/trailer/TRỤC QUỶ TRAILER _ DKKC_ 04.12.2020.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/the-amityville-horror_web_posterLandscape_33b44c16ed48b15697779d6400c05379.jpg',
-            name: 'Ngôi Nhà Rùng Rợn',
+            path: 'https://assets.glxplay.io/images/w400/title/vacacy-2-the-first-cut_web_posterLandscape_474c9e3e2ad22cc1baeeea04835ea17d.jpg',
+            name: 'Nhà Trọ Kinh Hoàng 2',
             category: 'Kinh dị',
             duration: '120 phut',
             age: '21+',
@@ -402,8 +404,8 @@ const appItemsFilm = {
         {
             id: 19,
             src: './assets/trailer/John Wick_ Chapter 3 - Parabellum (2019 Movie) New Trailer – Keanu Reeves, Halle Berry.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/death-by-zero_web_posterLandscape_aa9462fbddee226ccf0f060bb8371c01.jpg',
-            name: 'Sát thủ',
+            path: 'https://assets.glxplay.io/images/w400/title/shining-girl_web_posterLandscape_055f6c4b541f5305a37af37851e30e8b.jpg',
+            name: 'Cô Nàng Lấp Lánh',
             category: 'Hành động',
             duration: '30 Tập',
             age: '18+',
@@ -412,8 +414,8 @@ const appItemsFilm = {
         {
             id: 20,
             src: './assets/trailer/Life Of Pi - Trailer - MegaStar Cineplex.mp4',
-            path: 'https://assets.glxplay.io/images/w400/title/life-of-pi_web_posterLandscape_4454549f9219a2457f9514c61c26d785.jpg',
-            name: 'Cuộc Đời Của Pi',
+            path: 'https://assets.glxplay.io/images/w400/title/bo-gia_web_posterLandscape_67433b6efe0a2565ec972063216134dc.jpg',
+            name: 'Bố Già',
             category: 'Tâm lý',
             duration: '120 phut',
             age: '7+',
@@ -625,7 +627,7 @@ const appItemsFilm = {
     blockbusterFilm: [
         {
             id: 1,
-            src: '',
+            src: "./assets/trailer/Marvel Studios' Avengers- Infinity War - Official Trailer.mp4",
             path: './assets/img/poster-film/endgame.jpg',
             name: 'Avengers: Endgame',
             category: 'Viễn Tưởng',
@@ -635,7 +637,7 @@ const appItemsFilm = {
         },
         {
             id: 2,
-            src: './assets/trailer/(Official Trailer)  SONG SINH (ROPES) - KC- 08.01.2021.mp4',
+            src: './assets/trailer/Transformers- The Last Knight Official Trailer 1 (2017) - Michael Bay Movie.mp4',
             path: './assets/img/poster-film/The-Last-Knight-New-Banner-03 (1).jpg',
             name: 'Transformers 3',
             category: 'Viễn Tưởng',
@@ -645,7 +647,7 @@ const appItemsFilm = {
         },
         {
             id: 3,
-            src: './assets/trailer/MUSE- NÀNG THƠ CỦA QUỶ- KHỞI CHIẾU MÙNG 8 TẾT (23.02.2018) OFFICIAL TRAILER.mp4',
+            src: './assets/trailer/SPIDER-MAN- FAR FROM HOME - Official Teaser Trailer.mp4',
             path: 'https://assets.glxplay.io/images/w400/title/spider-man-homecoming_web_posterLandscape_89e703b5ff9ed401a44cc32747c5b72c.jpg',
             name: 'Người Nhện: Trở Về Nhà',
             category: 'Viễn Tưởng',
@@ -655,7 +657,7 @@ const appItemsFilm = {
         },
         {
             id: 4,
-            src: './assets/trailer/(Official Trailer) MẸ QUỶ - KC- 19.06.2020.mp4',
+            src: './assets/trailer/Transformers- The Last Knight Official Trailer 1 (2017) - Michael Bay Movie.mp4',
             path: './assets/img/poster-film/tranformer5.jpg',
             name: 'Transformers 5: Kỵ sĩ cuối cùng',
             category: 'Viễn Tưởng',
@@ -765,7 +767,7 @@ const appItemsFilm = {
         },
         {
             id: 15,
-            src: './assets/trailer/LAKE PLACID- LEGACY Official Trailer (2018) Horror Movie.mp4',
+            src: './assets/trailer/Deadpool Official Trailer #2 (2016) - Ryan Reynolds Movie HD.mp4',
             path: 'https://cdna.artstation.com/p/assets/images/images/000/344/552/large/enrique-martin-funez-deadpool-mi-dibujo.jpg?1418083572',
             name: 'Deadpool 1',
             category: 'Viễn Tưởng',
@@ -775,7 +777,7 @@ const appItemsFilm = {
         },
         {
             id: 16,
-            src: './assets/trailer/(Official Trailer) CHUYỆN KINH DỊ LÚC NỬA ĐÊM - JANGLY MAN - KC- 09.08.2019.mp4',
+            src: './assets/trailer/Deadpool Official Trailer #2 (2016) - Ryan Reynolds Movie HD.mp4',
             path: 'https://assets.glxplay.io/images/w400/title/deadpool_web_posterLandscape_fbcc52e4e89e3626f4575a1fa8e3c91d.jpg',
             name: 'Deadpool 2',
             category: 'Viễn Tưởng',
@@ -1034,78 +1036,108 @@ const appItemsFilm = {
             name: 'Đẳng Cấp Thú Cưng 2'
         },
         {
-            src: '',
-            path: './assets/img/poster-film/end1.jpg'
+            src: './assets/trailer/Scream - Official Trailer (2022 Movie).mp4',
+            path: './assets/img/poster-film/end1.jpg',
+            name: 'Scream II'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end2.jpg'
+            src: './assets/trailer/Khách Sạn Huyền Bí - Official Trailer - DKKC tại CGV-  27.08.2021.mp4',
+            path: './assets/img/poster-film/end2.jpg',
+            name: 'Khách sạn huyền bí'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end3.jpg'
+            src: './assets/trailer/LARVA - SEASON 4 TRAILER - NEW LARVA - LARVA Official.mp4',
+            path: './assets/img/poster-film/end3.jpg',
+            name: 'Lavar Đảo Hoang'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end4.jpg'
+            src: './assets/trailer/DORAEMON ĐÔI BẠN THÂN [STAND BY ME] (TRAILER) - ĐÔRÊMON THÁI NGUYÊN.mp4',
+            path: './assets/img/poster-film/end4.jpg',
+            name: 'DORAEMON ĐÔI BẠN THÂN'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end5.jpg'
+            src: './assets/trailer/Demon Slayer - Kimetsu no Yaiba - The Movie- Mugen Train Official Trailer.mp4',
+            path: './assets/img/poster-film/end5.jpg',
+            name: 'Kimetsu no Yaiba - The Movie'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end6.jpg'
+            src: './assets/trailer/Phim hoạt hình -RICHARD THE STORK _ VẸT CÒ PHIÊU LƯU KÝ- trailer.mp4',
+            path: './assets/img/poster-film/end6.jpg',
+            name: 'Vẹt Cò phiêu lưu ký'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end7.jpg'
+            src: './assets/trailer/Annabelle- Tạo Vật Quỷ Dữ - Official Trailer.mp4',
+            path: './assets/img/poster-film/end7.jpg',
+            name: 'Annabelle- Tạo Vật Quỷ Dữ'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end8.jpg'
+            src: './assets/trailer/Duck Duck Goose - Ngỗng Vịt Phiêu Lưu Ký - Trailer.mp4',
+            path: './assets/img/poster-film/end8.jpg',
+            name: 'Ngỗng Vịt Phiêu Lưu Ký'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end9.jpg'
+            src: './assets/trailer/Phim -Cậu Vàng- Teaser Trailer - KC 08.01.2021.mp4',
+            path: './assets/img/poster-film/end9.jpg',
+            name: 'Cậu Vàng'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end10.jpg'
+            src: './assets/trailer/Chú Khủng Long Tốt Bụng - Trailer Chính Thức.mp4',
+            path: './assets/img/poster-film/end10.jpg',
+            name: 'Chú Khủng Long Tốt Bụng'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end11.jpg'
+            src: './assets/trailer/A DOG NAMED PALMA ★ Russian movie trailer 2021.mp4',
+            path: './assets/img/poster-film/end11.jpg',
+            name: 'Chú Chó PalMa'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end15.jpg'
+            src: './assets/trailer/The Call Of The Wild- Tiếng Gọi Nơi Hoang Dã - Legend.mp4',
+            path: './assets/img/poster-film/end15.jpg',
+            name: 'Tiếng Gọi Nơi Hoang Dã'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end13.jpg'
+            src: './assets/trailer/The Call Of The Wild- Tiếng Gọi Nơi Hoang Dã - Legend.mp4',
+            path: './assets/img/poster-film/end13.jpg',
+            name: 'Tiếng Gọi Nơi Hoang Dã'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end14.jpg'
+            src: './assets/trailer/Walking With Dinosaurs - Dạo Bước Cùng Khủng Long - Trailer E.mp4',
+            path: './assets/img/poster-film/end14.jpg',
+            name: 'Dạo Bước Khủng Long'
+            
         }
         ,
         {
-            src: '',
-            path: './assets/img/poster-film/end16.jpg'
+            src: './assets/trailer/The Lion King Official Trailer.mp4',
+            path: './assets/img/poster-film/end16.jpg',
+            name: 'Lion King'
+            
         }
     ]
 
@@ -1511,3 +1543,31 @@ btnModalFilm.onclick = () => {
     }
 }
 
+function toastAram () {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if(toastMain) {
+        toast.classList.add('toast', 'toastAram')
+        toast.innerHTML = `
+            <i class="ti-settings aram"></i>
+            <p class="toast-text">Chức năng đang được cập nhật</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function(){
+            toastMain.removeChild(toast);
+        },4000)
+    }
+}
+
+const filmSelect = document.querySelectorAll('.film-select');
+const updateBefore = document.querySelectorAll('.js-update-before');
+filmSelect.forEach((filmSelect)=>{
+    filmSelect.onclick = function(){
+        toastAram();
+    }
+})
+updateBefore.forEach((updateBefore)=>{
+    updateBefore.onclick = function(){
+        toastAram();
+    }
+})

@@ -298,4 +298,8 @@
     .storage-content:last-child{
         display: block;
     }
+
+    .footer::before {
+        background-image: linear-gradient(0, transparent, #000 97%);
+    }
 }
