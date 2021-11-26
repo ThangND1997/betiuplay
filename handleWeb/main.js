@@ -26,8 +26,8 @@ slideNodes[0].onclick = () => {
     slide.classList.remove('active-4')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
-    slideContent.style.animation = 'none'
-    slideContentApp.style.animation = 'none'
+    slideContent.style.animation = 'unset'
+    slideContentApp.style.animation = 'unset'
     setTimeout(function() {
         slideContent.style.display = 'block';
         slideContentApp.style.display = 'block';
@@ -51,8 +51,8 @@ slideNodes[1].onclick = () => {
     slide.classList.remove('active-4')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
-    slideContent.style.animation = 'none'
-    slideContentApp.style.animation = 'none'
+    slideContent.style.animation = 'unset'
+    slideContentApp.style.animation = 'unset'
     setTimeout(function() {
         slideContent.style.display = 'block';
          slideContentApp.style.display = 'block';
@@ -76,8 +76,8 @@ slideNodes[2].onclick = () => {
     slide.classList.remove('active-4')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
-    slideContent.style.animation = 'none'
-    slideContentApp.style.animation = 'none'
+    slideContent.style.animation = 'unset'
+    slideContentApp.style.animation = 'unset'
     setTimeout(function() {
         slideContent.style.display = 'block';
         slideContentApp.style.display = 'block';
@@ -101,8 +101,8 @@ slideNodes[3].onclick = () => {
     slide.classList.remove('active-2')
     slideContent.style.display = 'none';
     slideContentApp.style.display = 'none';
-    slideContent.style.animation = 'none'
-    slideContentApp.style.animation = 'none'
+    slideContent.style.animation = 'unset'
+    slideContentApp.style.animation = 'unset'
     setTimeout(function() {
         slideContent.style.display = 'block';
         slideContentApp.style.display = 'block';
