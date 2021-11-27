@@ -1,0 +1,88 @@
+
+.slide.slide-first {
+    background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
+    transition: 0.6s;
+}
+
+.slide.active-1 {
+    background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
+    transition: 0.6s;
+}
+
+.slide.active-2 {
+    background-image: url('https://i.pinimg.com/originals/8e/ea/bc/8eeabcabef63d36b4b988f6da2afc541.jpg');
+    transition: 0.6s;
+}
+
+
+.slide.active-3 {
+    background-image: url('https://1.bp.blogspot.com/-yHO94z09E1g/XEdomPOZBsI/AAAAAAABNhg/dWHWP3OChSYcsS4mK0uc5xAFRN7svaXPQCLcBGAs/s1600/het-vi-ban-nhac-nay-nhac-san-cuc-manh-2018-tong-hop-gai-xinh-trong-bar-MhJbEruBfP8.jpg');
+    transition: 0.6s;
+}
+
+.slide.active-4 {
+    background-image: url('https://1.bp.blogspot.com/-ZevUi4A45Iw/X-P-xqnfHkI/AAAAAAACcwE/CDCBd6hy48YSIIHn18kHJh21lFQNDrTQgCLcBGAsYHQ/s1280/maxresdefault.jpg');
+    transition: 0.6s;
+}
+
+/* slide-content */
+
+.slide-content.slide-content-first {
+    background-image: url('https://pro2-bar-s3-cdn-cf3.myportfolio.com/65d21401432b897dff8e043de7caa9e6/ee568add-d576-48c6-b2a7-ac60086da4e4_rw_1200.png?h=9a8f28fe85a233417507b7306c0e827f');
+    transition: 0.6s;
+    z-index: 1;
+}
+
+.slide-content.active-5 {
+    background-image: url('https://pro2-bar-s3-cdn-cf3.myportfolio.com/65d21401432b897dff8e043de7caa9e6/ee568add-d576-48c6-b2a7-ac60086da4e4_rw_1200.png?h=9a8f28fe85a233417507b7306c0e827f');
+    transition: 0.6s;
+}
+
+.slide-content.active-6 {
+    background-image: url('https://www.designfreelogoonline.com/wp-content/uploads/2019/06/00554-Fashion-01.png');
+    transition: 0.6s;
+    height: 196px;
+}
+
+.slide-content.active-7 {
+    background-image: url('https://snappygoat.com/o/089f95e95edbf59a155ff80b39a2c506ca664a1d/Illustrated-Silhouette-Of-A-Beautiful-Woman.png');
+    transition: 0.6s;
+}
+
+.slide-content.active-8 {
+    background-image: url('https://cdn.pixabay.com/photo/2020/02/14/00/12/silhouette-4847199_960_720.png');
+    transition: 0.6s;
+}
+
+.slide-content {
+    top: 35%;
+}
+
+@media (max-width: 739px) {
+    .slide-content.slide-content-first {
+      background-image: unset;
+    }
+    .slide-content.active-5 {
+         background-image: unset;
+        transition: 0.6s;
+    }
+    
+    .slide-content.active-6 {
+        background-image: unset;
+        transition: 0.6s;
+    }
+    
+    .slide-content.active-7 {
+        background-image: unset;
+        transition: 0.6s;
+    }
+    
+    .slide-content.active-8 {
+        background-image: unset;
+        transition: 0.6s;
+    }
+
+    .btn-trailer {
+        margin-right: unset;
+    }
+}
