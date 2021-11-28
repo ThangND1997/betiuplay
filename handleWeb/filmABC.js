@@ -211,7 +211,7 @@ const appItemsFilm = {
         }
         ,
         {
-            src: 'https://r3---sn-npoe7ne6.googlevideo.com/videoplayback?expire=1638089127&ei=R-2iYdfUM5D5gQPt-JNA&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-AIEFQh_8-lyNug816eC5mze4_sVPqL-ut-J90h3lbNVu&itag=22&source=youtube&requiressl=yes&mh=ZM&mm=32&mn=sn-npoe7ne6&ms=su&mv=m&mvi=3&pl=48&sc=yes&initcwndbps=803750&vprv=1&prv=1&mime=video/mp4&cnr=14&ratebypass=yes&dur=1100.045&lmt=1635412863746394&mt=1638067228&fexp=24001373,24007246&txp=6211224&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,prv,mime,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRQIgP8fGSu2oZHW4HIESnxzHuVCWbb2UU__PuCZbNXLNhmACIQDKpaBblZhD3JCGLJU7o7Pq87S0h0XOGhwioPn63RYb9g==&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRgIhAN7_wlTWdBjOAA2_JGcm-UsoqWnImKvdDAUn5KgLYMjAAiEA3eMAnz7CyMyG3q4yB0w955vGTIjtnjG9WYUVG2Bt3Fs=',
+            src: './assets/filmABBC/p2.mp4',
             path: 'https://iv1.lisimg.com/image/21280028/640full-melody-marks.jpg',
             name: 'Tình cờ gặp Idol trên phố'
             
@@ -225,7 +225,7 @@ const appItemsFilm = {
         }
         ,
         {
-            src: 'https://fvs.io/redirector?token=Mkx2L3NlMHNtT1BRVVc3K0lyeGd6OEdVSTJjOUdXMFc1eVpPdXJGMDJaYVIzUlAzYzZFWTF4M2ZlNXo1WGFpdWJ6REI4OXdaZHJvYVBLVjlaSkh3R09yVGJMWGtnK2JUcjdINVZDaEowbXl0QXlkNEpXSS9aRU9ZcUZWUE1TMGtxQnhCMEFUNk5wWXB4OU8rSTJqRUNsY0JPM1Z6WEdQSDB3PT06T2VFLzI2cXhlSGJuMERINDZ5bnprZz09VDxG',
+            src: 'https://video.fhph1-2.fna.fbcdn.net/v/t66.36240-6/10000000_618455705957951_125417533242997657_n.mp4?_nc_cat=101&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjE2MzYsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=U1vahTzXiS0AX8uHSgw&rl=1636&vabr=1091&_nc_ht=scontent-bru2-1.xx&oh=88d255042cbcd683fd18c5a98d6f1e74&oe=61A8E266',
             path: 'https://i.pinimg.com/474x/66/33/0f/66330fbc27131fad74ac76f95d0c1d5f.jpg',
             name: 'Chiến em shion Ngọt nước non tơ'
             
@@ -302,7 +302,7 @@ const appItemsFilm = {
         // }
         ,
         {
-            src: 'https://fvs.io/redirector?token=b3BUcG9MK2s2WmNNWE1NRVZZK0VNUFFLMUphUVk5UUo5WVNzajNGdnphTnZsclJWdFlIeVdsazR4REZaNjJPM2ptL2VDR1hmai9IckFXOWpiZ1dxWi90eFJ5aWpRTUs3RTJtT1dRYTdrbTBvNDVEdFQ0YUZIcjFUYjh4VytZRXhsTUtJVGdtdmQ3aG1PNnlhVHBhMW1mNFoyZE1vT0NLcU5MWT06Mjh0RGNjMUhlVjQ1anlYcXMwUEt2dz09oWoE',
+            src: 'https://video.fhph1-2.fna.fbcdn.net/v/t42.1790-2/10000000_441664610959594_7756618797033247110_n.mp4?_nc_cat=109&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjM2NSwicmxhIjo0MDk2LCJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_ohc=Ai9-cvGlkaQAX_nW7JD&rl=365&vabr=203&_nc_ht=video-bru2-1.xx&oh=bbe45e4ab06738fe5430affb843a7b8a&oe=61A494CD',
             path: 'https://javcl.com/wp-content/uploads/2020/06/patsupatsu-clothing-big-breasts-we-are-reverse-sex.jpg',
             name: 'Phịch em đồng nghiệp Ai-saayama'
             
