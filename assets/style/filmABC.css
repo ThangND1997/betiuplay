@@ -58,6 +58,61 @@
     top: 35%;
 }
 
+#pass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999999;
+    transition: 0.6s;
+    background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
+    background-size: cover;
+}
+
+.pass-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.pass-input {
+    z-index: 1;
+    transition: 0.6s;
+    min-width: 280px;
+}
+
+.pass-input input {
+    width: 100%;
+    padding: 14px 16px;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 26px;
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+}
+
+.btn-pass {
+    width: 100%;
+    height: 50px;
+    margin-top: 8px;
+    background-color: #007aff;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: 0.4s;
+}
+
+.btn-pass:hover {
+    background-color: red;
+}
+
 @media (max-width: 739px) {
     .slide-content.slide-content-first {
       background-image: unset;
@@ -84,5 +139,9 @@
 
     .btn-trailer {
         margin-right: unset;
+    }
+
+    #pass {
+        background-image: url('https://gamek.mediacdn.vn/2019/9/3/photo-1-15674798154701613127382.jpg');
     }
 }

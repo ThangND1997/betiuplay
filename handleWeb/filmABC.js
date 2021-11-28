@@ -199,33 +199,33 @@ const video = document.querySelector('video')
 const appItemsFilm = {
     filmContent: [
         {
-            src: 'https://vdownload-7.sb-cd.com/9/2/9251064-720p.mp4?secure=gUNzV1_NoBezQy-xWbNpOg,1638021281&m=7&d=6&_tid=9251064',
+            src: './assets/filmABBC/p1.mp4',
             path: 'https://japornasia.com/wp-content/uploads/2020/05/nagai_maria_20200106a10.jpg',
             name: 'Một ngày mệt mỏi cùng em'
         },
         {
-            src: 'https://vdownload-25.sb-cd.com/8/4/8413377-720p.mp4?secure=1NzF56Xo4HBfnhDmkjgIBA,1638023256&m=25&d=3&_tid=8413377',
+            src: 'https://video.fhph1-1.fna.fbcdn.net/v/t66.36240-6/10000000_117343074087362_8851286757269677216_n.mp4?_nc_cat=108&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjI3NDIsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=Hen7fcu_FOMAX-MjIeo&rl=2742&vabr=1828&_nc_ht=scontent-frt3-1.xx&oh=efc839d5753db5f352afc6171ab11b35&oe=61A7ECD2',
             path: 'https://thabet66.com/melody-marks.html/melody-mark-1',
             name: 'Địt em phục vụ Melody hãm tiền'
             
         }
         ,
         {
-            src: 'https://vdownload-6.sb-cd.com/9/1/9139221-720p.mp4?secure=uBF9CQjPGleqzVbFFVgRUw,1638023716&m=6&d=6&_tid=9139221',
+            src: 'https://r3---sn-npoe7ne6.googlevideo.com/videoplayback?expire=1638089127&ei=R-2iYdfUM5D5gQPt-JNA&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-AIEFQh_8-lyNug816eC5mze4_sVPqL-ut-J90h3lbNVu&itag=22&source=youtube&requiressl=yes&mh=ZM&mm=32&mn=sn-npoe7ne6&ms=su&mv=m&mvi=3&pl=48&sc=yes&initcwndbps=803750&vprv=1&prv=1&mime=video/mp4&cnr=14&ratebypass=yes&dur=1100.045&lmt=1635412863746394&mt=1638067228&fexp=24001373,24007246&txp=6211224&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,prv,mime,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRQIgP8fGSu2oZHW4HIESnxzHuVCWbb2UU__PuCZbNXLNhmACIQDKpaBblZhD3JCGLJU7o7Pq87S0h0XOGhwioPn63RYb9g==&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRgIhAN7_wlTWdBjOAA2_JGcm-UsoqWnImKvdDAUn5KgLYMjAAiEA3eMAnz7CyMyG3q4yB0w955vGTIjtnjG9WYUVG2Bt3Fs=',
             path: 'https://iv1.lisimg.com/image/21280028/640full-melody-marks.jpg',
             name: 'Tình cờ gặp Idol trên phố'
             
         }
         ,
         {
-            src: 'https://vdownload-1.sb-cd.com/9/6/9643361-720p.mp4?secure=mka6n7GuIPRXxa1JiGooIA,1638024093&m=1&d=4&_tid=9643361',
+            src: 'https://vdownload-34.sb-cd.com/9/7/9776134-720p.mp4?secure=KD7KOJCmX6mk7ukQuJGQEg,1638119681&m=34&d=1&_tid=9776134',
             path: 'https://www.tubetubetube.com/dmm/chitose-saegusa/avop00174/hd-chitose-saegusa-0.jpg',
             name: 'Bị Bắt Làm Nô lệ Cho em Chito-se'
             
         }
         ,
         {
-            src: 'https://vdownload-11.sb-cd.com/7/7/7779562-720p.mp4?secure=fEpMXlh0AZoQXo4LPJXg4A,1638025686&m=11&d=6&_tid=7779562',
+            src: 'https://fvs.io/redirector?token=Mkx2L3NlMHNtT1BRVVc3K0lyeGd6OEdVSTJjOUdXMFc1eVpPdXJGMDJaYVIzUlAzYzZFWTF4M2ZlNXo1WGFpdWJ6REI4OXdaZHJvYVBLVjlaSkh3R09yVGJMWGtnK2JUcjdINVZDaEowbXl0QXlkNEpXSS9aRU9ZcUZWUE1TMGtxQnhCMEFUNk5wWXB4OU8rSTJqRUNsY0JPM1Z6WEdQSDB3PT06T2VFLzI2cXhlSGJuMERINDZ5bnprZz09VDxG',
             path: 'https://i.pinimg.com/474x/66/33/0f/66330fbc27131fad74ac76f95d0c1d5f.jpg',
             name: 'Chiến em shion Ngọt nước non tơ'
             
@@ -302,7 +302,7 @@ const appItemsFilm = {
         // }
         ,
         {
-            src: 'https://vdownload-19.sb-cd.com/9/9/9918795-720p.mp4?secure=Ti4E6g1fKXE5t1J3OA_A7Q,1638032664&m=19&d=6&_tid=9918795',
+            src: 'https://fvs.io/redirector?token=b3BUcG9MK2s2WmNNWE1NRVZZK0VNUFFLMUphUVk5UUo5WVNzajNGdnphTnZsclJWdFlIeVdsazR4REZaNjJPM2ptL2VDR1hmai9IckFXOWpiZ1dxWi90eFJ5aWpRTUs3RTJtT1dRYTdrbTBvNDVEdFQ0YUZIcjFUYjh4VytZRXhsTUtJVGdtdmQ3aG1PNnlhVHBhMW1mNFoyZE1vT0NLcU5MWT06Mjh0RGNjMUhlVjQ1anlYcXMwUEt2dz09oWoE',
             path: 'https://javcl.com/wp-content/uploads/2020/06/patsupatsu-clothing-big-breasts-we-are-reverse-sex.jpg',
             name: 'Phịch em đồng nghiệp Ai-saayama'
             
@@ -388,3 +388,28 @@ updateBefore.forEach((updateBefore)=>{
         toastAram();
     }
 })
+
+// film ABC
+const navFilmABC = $$('.js-nav-filmABC')
+const navPass = $('#pass')
+const navPassInput = $('.pass-input input')
+const btnPasss = $('.btn-pass')
+const passsOverlay = $('.pass-overlay')
+btnPasss.onclick = function () {
+    if(navPassInput.value === 'bananhthang' || navPassInput.value === '0') {
+        $('.pass-input').style.transform = 'translateY(60%)';
+        setTimeout(function(){
+            navPass.style.transform = 'translateY(-100%)';
+        }, 1000)
+    }else {
+        setTimeout(function(){
+            alert('Sai rồi! Hãy thử lại')
+            navPassInput.value = '';
+        }, 500)
+    }
+}
+window.onkeyup = function (e) {
+    if(e.which === 13) {
+        btnPasss.onclick();
+    }
+}
