@@ -218,7 +218,7 @@ const appItemsFilm = {
         }
         ,
         {
-            src: 'https://vdownload-34.sb-cd.com/9/7/9776134-720p.mp4?secure=KD7KOJCmX6mk7ukQuJGQEg,1638119681&m=34&d=1&_tid=9776134',
+            src: 'https://fvs.io/redirector?token=QjRLcEt4Q21IQ2JDMHJKcVpHb1ppZFQxR0o0VkUyRm13WGVDc3lnNHVFbjBRM09UWXA5NzhZbmJhb2swYXBPcTFjSG9yOTM2d2dRUk81ZXl1Uk9pMGt1RWhBZUEwRzNYV2t1UnNjb2hMWW1kd3M1MWd4cTBiVzVDQ2trV3c1dU56MlZ0QklkVjZpc2dEWnhHeEVGY1JFSzFxbnE0R1l0eGNaVT06R05Hdk9GS0FSMTdPczZZWFA5ODlrQT0979YK',
             path: 'https://www.tubetubetube.com/dmm/chitose-saegusa/avop00174/hd-chitose-saegusa-0.jpg',
             name: 'Bị Bắt Làm Nô lệ Cho em Chito-se'
             
@@ -230,42 +230,42 @@ const appItemsFilm = {
             name: 'Chiến em shion Ngọt nước non tơ'
             
         }
-        // ,
-        // {
-        //     src: './assets/trailer/Demon Slayer - Kimetsu no Yaiba - The Movie- Mugen Train Official Trailer.mp4',
-        //     path: './assets/img/poster-film/end5.jpg',
-        //     name: 'Kimetsu no Yaiba - The Movie'
+        ,
+        {
+            src: 'https://r5---sn-npoeened.googlevideo.com/videoplayback?expire=1638161629&ei=fQikYffxM9P6gQOQxoaYBA&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-AC0nvbnLlMQfElXd4EQrzkiNwvtIBFnkZArMAuYGkgbN&itag=22&source=youtube&requiressl=yes&mh=Ut&mm=32&mn=sn-npoeened&ms=su&mv=m&mvi=5&pl=48&sc=yes&initcwndbps=62500&vprv=1&prv=1&mime=video/mp4&cnr=14&ratebypass=yes&dur=9302.401&lmt=1630966402518245&mt=1638139704&fexp=24001373,24007246&txp=6211224&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,prv,mime,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRAIgeMRVQvi2igBTCAiOAWV-X8F1epT0jp0NP4KM3qaHsqMCIB3vnaPg2rlcznLamXWsLJNpKPNaidS79cyARTt3VnwG&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRQIgXGwMjiHFUCIf66HJxCNpJtJKSKs24sjfCFiGjX05rkUCIQCo6_wtPzpfA5IMHqg3-qzIqbVqLHfWCNXQt6psTQAQMg==',
+            path: 'https://lh3.googleusercontent.com/proxy/f0CFxbpwM_5bJm6OIj5ZoH0Ki5uYl4tlpTuqF6fYiwaqcAzqQTZrV6VTtKvQdxwia82WOpTGhlkpDY2JNwKoHTXLURAMQGtXctPstpN0EbIqLubVaIN4ujUWuK_VS0j1v3yGs9ZtIOD6ZKC9c-UzeRBGMqPoOe8Uk4eZIxk',
+            name: 'Me ke dam dang marina shiraishi '
             
-        // }
-        // ,
-        // {
-        //     src: './assets/trailer/Phim hoạt hình -RICHARD THE STORK _ VẸT CÒ PHIÊU LƯU KÝ- trailer.mp4',
-        //     path: './assets/img/poster-film/end6.jpg',
-        //     name: 'Vẹt Cò phiêu lưu ký'
+        }
+        ,
+        {
+            src: 'https://r3---sn-npoeenee.googlevideo.com/videoplayback?expire=1638168947&ei=EyWkYZrNHdKsigbBoLa4BA&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-APLytAsR9bnx7-f0fu1JvuvxUagEijtmnkD-ZIiV-wad&itag=22&source=youtube&requiressl=yes&mh=RL&mm=32&mn=sn-npoeenee&ms=su&mv=m&mvi=3&pl=48&sc=yes&pcm2=yes&initcwndbps=132500&vprv=1&prv=1&mime=video/mp4&cnr=14&ratebypass=yes&dur=7711.811&lmt=1635360181816218&mt=1638146903&fexp=24001373,24007246&txp=6211224&sparams=expire,ei,ip,id,itag,source,requiressl,pcm2,vprv,prv,mime,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRgIhANmKwI8cpxsj9EVmBFp3hNwOrR6s-ARZgsPbz8SP7EVOAiEAvjvOTddNBo-Tr1Cup9muL1sn7tAtuv1bTE022J_1KoM=&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRQIhAO5PYKNDTDWP2-8UD9Xx9lHNJVUO-cOd48_DceggE15lAiAJ4CFR0fncMGf-_c9opxZzSmBRnBqO1Dgo6xb_K8KpyQ==',
+            path: 'https://static.sextb.net/poster/adn-018.jpg',
+            name: 'Thác loạn với cậu em hư hỏng ai sayama'
             
-        // }
-        // ,
-        // {
-        //     src: './assets/trailer/Annabelle- Tạo Vật Quỷ Dữ - Official Trailer.mp4',
-        //     path: './assets/img/poster-film/end7.jpg',
-        //     name: 'Annabelle- Tạo Vật Quỷ Dữ'
+        }
+        ,
+        {
+            src: 'https://r2---sn-npoe7ne6.googlevideo.com/videoplayback?expire=1638166433&ei=QRukYe2yG-rQ2roPpOmawA4&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-AEwmr2kbWAHDyYwQMlLnUMRKCVvXSifB1acHa8U6Yx7J&itag=22&source=youtube&requiressl=yes&mh=Q9&mm=32&mn=sn-npoe7ne6&ms=su&mv=m&mvi=2&pl=48&sc=yes&initcwndbps=3463750&vprv=1&prv=1&mime=video/mp4&ratebypass=yes&dur=7795.449&lmt=1631824392784503&mt=1638144503&fexp=24001373,24007246&txp=6216222&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,prv,mime,ratebypass,dur,lmt&sig=AOq0QJ8wRAIgMhMBQvXOeehtja6gCkzdB4Qnm5Rj9BfXGe9c5hfsSx8CIH97-UdNoio7V4b6Sn7ZXHi8lMhLVzDbn3ya4jEeLh6W&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRgIhAMbnQ17azR-hC0OvFpf_tqztWFQRH3mVquJWNMAYatzHAiEAp42RrWjEnApEJbgjJ4COhx4L9i0mj31UWjzeJDBT75s=',
+            path: 'https://r18.video/pics/ai-sayama/waaa00112/ai-sayama-0-300.jpg',
+            name: 'Đit em ở bênh viện'
             
-        // }
-        // ,
-        // {
-        //     src: './assets/trailer/Duck Duck Goose - Ngỗng Vịt Phiêu Lưu Ký - Trailer.mp4',
-        //     path: './assets/img/poster-film/end8.jpg',
-        //     name: 'Ngỗng Vịt Phiêu Lưu Ký'
+        }
+        ,
+        {
+            src: 'https://r2---sn-npoeenly.googlevideo.com/videoplayback?expire=1638170719&ei=_yukYaO8CtPrrQS4kYTADQ&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-AI52-l73r1NBY03WvCoQKPycYTU8zpZLzI8Hn6981W1q&itag=22&source=youtube&requiressl=yes&mh=1c&mm=32&mn=sn-npoeenly&ms=su&mv=m&mvi=2&pl=48&sc=yes&initcwndbps=3463750&vprv=1&prv=1&mime=video/mp4&cnr=14&ratebypass=yes&dur=7051.807&lmt=1637281118977819&mt=1638148825&fexp=24001373,24007246&txp=6211224&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,prv,mime,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRQIgK_h97BSURn1w4LZsIfB1i7UjfPdbW1quOEiZTIC0X4ECIQCmF5XvEp62Wu73JbtMOI_J__JRzO-VNFNc1iyn6_1CRg==&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRgIhANY9Z0oBKWNm91W67cCsESeozgmVRFJ8zWg8FqmvZY-UAiEAg_gTP5u0pzAa6CUmlOsPTbLDcxw5ARn6m5zc4DTeuH4=',
+            path: 'https://xjapanese.com/pornpics/aka-asuka/oae00212/aka-asuka-0-300.jpg',
+            name: 'Em đồng nghiệp Aka Asuka'
             
-        // }
-        // ,
-        // {
-        //     src: './assets/trailer/Phim -Cậu Vàng- Teaser Trailer - KC 08.01.2021.mp4',
-        //     path: './assets/img/poster-film/end9.jpg',
-        //     name: 'Cậu Vàng'
+        }
+        ,
+        {
+            src: 'https://r4---sn-npoeenlk.googlevideo.com/videoplayback?expire=1638165199&ei=bxakYerwB7bHs8IPlK2GsAg&ip=2401:c440::f816:3eff:fe30:3d4c&id=o-AIfytNJbOQbJvr71rpVarYpur9Ik1ZyZ2x9sd9ScQPKP&itag=22&source=youtube&requiressl=yes&mh=jx&mm=32&mn=sn-npoeenlk&ms=su&mv=m&mvi=4&pl=48&sc=yes&initcwndbps=3463750&vprv=1&prv=1&mime=video/mp4&cnr=14&ratebypass=yes&dur=7106.908&lmt=1631677900531378&mt=1638143303&fexp=24001373,24007246&txp=6211224&sparams=expire,ei,ip,id,itag,source,requiressl,vprv,prv,mime,cnr,ratebypass,dur,lmt&sig=AOq0QJ8wRQIhAIoHlFXKkUAq_FF_NW4C7oi889sTsMEt4iRclhB56o7DAiBgk8MSGqYydzJeW2wTHhpeAYhlXLOe3hZasU4yCBiwiA==&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc,initcwndbps&lsig=AG3C_xAwRAIgaChcF4sFa2lFr1iuLQyd4bsX8NiIyHgGAwrR8VXScVgCIBTeLpcSEHVwbAuBzDg_ffiKLXGsr3fOEARWztvpowW3',
+            path: 'https://i2.wp.com/xopenload.pw/wp-content/uploads/2021/03/VEMA-097.jpg?fit=375%2C541&ssl=1',
+            name: 'Em giúp việc xinh đẹp'
             
-        // }
-        // ,
+        }
+        ,
         // {
         //     src: './assets/trailer/Chú Khủng Long Tốt Bụng - Trailer Chính Thức.mp4',
         //     path: './assets/img/poster-film/end10.jpg',
@@ -300,7 +300,7 @@ const appItemsFilm = {
         //     name: 'Dạo Bước Khủng Long'
             
         // }
-        ,
+        // ,
         {
             src: 'https://video.fhph1-2.fna.fbcdn.net/v/t42.1790-2/10000000_441664610959594_7756618797033247110_n.mp4?_nc_cat=109&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjM2NSwicmxhIjo0MDk2LCJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_ohc=Ai9-cvGlkaQAX_nW7JD&rl=365&vabr=203&_nc_ht=video-bru2-1.xx&oh=bbe45e4ab06738fe5430affb843a7b8a&oe=61A494CD',
             path: 'https://javcl.com/wp-content/uploads/2020/06/patsupatsu-clothing-big-breasts-we-are-reverse-sex.jpg',
@@ -396,7 +396,7 @@ const navPassInput = $('.pass-input input')
 const btnPasss = $('.btn-pass')
 const passsOverlay = $('.pass-overlay')
 btnPasss.onclick = function () {
-    if(navPassInput.value === 'bananhthang' || navPassInput.value === '0') {
+    if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
         $('.pass-input').style.transform = 'translateY(60%)';
         setTimeout(function(){
             navPass.style.transform = 'translateY(-100%)';
