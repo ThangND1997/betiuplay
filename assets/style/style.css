@@ -2,6 +2,11 @@
 
 /* Header CSS */
 
+*{
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .arrow-mobile-first-page {
     font-size: 2rem;
     color: #0177b3;
