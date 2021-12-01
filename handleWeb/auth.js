@@ -168,7 +168,26 @@ function toastAram () {
 }
 //handle music 
 const audio = document.querySelector('audio');
+const PreseulAudio = document.querySelector('.preseul-btn');
 const music = document.querySelector('#music');
+//handle radom music
+const listMusic = [
+    './assets/music/kloi1.mp3',
+    './assets/music/kloi2.mp3',
+    './assets/music/piano-chil.mp3',
+    './assets/music/We Wish You a Merry Christmas.mp3'
+]
+
+var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
+audio.setAttribute('src', listMusic[3]);
+PreseulAudio.onclick = () => {
+    audio.play();
+}
+window.onload = () => {
+    PreseulAudio.onclick();
+}
+audio.loop = true;
+
 if(audio.play()) {
     var htmlMusic = `<i class="fas fa-volume-up music-img"></i>`;
     audio.volume = 0.6;
@@ -187,12 +206,3 @@ if(audio.play()) {
         }
     }, 1000)
 }
-//handle radom music
-const listMusic = [
-    './assets/music/kloi1.mp3',
-    './assets/music/kloi2.mp3',
-    './assets/music/piano-chil.mp3'
-]
-
-var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
-audio.setAttribute('src', listMusic[indexRandomMusic]);

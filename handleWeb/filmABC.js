@@ -189,7 +189,7 @@ const film = [
 ];
 
 const btnFilm = document.querySelector('.js-btn-film-play')
-const btnTrailer = document.querySelectorAll('.js-btn-trailer-play')
+const btnTrailer = document.querySelector('.js-btn-trailer-play')
 const filmApp = document.querySelector('.film-app')
 const filmModal = document.querySelector('.modal-film')
 const trailer = document.querySelector('.trailer')
@@ -310,6 +310,9 @@ const appItemsFilm = {
     ]
 
 };
+btnTrailer.onclick = () => {
+    toastAram();
+}
 const zeroEnd = document.querySelector('.zero-end');
 function renderContentFilmEnd() {
     var htmls = appItemsFilm.filmContent.map(function(filmContent, index) {
@@ -335,6 +338,7 @@ zeroEnd.onclick = function (e) {
         storageDesHearder.textContent = appItemsFilm.filmContent[currentFilm].name;
         modalPlayFilm.style.display = 'flex'
         video.play();
+        audio.pause();
     }
 }
 // handle click close modal film
@@ -342,15 +346,18 @@ const btnloseModalFilm = document.querySelector('.storage-body-modal_overlay i')
 const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
 btnloseModalFilm.onclick = function () {
     video.pause();
+    audio.play();
     modalPlayFilm.style.display = 'none'
 }
 overlayModalFilm.onclick = function () {
     video.pause();
+    audio.play();
     modalPlayFilm.style.display = 'none'
 }
 window.onkeyup = function (e) {
     if(e.which == 27) {
         video.pause();
+        audio.play();
         modalPlayFilm.style.display = 'none'
     }
 }
@@ -376,6 +383,8 @@ function toastAram () {
     }
 }
 
+
+
 const filmSelect = document.querySelectorAll('.film-select');
 const updateBefore = document.querySelectorAll('.js-update-before');
 filmSelect.forEach((filmSelect)=>{
@@ -395,12 +404,14 @@ const navPass = $('#pass')
 const navPassInput = $('.pass-input input')
 const btnPasss = $('.btn-pass')
 const passsOverlay = $('.pass-overlay')
+const audio = $('audio')
 btnPasss.onclick = function () {
     if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
         $('.pass-input').style.transform = 'translateY(60%)';
         setTimeout(function(){
             navPass.style.transform = 'translateY(-100%)';
         }, 1000)
+        audio.play();
     }else {
         setTimeout(function(){
             alert('Sai rồi! Hãy thử lại')
@@ -413,3 +424,5 @@ window.onkeyup = function (e) {
         btnPasss.onclick();
     }
 }
+audio.loop = true;
+

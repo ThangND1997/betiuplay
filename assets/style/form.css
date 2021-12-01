@@ -311,3 +311,7 @@ input:focus ~ .form-footer {
 .music-img:hover {
     color: #999;
 }
+
+.preseul-btn {
+    display: none;
+}
