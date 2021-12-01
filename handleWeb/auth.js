@@ -59,6 +59,7 @@ btnRegister.onclick = () => {
     valueRegisterPass.value = '';
     valueRegisterPhone.value = '';
     valueRegisterName.value = '';
+    PreseulAudio.onclick();
 }
 // button login footer
 btnLoginTer.onclick = () => {
@@ -182,9 +183,6 @@ var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
 audio.setAttribute('src', listMusic[3]);
 PreseulAudio.onclick = () => {
     audio.play();
-}
-window.onload = () => {
-    PreseulAudio.onclick();
 }
 audio.loop = true;
 

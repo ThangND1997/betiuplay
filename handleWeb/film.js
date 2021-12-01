@@ -163,6 +163,15 @@ btnMenu.onclick = () => {
     menuMobile.classList.toggle('visi-menu');
     btnMenu.classList.toggle('ti-back-left')
     btnMenu.classList.toggle('ti-menu')
+    var testBtnMenu = btnMenu.closest('.ti-menu')
+    var testArrowBtn = arrowBtn.closest('.ti-minus')
+    if(testBtnMenu && testArrowBtn) {
+        subnavMobile.forEach(function (subnavMobile) {
+            subnavMobile.classList.remove('change-height')
+        })
+        arrowBtn.classList.toggle('ti-plus')
+        arrowBtn.classList.toggle('ti-minus')
+    }
 };
 itemMenu.onclick = () => {
     menuMobile.classList.remove('visi-menu');

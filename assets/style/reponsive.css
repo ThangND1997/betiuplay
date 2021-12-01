@@ -371,18 +371,18 @@
     .mobile-menu-item_sub-link {
         text-decoration: none;
         color: rgba(255, 255, 255, 0.6);
-        font-size: 0rem;
-        display: block;
+        display: none;
         padding: 20px 10px;
     }
     
     .change-height {
         height: 62px;
-        transition: 0.9s;
+        display: block;
+        transition: 0.4s;
     }
     .change-height .mobile-menu-item_sub-link {
-        transition: 0.6s;
         font-size: 1.2rem;
+        display: block;
     }
 
     .mobile-arrow {
