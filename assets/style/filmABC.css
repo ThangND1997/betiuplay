@@ -136,29 +136,6 @@
 
 
 @media (max-width: 739px) {
-    .slide-content.slide-content-first {
-      background-image: unset;
-    }
-    .slide-content.active-5 {
-         background-image: unset;
-        transition: 0.6s;
-    }
-    
-    .slide-content.active-6 {
-        background-image: unset;
-        transition: 0.6s;
-    }
-    
-    .slide-content.active-7 {
-        background-image: unset;
-        transition: 0.6s;
-    }
-    
-    .slide-content.active-8 {
-        background-image: unset;
-        transition: 0.6s;
-    }
-
     .container::after {
         display: block;
         background-image: linear-gradient(180deg,transparent,#000 80%);
