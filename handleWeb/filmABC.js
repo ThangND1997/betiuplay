@@ -10,129 +10,129 @@ const slidesPrev = $('.slides-prev');
 const slidesNext = $('.slides-next');
 const slideContentTextAll = $$('.slide-content-text');
 // handle when onclick dot slide
-slideNodes[0].onclick = () => {
-    //Reset interval with indexSlideCurrent
-    indexSlideCurrent = 0;
-    // Add and remove class node, slide, content    
-    $('.slides-dot_item.active').classList.remove('active')
-    slideNodes[0].classList.add('active')
-    slide.classList.add('active-1')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-4')
-    slideContent.classList.add('active-5')
-    slideContent.classList.remove('active-6')
-    slideContent.classList.remove('active-7')
-    slideContent.classList.remove('active-8')
-    document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
-    slideContentTextAll[0].classList.add('visi-slide-film')
-}
-slideNodes[1].onclick = () => {
-    indexSlideCurrent = 1;
-    $('.slides-dot_item.active').classList.remove('active')
-    slideNodes[1].classList.add('active')
-    slide.classList.add('active-2')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-4')
-    slideContent.classList.add('active-6')
-    slideContent.classList.remove('active-5')
-    slideContent.classList.remove('active-7')
-    slideContent.classList.remove('active-8')
+// slideNodes[0].onclick = () => {
+//     //Reset interval with indexSlideCurrent
+//     indexSlideCurrent = 0;
+//     // Add and remove class node, slide, content    
+//     $('.slides-dot_item.active').classList.remove('active')
+//     slideNodes[0].classList.add('active')
+//     slide.classList.add('active-1')
+//     slide.classList.remove('active-2')
+//     slide.classList.remove('active-3')
+//     slide.classList.remove('active-4')
+//     slideContent.classList.add('active-5')
+//     slideContent.classList.remove('active-6')
+//     slideContent.classList.remove('active-7')
+//     slideContent.classList.remove('active-8')
+//     document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
+//     slideContentTextAll[0].classList.add('visi-slide-film')
+// }
+// slideNodes[1].onclick = () => {
+//     indexSlideCurrent = 1;
+//     $('.slides-dot_item.active').classList.remove('active')
+//     slideNodes[1].classList.add('active')
+//     slide.classList.add('active-2')
+//     slide.classList.remove('active-1')
+//     slide.classList.remove('active-3')
+//     slide.classList.remove('active-4')
+//     slideContent.classList.add('active-6')
+//     slideContent.classList.remove('active-5')
+//     slideContent.classList.remove('active-7')
+//     slideContent.classList.remove('active-8')
     
-    document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
-    slideContentTextAll[1].classList.add('visi-slide-film')
-}
-slideNodes[2].onclick = () => {
-    indexSlideCurrent = 2;
-    $('.slides-dot_item.active').classList.remove('active')
-    slideNodes[2].classList.add('active')
-    slide.classList.add('active-3')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-2')
-    slide.classList.remove('active-4')
-    slideContent.classList.add('active-7')
-    slideContent.classList.remove('active-5')
-    slideContent.classList.remove('active-6')
-    slideContent.classList.remove('active-8')
-    document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
-    slideContentTextAll[2].classList.add('visi-slide-film')
-}
-slideNodes[3].onclick = () => {
-    indexSlideCurrent = 3;
-    $('.slides-dot_item.active').classList.remove('active')
-    slideNodes[3].classList.add('active')
-    slide.classList.add('active-4')
-    slide.classList.remove('active-1')
-    slide.classList.remove('active-3')
-    slide.classList.remove('active-2')
-    slideContent.classList.add('active-8')
-    slideContent.classList.remove('active-5')
-    slideContent.classList.remove('active-6')
-    slideContent.classList.remove('active-7')
-    document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
-    slideContentTextAll[3].classList.add('visi-slide-film')
-}
+//     document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
+//     slideContentTextAll[1].classList.add('visi-slide-film')
+// }
+// slideNodes[2].onclick = () => {
+//     indexSlideCurrent = 2;
+//     $('.slides-dot_item.active').classList.remove('active')
+//     slideNodes[2].classList.add('active')
+//     slide.classList.add('active-3')
+//     slide.classList.remove('active-1')
+//     slide.classList.remove('active-2')
+//     slide.classList.remove('active-4')
+//     slideContent.classList.add('active-7')
+//     slideContent.classList.remove('active-5')
+//     slideContent.classList.remove('active-6')
+//     slideContent.classList.remove('active-8')
+//     document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
+//     slideContentTextAll[2].classList.add('visi-slide-film')
+// }
+// slideNodes[3].onclick = () => {
+//     indexSlideCurrent = 3;
+//     $('.slides-dot_item.active').classList.remove('active')
+//     slideNodes[3].classList.add('active')
+//     slide.classList.add('active-4')
+//     slide.classList.remove('active-1')
+//     slide.classList.remove('active-3')
+//     slide.classList.remove('active-2')
+//     slideContent.classList.add('active-8')
+//     slideContent.classList.remove('active-5')
+//     slideContent.classList.remove('active-6')
+//     slideContent.classList.remove('active-7')
+//     document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
+//     slideContentTextAll[3].classList.add('visi-slide-film')
+// }
 
-// Set Interval for slides
-// var loopSlider = setInterval(loopSlide, 6000);
-var indexSlideCurrent = 0;
-// function loopSlide() {
-    //     indexSlideCurrent > 2 ? indexSlideCurrent = 0 : indexSlideCurrent ++;
-    //     autoSlide(indexSlideCurrent);
-    // }
+// // Set Interval for slides
+// // var loopSlider = setInterval(loopSlide, 6000);
+// var indexSlideCurrent = 0;
+// // function loopSlide() {
+//     //     indexSlideCurrent > 2 ? indexSlideCurrent = 0 : indexSlideCurrent ++;
+//     //     autoSlide(indexSlideCurrent);
+//     // }
     
-    // function autoSlide(indexSlideCurrent) {
-        //     slideNodes[indexSlideCurrent].onclick();
-        // }
+//     // function autoSlide(indexSlideCurrent) {
+//         //     slideNodes[indexSlideCurrent].onclick();
+//         // }
         
-        // Handle prev/next slide changes
-        // slide previous slide
-        slidesPrev.onclick = function() {
-            indexSlideCurrent --;
-            if(indexSlideCurrent < 0) {
-                indexSlideCurrent = slideNodes.length - 1;
-            }
-            slideNodes[indexSlideCurrent].onclick()
-        }
-        //slide next slide
-        slidesNext.onclick = function() {
-            indexSlideCurrent ++;
-            if(indexSlideCurrent >= slideNodes.length) {
-                indexSlideCurrent = 0;
-            }
-            slideNodes[indexSlideCurrent].onclick()
-        }
-        // mouse move event
-        var startClient;
-        var endClient;
-        slides.onmousedown = function(e) {
-            startClient = e.clientX;
-        }
-        slides.onmouseup = function(e) {
-            endClient = e.clientX;
-            if(startClient - endClient > 50) {
-                slidesNext.onclick();
-            }
-            else if(startClient - endClient <= -50) {
-                slidesPrev.onclick();
-            }
-        }
+//         // Handle prev/next slide changes
+//         // slide previous slide
+//         slidesPrev.onclick = function() {
+//             indexSlideCurrent --;
+//             if(indexSlideCurrent < 0) {
+//                 indexSlideCurrent = slideNodes.length - 1;
+//             }
+//             slideNodes[indexSlideCurrent].onclick()
+//         }
+//         //slide next slide
+//         slidesNext.onclick = function() {
+//             indexSlideCurrent ++;
+//             if(indexSlideCurrent >= slideNodes.length) {
+//                 indexSlideCurrent = 0;
+//             }
+//             slideNodes[indexSlideCurrent].onclick()
+//         }
+//         // mouse move event
+//         var startClient;
+//         var endClient;
+//         slides.onmousedown = function(e) {
+//             startClient = e.clientX;
+//         }
+//         slides.onmouseup = function(e) {
+//             endClient = e.clientX;
+//             if(startClient - endClient > 50) {
+//                 slidesNext.onclick();
+//             }
+//             else if(startClient - endClient <= -50) {
+//                 slidesPrev.onclick();
+//             }
+//         }
         
-        // touch mobile move event
-        slides.ontouchstart = function(e) {
-            startClient = e.touches[0].clientX;
-        }
-        slides.ontouchend = function(e) {
-            endClient = e.changedTouches[0].clientX;
-            const aboutClient = startClient - endClient;
-            if(aboutClient > 50) {
-                slidesNext.onclick();
-            }
-            else if(aboutClient < -50) {
-                slidesPrev.onclick();
-            }
-        }
+//         // touch mobile move event
+//         slides.ontouchstart = function(e) {
+//             startClient = e.touches[0].clientX;
+//         }
+//         slides.ontouchend = function(e) {
+//             endClient = e.changedTouches[0].clientX;
+//             const aboutClient = startClient - endClient;
+//             if(aboutClient > 50) {
+//                 slidesNext.onclick();
+//             }
+//             else if(aboutClient < -50) {
+//                 slidesPrev.onclick();
+//             }
+//         }
         
         
         // Handle scroll window scroll event on visibility
@@ -203,7 +203,8 @@ const filmApp = document.querySelector('.film-app')
 const filmModal = document.querySelector('.modal-film')
 const trailer = document.querySelector('.trailer')
 const filmPlay = document.querySelector('.film')
-const video = document.querySelector('video')
+const video = document.querySelector('#video')
+const videoTitle = document.querySelector('#video-title')
 
 const appItemsFilm = {
     filmContent: [
@@ -313,15 +314,15 @@ const appItemsFilm = {
         {
             src: 'https://video.fhph1-1.fna.fbcdn.net/v/t66.36240-6/10000000_688537985363972_5383715241904905650_n.mp4?_nc_cat=1&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjE1MDAsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=7ZhoTWKaJUcAX9QSbAw&rl=1500&vabr=942&_nc_ht=scontent-frx5-1.xx&oh=dce25af7f8f1f9311e8ddab5e1cb017b&oe=61AB166E',
             path: 'https://m.media-amazon.com/images/I/411uVC0M7lL.jpg',
-            name: 'Phịch em đồng nghiệp Ai-saayama'
+            name: 'Phịch em đồng nghiệp Mikami hàng non'
             
         }
     ]
 
 };
-btnTrailer.onclick = () => {
-    toastAram();
-}
+// btnTrailer.onclick = () => {
+//     toastAram();
+// }
 const zeroEnd = document.querySelector('.zero-end');
 function renderContentFilmEnd() {
     var htmls = appItemsFilm.filmContent.map(function(filmContent, index) {
@@ -348,25 +349,34 @@ zeroEnd.onclick = function (e) {
         modalPlayFilm.style.display = 'flex'
         video.play();
         audio.pause();
+        videoTitle.pause();
     }
 }
 // handle click close modal film
 const btnloseModalFilm = document.querySelector('.storage-body-modal_overlay i');
 const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
+function audioPlay () {
+    setTimeout(() => {
+        audio.play();
+    }, 800)
+}
 btnloseModalFilm.onclick = function () {
     video.pause();
-    audio.play();
+    audioPlay();
+    videoTitle.play();
     modalPlayFilm.style.display = 'none'
 }
 overlayModalFilm.onclick = function () {
     video.pause();
-    audio.play();
+    audioPlay();
+    videoTitle.play();
     modalPlayFilm.style.display = 'none'
 }
 window.onkeyup = function (e) {
     if(e.which == 27) {
         video.pause();
-        audio.play();
+        audioPlay();
+        videoTitle.play();
         modalPlayFilm.style.display = 'none'
     }
 }
@@ -421,6 +431,7 @@ btnPasss.onclick = function () {
             navPass.style.transform = 'translateY(-100%)';
         }, 1000)
         audio.play();
+        videoTitle.play();
     }else {
         setTimeout(function(){
             alert('Sai rồi! Hãy thử lại')
@@ -434,4 +445,7 @@ window.onkeyup = function (e) {
     }
 }
 audio.loop = true;
+videoTitle.loop = true;
+videoTitle.muted = true;
+audio.volume = 0.8;
 

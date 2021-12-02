@@ -1,5 +1,19 @@
 
-.slide.slide-first {
+
+.slide {
+    width: 100%;
+    height: 100vh;
+}
+
+#video-title {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+/* .slide.slide-first {
     background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
     transition: 0.6s;
 }
@@ -23,11 +37,11 @@
 .slide.active-4 {
     background-image: url('https://s3.video-youtube.xyz/upload/photos/2021/09/5X2UcFRenp8iKJzgU9vx_23_7260b3dbda551843d24938ece2dabec0_image.jpg');
     transition: 0.6s;
-}
+} */
 
 /* slide-content */
 
-.slide-content.slide-content-first {
+/* .slide-content.slide-content-first {
     background-image: url('http://www.gogohopping.com/wp-content/uploads/2016/06/10.png');
     transition: 0.6s;
     z-index: 1;
@@ -55,7 +69,7 @@
 
 .slide-content {
     top: 35%;
-}
+} */
 
 #pass {
     display: flex;
@@ -111,6 +125,15 @@
 .btn-pass:hover {
     background-color: red;
 }
+
+.slide::after, .slide::before {
+    display: none;
+}
+
+.container::after {
+    background-image: linear-gradient(180deg,transparent,#111111 80%);
+}
+
 
 @media (max-width: 739px) {
     .slide-content.slide-content-first {

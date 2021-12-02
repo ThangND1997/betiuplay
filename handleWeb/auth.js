@@ -60,6 +60,7 @@ btnRegister.onclick = () => {
     valueRegisterPhone.value = '';
     valueRegisterName.value = '';
     PreseulAudio.onclick();
+    showSound();
 }
 // button login footer
 btnLoginTer.onclick = () => {
@@ -176,7 +177,7 @@ const listMusic = [
     './assets/music/kloi1.mp3',
     './assets/music/kloi2.mp3',
     './assets/music/piano-chil.mp3',
-    './assets/music/We Wish You a Merry Christmas.mp3'
+    './assets/music/Anak Ft IT Song 2021 - Leang Mashup Remix - Hot TikTok 2021 - DVT Muzik.mp3'
 ]
 
 var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
@@ -186,7 +187,7 @@ PreseulAudio.onclick = () => {
 }
 audio.loop = true;
 
-if(audio.play()) {
+function showSound () {
     var htmlMusic = `<i class="fas fa-volume-up music-img"></i>`;
     audio.volume = 0.6;
     setTimeout(() => {
