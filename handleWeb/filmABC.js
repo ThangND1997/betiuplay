@@ -426,7 +426,9 @@ const passsOverlay = $('.pass-overlay')
 const audio = $('audio')
 btnPasss.onclick = function () {
     if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
-        videoTitle.play();
+        if(videoTitle.style.display === 'block') {
+            videoTitle.play();
+        }
         $('.pass-input').style.transform = 'translateY(60%)';
         setTimeout(function(){
             navPass.style.transform = 'translateY(-100%)';
