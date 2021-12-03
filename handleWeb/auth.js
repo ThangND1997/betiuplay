@@ -177,7 +177,7 @@ const listMusic = [
     './assets/music/kloi1.mp3',
     './assets/music/kloi2.mp3',
     './assets/music/piano-chil.mp3',
-    './assets/music/Anak Ft IT Song 2021 - Leang Mashup Remix - Hot TikTok 2021 - DVT Muzik.mp3'
+    './assets/music/We Wish You a Merry Christmas.mp3'
 ]
 
 var indexRandomMusic = Math.floor(Math.random() * listMusic.length);

@@ -7,18 +7,18 @@
 
 #video-title {
   position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
 }
-/* .slide.slide-first {
-    background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
-    transition: 0.6s;
-}
 
-.slide.active-1 {
+
+/* .slide.active-1 {
     background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
     transition: 0.6s;
 }
@@ -40,8 +40,8 @@
 } */
 
 /* slide-content */
-
-/* .slide-content.slide-content-first {
+/* 
+.slide-content.slide-content-first {
     background-image: url('http://www.gogohopping.com/wp-content/uploads/2016/06/10.png');
     transition: 0.6s;
     z-index: 1;
@@ -65,11 +65,11 @@
 .slide-content.active-8 {
     background-image: url('http://www.gogohopping.com/wp-content/uploads/2016/06/10.png');
     transition: 0.6s;
-}
+} */
 
 .slide-content {
-    top: 35%;
-} */
+    display: none;
+}
 
 #pass {
     display: flex;
@@ -134,8 +134,38 @@
     background-image: linear-gradient(180deg,transparent,#111111 80%);
 }
 
+.slides-dot, .slides-manual {
+    display: none;
+}
+
 
 @media (max-width: 739px) {
+
+    .slide.slide-first {
+        background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
+        transition: 0.6s;
+    }
+
+    .slide-content.slide-content-first {
+    background-image: url('https://us.simplerousercontent.net/uploads/theme_file_versions/71083/logo.png');
+    transition: 0.6s;
+    z-index: 1;
+    }
+
+    .slide-content {
+        display: block;
+        top: 63%;
+        transform: translateX(-50%);
+    }
+
+    #video-title {
+        display: none;
+    }
+
+    .slide {
+        height: 75vh;
+    }
+
     .container::after {
         display: block;
         background-image: linear-gradient(180deg,transparent,#000 80%);
@@ -144,6 +174,7 @@
     .btn-trailer {
         margin-right: unset;
     }
+
 
     #pass {
         background-image: url('https://gamek.mediacdn.vn/2019/9/3/photo-1-15674798154701613127382.jpg');

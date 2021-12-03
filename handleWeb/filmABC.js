@@ -74,65 +74,65 @@ const slideContentTextAll = $$('.slide-content-text');
 //     slideContentTextAll[3].classList.add('visi-slide-film')
 // }
 
-// // Set Interval for slides
-// // var loopSlider = setInterval(loopSlide, 6000);
-// var indexSlideCurrent = 0;
-// // function loopSlide() {
-//     //     indexSlideCurrent > 2 ? indexSlideCurrent = 0 : indexSlideCurrent ++;
-//     //     autoSlide(indexSlideCurrent);
-//     // }
+// Set Interval for slides
+// var loopSlider = setInterval(loopSlide, 6000);
+var indexSlideCurrent = 0;
+// function loopSlide() {
+    //     indexSlideCurrent > 2 ? indexSlideCurrent = 0 : indexSlideCurrent ++;
+    //     autoSlide(indexSlideCurrent);
+    // }
     
-//     // function autoSlide(indexSlideCurrent) {
-//         //     slideNodes[indexSlideCurrent].onclick();
-//         // }
+    // function autoSlide(indexSlideCurrent) {
+        //     slideNodes[indexSlideCurrent].onclick();
+        // }
         
-//         // Handle prev/next slide changes
-//         // slide previous slide
-//         slidesPrev.onclick = function() {
-//             indexSlideCurrent --;
-//             if(indexSlideCurrent < 0) {
-//                 indexSlideCurrent = slideNodes.length - 1;
-//             }
-//             slideNodes[indexSlideCurrent].onclick()
-//         }
-//         //slide next slide
-//         slidesNext.onclick = function() {
-//             indexSlideCurrent ++;
-//             if(indexSlideCurrent >= slideNodes.length) {
-//                 indexSlideCurrent = 0;
-//             }
-//             slideNodes[indexSlideCurrent].onclick()
-//         }
-//         // mouse move event
-//         var startClient;
-//         var endClient;
-//         slides.onmousedown = function(e) {
-//             startClient = e.clientX;
-//         }
-//         slides.onmouseup = function(e) {
-//             endClient = e.clientX;
-//             if(startClient - endClient > 50) {
-//                 slidesNext.onclick();
-//             }
-//             else if(startClient - endClient <= -50) {
-//                 slidesPrev.onclick();
-//             }
-//         }
+        // Handle prev/next slide changes
+        // slide previous slide
+        // slidesPrev.onclick = function() {
+        //     indexSlideCurrent --;
+        //     if(indexSlideCurrent < 0) {
+        //         indexSlideCurrent = slideNodes.length - 1;
+        //     }
+        //     slideNodes[indexSlideCurrent].onclick()
+        // }
+        // //slide next slide
+        // slidesNext.onclick = function() {
+        //     indexSlideCurrent ++;
+        //     if(indexSlideCurrent >= slideNodes.length) {
+        //         indexSlideCurrent = 0;
+        //     }
+        //     slideNodes[indexSlideCurrent].onclick()
+        // }
+        // mouse move event
+        var startClient;
+        var endClient;
+        slides.onmousedown = function(e) {
+            startClient = e.clientX;
+        }
+        slides.onmouseup = function(e) {
+            endClient = e.clientX;
+            if(startClient - endClient > 50) {
+                slidesNext.onclick();
+            }
+            else if(startClient - endClient <= -50) {
+                slidesPrev.onclick();
+            }
+        }
         
-//         // touch mobile move event
-//         slides.ontouchstart = function(e) {
-//             startClient = e.touches[0].clientX;
-//         }
-//         slides.ontouchend = function(e) {
-//             endClient = e.changedTouches[0].clientX;
-//             const aboutClient = startClient - endClient;
-//             if(aboutClient > 50) {
-//                 slidesNext.onclick();
-//             }
-//             else if(aboutClient < -50) {
-//                 slidesPrev.onclick();
-//             }
-//         }
+        // touch mobile move event
+        // slides.ontouchstart = function(e) {
+        //     startClient = e.touches[0].clientX;
+        // }
+        // slides.ontouchend = function(e) {
+        //     endClient = e.changedTouches[0].clientX;
+        //     const aboutClient = startClient - endClient;
+        //     if(aboutClient > 50) {
+        //         slidesNext.onclick();
+        //     }
+        //     else if(aboutClient < -50) {
+        //         slidesPrev.onclick();
+        //     }
+        // }
         
         
         // Handle scroll window scroll event on visibility
@@ -426,12 +426,12 @@ const passsOverlay = $('.pass-overlay')
 const audio = $('audio')
 btnPasss.onclick = function () {
     if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
+        videoTitle.play();
         $('.pass-input').style.transform = 'translateY(60%)';
         setTimeout(function(){
             navPass.style.transform = 'translateY(-100%)';
         }, 1000)
         audio.play();
-        videoTitle.play();
     }else {
         setTimeout(function(){
             alert('Sai rồi! Hãy thử lại')
@@ -447,5 +447,6 @@ window.onkeyup = function (e) {
 audio.loop = true;
 videoTitle.loop = true;
 videoTitle.muted = true;
-audio.volume = 0.8;
+videoTitle.controls = false;
+audio.volume = 0.4;
 
