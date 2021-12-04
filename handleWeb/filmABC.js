@@ -352,13 +352,16 @@ zeroEnd.onclick = function (e) {
         videoTitle.pause();
     }
 }
+video.onerror = ()=> {
+    document.querySelector('#error-video').style.display = 'flex';
+}
 // handle click close modal film
 const btnloseModalFilm = document.querySelector('.storage-body-modal_overlay i');
 const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
 function audioPlay () {
     setTimeout(() => {
         audio.play();
-    }, 800)
+    }, 400)
 }
 function videoTitlePlay () {
     if(videoTitle.style.display === 'block') {
@@ -370,19 +373,22 @@ btnloseModalFilm.onclick = function () {
     audioPlay();
     videoTitlePlay();
     modalPlayFilm.style.display = 'none'
+    document.querySelector('#error-video').style.display = 'none';
 }
 overlayModalFilm.onclick = function () {
     video.pause();
     audioPlay();
     videoTitlePlay();
     modalPlayFilm.style.display = 'none'
+    document.querySelector('#error-video').style.display = 'none';
 }
 window.onkeyup = function (e) {
-    if(e.which == 27) {
+    if(e.which === 27) {
         video.pause();
         audioPlay();
         videoTitlePlay();
         modalPlayFilm.style.display = 'none'
+    document.querySelector('#error-video').style.display = 'none';
     }
 }
 
@@ -410,9 +416,15 @@ function toastAram () {
 
 
 const filmSelect = document.querySelectorAll('.film-select');
+const subFilm = document.querySelectorAll('.js-sub');
 const updateBefore = document.querySelectorAll('.js-update-before');
 filmSelect.forEach((filmSelect)=>{
     filmSelect.onclick = function(){
+        toastAram();
+    }
+})
+subFilm.forEach((subFilm) => {
+    subFilm.onclick = () => {
         toastAram();
     }
 })

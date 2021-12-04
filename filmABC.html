@@ -357,12 +357,18 @@
         </div>
         <div class="storage-body-modal_container">
             <div class="storage-modal_container_see">
-                <video src="" controls id="video"></video>
+                <div class="wrap-video">
+                    <div id="error-video">
+                        <span>Ôi không! Phim không thể khởi chạy. Hãy liên hệ với DEV hoặc chọn phim khác</span>
+                        <div class="error-video-overlay"></div>
+                    </div>
+                    <video src="" controls id="video"></video>
+                </div>
                 <div class="storage-modal_container_see-descriptio">
                     <img src="./assets/img/logo/BeTiu-Logo-Vip.png" alt="" class="nav-logo menu-mobile_logo storage-desciption_logo">
                     <h2 class="storage-desciption_header"></h2>
                     <div class="storage-desciption_btnm">
-                        <button class="btn btn-trailer active-play">Subscribe Me</button>
+                        <button class="btn btn-trailer active-play js-sub">Subscribe Me</button>
                     </div>
                 </div>
             </div>

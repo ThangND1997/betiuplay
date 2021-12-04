@@ -183,6 +183,7 @@ const listMusic = [
 var indexRandomMusic = Math.floor(Math.random() * listMusic.length);
 audio.setAttribute('src', listMusic[3]);
 PreseulAudio.onclick = () => {
+    audio.load();
     audio.play();
 }
 audio.loop = true;
