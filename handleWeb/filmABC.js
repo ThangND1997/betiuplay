@@ -360,23 +360,28 @@ function audioPlay () {
         audio.play();
     }, 800)
 }
+function videoTitlePlay () {
+    if(videoTitle.style.display === 'block') {
+        videoTitle.play();
+    }
+}
 btnloseModalFilm.onclick = function () {
     video.pause();
     audioPlay();
-    videoTitle.play();
+    videoTitlePlay();
     modalPlayFilm.style.display = 'none'
 }
 overlayModalFilm.onclick = function () {
     video.pause();
     audioPlay();
-    videoTitle.play();
+    videoTitlePlay();
     modalPlayFilm.style.display = 'none'
 }
 window.onkeyup = function (e) {
     if(e.which == 27) {
         video.pause();
         audioPlay();
-        videoTitle.play();
+        videoTitlePlay();
         modalPlayFilm.style.display = 'none'
     }
 }
@@ -426,9 +431,7 @@ const passsOverlay = $('.pass-overlay')
 const audio = $('audio')
 btnPasss.onclick = function () {
     if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
-        if(videoTitle.style.display === 'block') {
-            videoTitle.play();
-        }
+        videoTitlePlay();
         $('.pass-input').style.transform = 'translateY(60%)';
         setTimeout(function(){
             navPass.style.transform = 'translateY(-100%)';
