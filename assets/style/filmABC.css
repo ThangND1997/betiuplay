@@ -181,6 +181,10 @@ video {
     position: absolute;
 }
 
+.no-hidden-pc.storage-content:last-child {
+    display: block;
+}
+
 
 @media (max-width: 739px) {
 
@@ -234,7 +238,7 @@ video {
     }
 
     #error-video span {
-        margin: unset;
+        margin: 0 6px;
         font-size: 1.4rem;
     }
 }
