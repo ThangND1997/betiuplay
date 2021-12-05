@@ -462,9 +462,9 @@ function audioPlay () {
     }, 400)
 }
 function videoTitlePlay () {
-    if(videoTitle.style.display === 'block') {
-        videoTitle.play();
-    }
+        if(videoTitle.style.display === 'block') {
+            videoTitle.play();
+        }
 }
 btnloseModalFilm.onclick = function () {
     video.pause();
@@ -480,16 +480,6 @@ overlayModalFilm.onclick = function () {
     modalPlayFilm.style.display = 'none'
     document.querySelector('#error-video').style.display = 'none';
 }
-window.onkeyup = function (e) {
-    if(e.which === 27) {
-        video.pause();
-        audioPlay();
-        videoTitlePlay();
-        modalPlayFilm.style.display = 'none'
-    document.querySelector('#error-video').style.display = 'none';
-    }
-}
-
 // const offset = stoImg.offsetWidth * 3.7;
 // storContainer.style.transform = `translateX(-${offset}px)`
 
