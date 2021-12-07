@@ -84,6 +84,7 @@
     transition: 0.6s;
     background-image: url('https://lh4.googleusercontent.com/-nVblyK3DxBU/WehTPD-U9VI/AAAAAAAAA64/0h_xhnnp-Gg4cxwmF_3MrPneO1pRQ6jxQCKgBGAs/s0-no-l100-e365/elf-cosplay-1920x1080.jpg');
     background-size: cover;
+    background-position: center;
 }
 
 .pass-overlay {
