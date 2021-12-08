@@ -216,19 +216,19 @@ const appItemsFilm = {
         {
             src: 'https://video.fhph1-1.fna.fbcdn.net/v/t66.36240-6/10000000_117343074087362_8851286757269677216_n.mp4?_nc_cat=108&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjI3NDIsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=Hen7fcu_FOMAX-MjIeo&rl=2742&vabr=1828&_nc_ht=scontent-frt3-1.xx&oh=efc839d5753db5f352afc6171ab11b35&oe=61A7ECD2',
             path: 'https://3.bp.blogspot.com/-eOqqEgCuGNo/XKDevxAdx-I/AAAAAAAAlnQ/gOA9qq6ibUIDqR9SB5PUXpdkhafZ-TJEgCK4BGAYYCw/s1600/W_adultery_2018_HD.jpg',
-            name: 'Địt em phục vụ Melody hãm tiền'
+            name: 'Con ciu to bự chỉ dành cho em'
             
         }
         ,
         {
             src: './assets/filmABBC/p2.mp4',
             path: 'https://i.mydramalist.com/wggl1_4c.jpg?v=1',
-            name: 'Tình cờ gặp Idol trên phố'
+            name: 'Hiếp dâm tập thể HD'
             
         }
         ,
         {
-            src: 'https://fvs.io/redirector?token=bHVSM2piYkdVOFF3aE5PMzdmVE4vcm1SZUNaN0duY0MyYk85SGpOaVBPV2RoWVB3SHZZOWNtenFZd3ZEaENWWnZheG5haTZoalZyZGZrZjhkOHdvam96d0t1SFNzSnkycUJ2a29ENWRaQUpvV090a005aWNoZTJodXJzMVZmSFBaa3llam16d3hKK0paNHM4WEVzTWViS2RyN2xzd25xaVZDaz06RjB1M2dETGI3YVRLM21kS0svd2RnUT092PyK',
+            src: 'https://vdownload-19.sb-cd.com/8/4/8421035-720p.mp4?secure=Qz7mpaE2AjgnhGU_rCHccQ,1638905631&m=19&d=4&_tid=8421035',
             path: 'https://img.soccersuck.com/images/2021/03/15/ipx641-pl.jpg',
             name: 'Bị Bắt Làm Nô lệ Cho em Chito-se JAV68'
             
@@ -323,45 +323,45 @@ const appItemsFilm = {
         {
             src: './assets/filmABBC/p1.mp4',
             path: 'https://sun9-16.userapi.com/impf/c852236/v852236819/11d18b/XP5ZLnEsqi0.jpg?size=403x604&quality=96&sign=ed8e25cdad8cea20cf5bde7df2dcc059&type=album',
-            name: 'Một ngày mệt mỏi cùng em'
+            name: 'Anh sửa ống nước Cu bự'
         },
         {
-            src: 'https://video.fhph1-1.fna.fbcdn.net/v/t66.36240-6/10000000_117343074087362_8851286757269677216_n.mp4?_nc_cat=108&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjI3NDIsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=Hen7fcu_FOMAX-MjIeo&rl=2742&vabr=1828&_nc_ht=scontent-frt3-1.xx&oh=efc839d5753db5f352afc6171ab11b35&oe=61A7ECD2',
+            src: 'https://vdownload-19.sb-cd.com/8/4/8421035-720p.mp4?secure=0PnGmN5WgkaXliQBV6f29g,1639013031&m=19&d=4&_tid=8421035',
             path: 'https://image-us.24h.com.vn/upload/4-2019/images/2019-10-04/1570150468-913-untitled-12-1570098063-width650height855.jpg',
-            name: 'Địt em phục vụ Melody hãm tiền'
+            name: 'Tất cả vì em với cặp dú bự'
             
         }
         ,
         {
             src: './assets/filmABBC/p2.mp4',
             path: 'https://i.pinimg.com/736x/6e/2e/04/6e2e043b822a3496432dd9b92c5a3abd.jpg',
-            name: 'Tình cờ gặp Idol trên phố'
+            name: 'U là trời, ngon qóa vậy Rio-Chan'
             
         }
         ,
         {
             src: 'https://fvs.io/redirector?token=bHVSM2piYkdVOFF3aE5PMzdmVE4vcm1SZUNaN0duY0MyYk85SGpOaVBPV2RoWVB3SHZZOWNtenFZd3ZEaENWWnZheG5haTZoalZyZGZrZjhkOHdvam96d0t1SFNzSnkycUJ2a29ENWRaQUpvV090a005aWNoZTJodXJzMVZmSFBaa3llam16d3hKK0paNHM4WEVzTWViS2RyN2xzd25xaVZDaz06RjB1M2dETGI3YVRLM21kS0svd2RnUT092PyK',
             path: 'https://superstarsbio.com/wp-content/uploads/2019/10/Lana-Rhoades-height.jpg',
-            name: 'Bị Bắt Làm Nô lệ Cho em Chito-se JAV68'
+            name: 'Không thể ngăn cản con cu này'
             
         }
         ,
         {
             src: 'https://video.fhph1-2.fna.fbcdn.net/v/t66.36240-6/10000000_618455705957951_125417533242997657_n.mp4?_nc_cat=101&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjE2MzYsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=U1vahTzXiS0AX8uHSgw&rl=1636&vabr=1091&_nc_ht=scontent-bru2-1.xx&oh=88d255042cbcd683fd18c5a98d6f1e74&oe=61A8E266',
             path: 'https://i.redd.it/gqrt4edj7pz31.jpg',
-            name: 'Chiến em shion Ngọt nước non tơ'
+            name: 'Cô bé thiên thần dú bự'
             
         }
         ,
         {
             src: './assets/filmABBC/p1.mp4',
             path: 'https://www.myconfinedspace.com/wp-content/uploads/2019/04/Kylie-Page-720x1082.jpg',
-            name: 'Một ngày mệt mỏi cùng em'
+            name: 'Quá tuyệt vời với tuyệt kĩ bú ciuu'
         },
         {
             src: 'https://video.fhph1-1.fna.fbcdn.net/v/t66.36240-6/10000000_117343074087362_8851286757269677216_n.mp4?_nc_cat=108&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjI3NDIsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=Hen7fcu_FOMAX-MjIeo&rl=2742&vabr=1828&_nc_ht=scontent-frt3-1.xx&oh=efc839d5753db5f352afc6171ab11b35&oe=61A7ECD2',
             path: 'https://64.media.tumblr.com/c149086722ae69caa836957fdf606e5d/tumblr_ofl77xi5Sk1vn43dho1_1280.jpg',
-            name: 'Địt em phục vụ Melody hãm tiền'
+            name: 'Bé xinh sắn làm tình giỏi'
             
         }
         ,
@@ -375,23 +375,16 @@ const appItemsFilm = {
         {
             src: 'https://fvs.io/redirector?token=bHVSM2piYkdVOFF3aE5PMzdmVE4vcm1SZUNaN0duY0MyYk85SGpOaVBPV2RoWVB3SHZZOWNtenFZd3ZEaENWWnZheG5haTZoalZyZGZrZjhkOHdvam96d0t1SFNzSnkycUJ2a29ENWRaQUpvV090a005aWNoZTJodXJzMVZmSFBaa3llam16d3hKK0paNHM4WEVzTWViS2RyN2xzd25xaVZDaz06RjB1M2dETGI3YVRLM21kS0svd2RnUT092PyK',
             path: 'https://data.ibtimes.sg/en/full/28858/kylie-jenner.jpg?w=736',
-            name: 'Bị Bắt Làm Nô lệ Cho em Chito-se JAV68'
+            name: 'Cái giá cho việc lẳng lơ'
             
         }
         ,
         {
             src: 'https://video.fhph1-2.fna.fbcdn.net/v/t66.36240-6/10000000_618455705957951_125417533242997657_n.mp4?_nc_cat=101&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjE2MzYsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=U1vahTzXiS0AX8uHSgw&rl=1636&vabr=1091&_nc_ht=scontent-bru2-1.xx&oh=88d255042cbcd683fd18c5a98d6f1e74&oe=61A8E266',
             path: 'https://i.pinimg.com/originals/04/56/73/0456737b513a9a80ca0092d2d17a08b2.jpg',
-            name: 'Chiến em shion Ngọt nước non tơ'
+            name: 'Tuyệt kĩ nhấp nhả của Cô nàng vú bự'
             
         }
-        // ,
-        // {
-        //     src: 'https://video.fhph1-2.fna.fbcdn.net/v/t66.36240-6/10000000_618455705957951_125417533242997657_n.mp4?_nc_cat=101&ccb=1-5&_nc_sid=985c63&efg=eyJybHIiOjE2MzYsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJvZXBfaGQifQ%3D%3D&_nc_ohc=U1vahTzXiS0AX8uHSgw&rl=1636&vabr=1091&_nc_ht=scontent-bru2-1.xx&oh=88d255042cbcd683fd18c5a98d6f1e74&oe=61A8E266',
-        //     path: 'https://i.redd.it/gqrt4edj7pz31.jpg',
-        //     name: 'Chiến em shion Ngọt nước non tơ'
-            
-        // }
     ]
 
 };
@@ -462,9 +455,9 @@ function audioPlay () {
     }, 400)
 }
 function videoTitlePlay () {
-        if(videoTitle.style.display === 'block') {
-            videoTitle.play();
-        }
+    if(document.documentElement.clientWidth > 739) {
+        videoTitle.play();
+    }
 }
 btnloseModalFilm.onclick = function () {
     video.pause();
@@ -547,6 +540,13 @@ btnPasss.onclick = function () {
 window.onkeyup = function (e) {
     if(e.which === 13) {
         btnPasss.onclick();
+    }
+    if(e.which === 27) {
+        video.pause();
+        audioPlay();
+        videoTitlePlay();
+        modalPlayFilm.style.display = 'none'
+        document.querySelector('#error-video').style.display = 'none';
     }
 }
 audio.loop = true;
