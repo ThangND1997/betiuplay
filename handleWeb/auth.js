@@ -87,7 +87,7 @@ btnRegisterCounti.onclick = () => {
 }
 // button register
 btnRegisterGo.onclick = () => {
-    if(valueRegisterCode.value !== '1997') {
+    if(valueRegisterCode.value !== '2468') {
         toastError();
         valueRegisterCode.value = '';
         valueRegisterOtp.value = '';
