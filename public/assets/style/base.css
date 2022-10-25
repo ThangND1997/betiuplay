@@ -1,0 +1,40 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    /* user-select: none;
+    -webkit-user-select: none; */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-content-type: none;
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #2b4570;
+    --black-color: #000;
+    --white-color: #fff;
+    --text-primary-color: #a9aaad;
+    --text-color: #333;
+    --sub-text-color: #666;
+}
+
+.grid.wide.version {
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+/* setting Button */
+
+.btn {
+    min-width: 126px;
+    height: 40px;
+    border-radius: 26px;
+    border: none;
+    cursor: pointer;
+}

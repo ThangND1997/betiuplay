@@ -1,0 +1,317 @@
+
+.form-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(16, 16, 16, 0.4);
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form-header_link {
+    margin-left: 80px;
+}
+
+.form-header_img {
+    width: 90px;
+    height: 50px;
+}
+
+.form-container {
+    background-image: url(../img/login-img/background-login.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 8px 0 8px;
+    overflow-y: hidden;
+}
+
+.form-container_heading {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.btn-form-gg {
+    width: 34px;
+    height: 34px;
+    margin-right: -40px;
+}
+
+.btn-form {
+    color: var(--black-color);
+    font-size: 1.3rem;
+    min-width: 320px;
+    padding: 30px 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: 0.6s;
+    font-weight: 500;
+    background-color: var(--white-color);
+}
+
+.btn-form:hover {
+    transform: translateY(-1px);
+    cursor: pointer;
+    filter: brightness(140%);
+}
+
+.btn-form-first {
+    margin-top: 40px;
+}
+
+.form-container_or {
+    padding: 30px 0;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.form-container_or::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    top: 50%;
+    left: 145%;
+}
+.form-container_or::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    top: 50%;
+    right: 145%;
+}
+
+.form-container_note {
+    width:  100%;
+}
+
+.form-container_note-text {
+    color: var(--white-color);
+    margin-top: 30px;
+    font-size: 1rem;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form-footer {
+    position: fixed;
+    display: flex;
+    bottom: 35px;
+    font-weight: 400;
+}
+
+.form-footer_link {
+    color: rgb(169, 170, 173);
+    text-decoration: none;
+}
+
+.form-footer a:not(:last-child) {
+    margin-right: 20px;
+}
+
+.form-footer p {
+    margin-right: 20px;
+}
+
+.form-container_data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes fadeSide {
+    from {
+        transform: translateY(40px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.form-container_data{
+    animation: fadeSide ease 0.3s;
+}
+
+.form-main, .form-phone, .form-phone-password, .form-register-phone,
+ .form-register-phone-end
+{
+    display: none;
+}
+
+.on-form {
+    display: block;
+}
+
+
+.form-data-phone_app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-data-phone_lable {
+    color: #a6a7aa;
+    font-size: 1.1rem;
+    padding-bottom: 16px;
+    margin-top: 40px;
+}
+
+.form-data-phone_input {
+    color: var(--white-color);
+    width: 100%;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 1px solid rgb(169, 170, 173);
+    transition: 0.6s;
+    outline: none;
+}
+
+.form-data-phone_input:focus {
+    color: var(--white-color);
+}
+
+.form-data-phone_input::placeholder {
+    color: #a6a7aa;
+}
+
+.btn-form_data {
+    cursor: pointer;
+    margin-top: 25px;
+    height:56px;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #282828;
+    background-color: rgb(255, 255, 255, 0.6);
+    transition: 0.6s;
+}
+
+.btn-form_data:hover {
+    background-color: rgb(255, 255, 255);
+    color: var(--black-color);
+}
+
+.form-phone-password_note {
+    margin-top: 14px;
+}
+
+.margin-lable {
+    margin-top: 20px;
+}
+
+.form-footer p {
+    display: none;
+}
+
+.form-footer .on-auth {
+    display: block;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.form-footer .on-auth:hover {
+    color: var(--white-color)
+}
+
+.toast {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    min-width: 120px;
+    height:60px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    animation: toastIn ease 0.3s, toastOut ease 0.2s 2s forwards;
+    border: 2px solid red;
+    z-index: 10;
+}
+
+.toastSuccess {
+    border: 2px solid #00bcd4;
+}
+
+.toastAram {
+    border: 2px solid #e5ff00;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 100px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes toastOut {
+    to {
+        opacity: 0.8;
+        transform: translateX(calc(100% + 100px));
+    }
+}
+
+.toast i {
+    margin-right:  16px;
+    background-color: #00bcd4;
+    padding: 8px;
+    color: #000;
+    border-radius: 50%;
+}
+
+.toast i.error {
+    background-color: red;
+    color: #000;
+}
+
+.toast i.aram {
+    background-color: #e5ff00;
+    color: #000;
+}
+
+input:focus ~ .form-footer {
+    display: none;
+}
+
+#music {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.music-img {
+    color: #222;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.6s;
+}
+
+.music-img:hover {
+    color: #999;
+}
+
+.preseul-btn {
+    display: none;
+}
