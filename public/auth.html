@@ -59,7 +59,7 @@
             <div class="form-container_data">
                 <div class="form-data-phone_app">
                     <label class="form-data-phone_lable" for="form-data-phone">Nhập địa chỉ email của bạn</label>
-                    <input type="text" name="" class="form-data-phone_input value-login-phone" placeholder="Nhập địa chỉ email tại đây">
+                    <input type="email" name="" class="form-data-phone_input value-login-phone" placeholder="Nhập địa chỉ email tại đây">
                 </div>
                 <div class="form-container_note">
                     <p class="form-container_note-text">Khi tiếp tục, bạn đã đồng ý <a href="" style="color:rgb(0, 122, 252); text-decoration:none">Quy chế sử dụng dịch vụ</a> của
@@ -91,10 +91,10 @@
         <!-- start form register phone -->
         <div class="form-register-phone">
             <h2 class="form-container_heading">Đăng ký</h2>
-            <div class="form-container_data">
+            <form class="form-container_data form-container-register">
                 <div class="form-data-phone_app">
                     <label class="form-data-phone_lable margin-lable" for="form-data-phone">Nhập địa chỉ email</label>
-                    <input type="text" name="" class="form-data-phone_input value-register-phone" placeholder="Nhập email đăng ký tại đây">
+                    <input type="email" name="" class="form-data-phone_input value-register-phone" placeholder="Nhập email đăng ký tại đây">
                 </div>
                 <div class="form-data-phone_app">
                     <label class="form-data-phone_lable margin-lable" for="form-data-phone">Mật khẩu</label>
@@ -102,14 +102,14 @@
                 </div>
                 <div class="form-data-phone_app">
                     <label class="form-data-phone_lable margin-lable" for="form-data-phone">Nhập lại mật khẩu</label>
-                    <input type="password" name="" class="form-data-phone_input value-register-name" placeholder="Nhập lại mật khẩu của bạn">
+                    <input type="password" name="" class="form-data-phone_input value-register-repass" placeholder="Nhập lại mật khẩu của bạn">
                 </div>
-                <button class="btn btn-form_data js-register-counti">Tiếp tục</button>
-            </div>
+                <button class="btn btn-form_data js-register-counti" type="submit">Tiếp tục</button>
+            </form>
         </div>
         <!-- end form register phone -->
         <!-- start form register end -->
-        <div class="form-register-phone-end">
+        <form class="form-register-phone-end">
             <h2 class="form-container_heading">Đăng ký</h2>
             <div class="form-container_data">
                 <div class="form-data-phone_app">
@@ -120,9 +120,9 @@
                     <label class="form-data-phone_lable margin-lable" for="form-data-phone">Mã OTP</label>
                     <input type="tel" name="" class="form-data-phone_input value-register-code" placeholder="Nhập mã OTP của bạn">
                 </div>
-                <button class="btn btn-form_data js-register-go">Đăng ký</button>
+                <button class="btn btn-form_data js-register-go" type="submit">Đăng ký</button>
             </div>
-        </div>
+        </form>
         <!-- end form register end -->
         <div class="form-footer">
             <p class="form-footer_link js-register on-auth">Đăng ký</p>

@@ -10,6 +10,7 @@ const slidesPrev = $('.slides-prev');
 const slidesNext = $('.slides-next');
 const slideContentTextAll = $$('.slide-content-text');
 
+let dropdownToggle = document.querySelector(".dropdown-toggle")
 let logImg = document.querySelector(".log-img")
 let logName = document.querySelector(".log-name")
 let btnLoginMobile = document.querySelector(".btn-login_link")
@@ -44,11 +45,11 @@ function button () {
 
 start()
 
-logImg.onclick = () => {
-    if (menuDrop.style.display === "flex") {
-        menuDrop.style.display = "none"
-    }else {
+dropdownToggle.onclick = () => {
+    if (menuDrop.style.display === "none" || menuDrop.style.display == "") {
         menuDrop.style.display = "flex"
+    }else {
+        menuDrop.style.display = "none"
     }
 }
 

@@ -14,7 +14,7 @@ const btnFormCounti = document.querySelector('.btn-form_data');
 // get input register phone count
 const valueRegisterPhone = document.querySelector('.value-register-phone')
 const valueRegisterPass = document.querySelector('.value-register-pass')
-const valueRegisterName = document.querySelector('.value-register-name')
+const valueRegisterName = document.querySelector('.value-register-repass')
 const valueRegisterOtp = document.querySelector('.value-register-otp')
 const valueRegisterCode = document.querySelector('.value-register-code')
 // get input login phone count
@@ -25,24 +25,28 @@ const swapPhone = document.querySelector('.js-swap-phone')
 const forgetPass = document.querySelector('.js-forget-password')
 
 // handle when click swap phone or forget password
-swapPhone.onclick = function() {
+swapPhone.onclick = function () {
     btnLoginTer.onclick();
 }
-forgetPass.onclick = function() {
+forgetPass.onclick = function () {
     toastAram();
 }
 
 // button login used phone
 btnLogin.onclick = () => {
     loginMain.classList.remove('on-form');
+    registerPhoneVldate.classList.remove('on-form');
     loginPhone.classList.add('on-form');
-    valueLoginPhone.value = valueRegisterPhone.value;
+    const email = sessionStorage.getItem("email")
+    if (email) {
+        valueLoginPhone.value = email;
+    }
 }
 // button login countinus when import phone
 btnFormCounti.onclick = () => {
-    if(valueLoginPhone.value === '') {
+    if (valueLoginPhone.value === '') {
         toastError();
-    }else{
+    } else {
         loginPhone.classList.remove('on-form');
         loginPhonePass.classList.add('on-form');
     }
@@ -71,26 +75,26 @@ btnLoginTer.onclick = () => {
     btnLoginTer.classList.toggle('on-auth');
 }
 // button register countinus when import infor
-btnRegisterCounti.onclick = () => {
+function registerEmails() {
     valueRegisterCode.value = '';
     valueRegisterOtp.value = '';
-    if(valueRegisterPhone.value === '' || valueRegisterPass.value === '' || valueRegisterName.value === ''){
+    if (valueRegisterPhone.value === '' || valueRegisterPass.value === '' || valueRegisterName.value === '') {
         toastError();
         valueRegisterPhone.value = '';
         valueRegisterPass.value = '';
         valueRegisterName.value = '';
-    }else {
+    } else {
         registerPhone.classList.remove('on-form');
         registerPhoneVldate.classList.add('on-form');
     }
 }
 // button register
-btnRegisterGo.onclick = () => {
-    if(valueRegisterCode.value !== '2468') {
+function registerLatest () {
+    if (valueRegisterCode.value !== '2468') {
         toastError();
         valueRegisterCode.value = '';
         valueRegisterOtp.value = '';
-    }else {
+    } else {
         toastSuccess();
         btnLoginTer.onclick();
         registerPhoneVldate.classList.remove('on-form');
@@ -121,50 +125,50 @@ formLoginGoogle.onclick = function () {
 }
 
 // Handle function toast message
-function toastSuccess () {
+function toastSuccess() {
     const toastMain = document.getElementById('toast');
     const toast = document.createElement('div');
-    if(toastMain) {
+    if (toastMain) {
         toast.classList.add('toast', 'toastSuccess')
         toast.innerHTML = `
             <i class="ti-check"></i>
             <p class="toast-text">Bạn đã đăng kí thành công.</p>
         `;
         toastMain.appendChild(toast);
-        setTimeout(function(){
+        setTimeout(function () {
             toastMain.removeChild(toast);
-        },4000)
+        }, 4000)
     }
 }
 
-function toastError () {
+function toastError() {
     const toastMain = document.getElementById('toast');
     const toast = document.createElement('div');
-    if(toastMain) {
+    if (toastMain) {
         toast.classList.add('toast')
         toast.innerHTML = `
             <i class="ti-lock error"></i>
             <p class="toast-text">Có lỗi xảy ra, vui lòng thử lại.</p>
         `;
         toastMain.appendChild(toast);
-        setTimeout(function(){
+        setTimeout(function () {
             toastMain.removeChild(toast);
-        },4000)
+        }, 4000)
     }
 }
-function toastAram () {
+function toastAram() {
     const toastMain = document.getElementById('toast');
     const toast = document.createElement('div');
-    if(toastMain) {
+    if (toastMain) {
         toast.classList.add('toast', 'toastAram')
         toast.innerHTML = `
             <i class="ti-settings aram"></i>
             <p class="toast-text">Hệ thống đang bảo trì.</p>
         `;
         toastMain.appendChild(toast);
-        setTimeout(function(){
+        setTimeout(function () {
             toastMain.removeChild(toast);
-        },4000)
+        }, 4000)
     }
 }
 //handle music 
@@ -187,21 +191,21 @@ PreseulAudio.onclick = () => {
 }
 audio.loop = true;
 
-function showSound () {
+function showSound() {
     var htmlMusic = `<i class="fas fa-volume-up music-img"></i>`;
     audio.volume = 0.6;
     setTimeout(() => {
         music.innerHTML = htmlMusic;
         const musicImg = document.querySelector('.music-img')
         musicImg.style.animation = 'toastIn ease 1s'
-        musicImg.onclick = function() {
+        musicImg.onclick = function () {
             htmlMusic = `<i class="fas fa-volume-mute music-img"></i>`;
-             music.innerHTML = htmlMusic;
+            music.innerHTML = htmlMusic;
             audio.pause();
             music.style.animation = 'toastOut ease 1s 2s forwards'
-            setTimeout(function(){
+            setTimeout(function () {
                 music.innerHTML = '';
-            },3000)
+            }, 3000)
         }
     }, 1000)
 }
@@ -213,16 +217,7 @@ const loading = document.querySelector('#loading')
 const apiPostUsers = 'https://api-betiu.herokuapp.com/api/v1/login'
 
 const email = sessionStorage.getItem("email")
-if(email) {
-    console.log(email);
-    formEmail.value = email;
-    if(formEmail.value.length > 2) {
-        formPassword.focus();
-    }
-    else {
-        formLogin.focus();
-    }
-}
+
 email ? valueLoginPhone.value = email : valueLoginPhone.value = "";
 
 async function loginNow(email, password) {
@@ -262,7 +257,7 @@ async function loginNow(email, password) {
 let emailValue = "";
 loginPhonePass.addEventListener('submit', e => {
     e.preventDefault()
-    emailValue = valueLoginPhone.value !== "" ?  valueLoginPhone.value : emailValue;
+    emailValue = valueLoginPhone.value !== "" ? valueLoginPhone.value : emailValue;
     const password = valueLoginPass.value
     loginNow(emailValue, password)
     valueLoginPhone.value = "";
@@ -273,18 +268,167 @@ loginPhonePass.addEventListener('submit', e => {
 //     toastAram("Tính năng đang được bảo trì, thông cảm nhé")
 // }
 
-function toastAram (e) {
+function toastAram(e) {
     const toastMain = document.getElementById('toast');
     const toast = document.createElement('div');
-    if(toastMain) {
+    if (toastMain) {
         toast.classList.add('toast')
         toast.innerHTML = `
             <i class="fa fa-solid fa-bug error"></i>
             <p class="toast-text">${e}</p>
         `;
         toastMain.appendChild(toast);
-        setTimeout(function(){
+        setTimeout(function () {
             toastMain.removeChild(toast);
-        },8000)
+        }, 8000)
     }
+}
+
+
+// Register
+
+
+
+const formLogin = document.querySelector('.form-container-register')
+const formEmail = document.querySelector('.value-register-phone')
+const formAvatar = document.querySelector('.form-avatar')
+const formUserName = document.querySelector('.value-register-otp')
+const formPhoneName = document.querySelector('.form-phone-name')
+const formAddress = document.querySelector('.form-address')
+const formPassword = document.querySelector('.value-register-pass')
+const formRestriesPassword = document.querySelector('.value-register-repass')
+
+const alertInput = document.querySelector("#alert input")
+const apiVerifyMail = 'https://api-betiu.herokuapp.com/api/v1/verify/send-mail'
+// const apiPostUsers = 'http://127.0.0.1:3001/api/v1/create'
+// const apiVerifyMail = 'http://127.0.0.1:3001/api/v1/verify/send-mail'
+sessionStorage.clear();
+
+async function verifySendMail(email) {
+    loading.style.display = "flex";
+    axios({
+        method: 'post',
+        url: apiVerifyMail,
+        params: { email: email }
+    })
+        .then((data) => {
+            console.log(data);
+            if (data.status === 200) {
+                toastSuccess(`Chúng tôi đã gửi mã xác nhận tới ${email}, cho chúng tôi biết nhé`);
+                loading.style.display = "none";
+                registerEmails();
+            }
+        })
+        .catch((e) => {
+            // console.log(e.response.data);
+            // const start = e.response.data.search('<pre>')
+            // const end = e.response.data.search('</pre>')
+            // let message = e.response.data.slice(start + 5, end);
+            toastAram("Ôi không, Email đã được đăng kí rồi :D");
+            loading.style.display = "none";
+        })
+}
+formLogin.addEventListener('submit', async e => {
+    e.preventDefault()
+    if (formPassword.value === formRestriesPassword.value) {
+        const data = {
+            email: formEmail.value,
+        }
+        verifySendMail(data.email)
+    } else {
+        toastAram("Mật khẩu không khớp. Kiểm tra lại đi bà nội")
+    }
+})
+
+registerPhoneVldate.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const data = {
+        firstName: covertUserName(formUserName.value)[0],
+        lastName: covertUserName(formUserName.value)[1],
+        email: formEmail.value,
+        password: formPassword.value,
+        phone: "",
+        genMailCode: valueRegisterCode.value
+    }
+    register(data)
+    formUserName.value = "";
+    valueRegisterCode.value = "";
+})
+
+
+
+function toastAram(e) {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if (toastMain) {
+        toast.classList.add('toast')
+        toast.innerHTML = `
+            <i class="fa fa-solid fa-bug error"></i>
+            <p class="toast-text">${e}</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function () {
+            toastMain.removeChild(toast);
+        }, 8000)
+    }
+}
+
+function toastSuccess(e) {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if (toastMain) {
+        toast.classList.add('toast', 'toastSuccess')
+        toast.innerHTML = `
+            <i class="ti-check"></i>
+            <p class="toast-text">${e}</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function () {
+            toastMain.removeChild(toast);
+        }, 8000)
+    }
+}
+
+function covertUserName(str) {
+    const array = [];
+    const strNew = str.split(' ');
+    const latestItem = strNew.pop()
+    array.push(strNew.join(' '))
+    array.push(latestItem)
+    return array;
+}
+var apiCreateuser = "https://api-betiu.herokuapp.com/api/v1/create"
+function register(body) {
+    loading.style.display = "flex";
+    axios({
+        method: 'POST',
+        url: apiCreateuser,
+        data: body
+    })
+        .then((data) => {
+            if (data.status === 200 && data.data.message === "created success") {
+                toastSuccess("Bạn đã đang kí thành công. Đăng nhập và trải nghiệm nào");
+                setTimeout(() => {
+                    loading.style.display = "none";
+                    btnLogin.onclick();
+                    sessionStorage.setItem("email", body.email)
+
+                }, 1000)
+            }
+        })
+        .catch((e) => {
+            // const start = e.response.data.search('<pre>')
+            // const end = e.response.data.search('</pre>')
+            // let message = e.response.data.slice(start + 5, end);
+            // console.log(e.response.data);
+            toastAram("Đã có lỗi xảy ra, vui lòng thử lại nhé");
+            loading.style.display = "none";
+            formUserName.value = "";
+            formAddress.value = "";
+            formEmail.value = "";
+            formPassword.value = "";
+            formAvatar.value = "";
+            alertInput.value = "";
+            formPhoneName.value = "";
+        })
 }
