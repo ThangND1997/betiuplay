@@ -13,6 +13,7 @@
     <title>BeTiu Play - Phim Hay, Xem Ngay !! </title>
     <link rel="shortcut icon" href="https://assets.glxplay.io/web/images/fav_icon.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <link rel="stylesheet" href="./assets/style/grid.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/style.css">
@@ -42,6 +43,36 @@
 
 
 <body>
+    <div id="loading">
+        <img class="loading-img" src="https://jchen23-stf.github.io/img/loading.gif" alt="">
+    </div>
+    <div id="edit-modal">
+        <form class="edit-modal-profile">
+            <div class="profile-editer profile-avatar">
+                <p class="profile-editer-title profile-avatar-title">Avatar</p>
+                <label for="upload-avatar" class="profile-editer-content profile-avatar-content">
+                    <img class="profile-avatar-img" src="https://tpmobile.vn/wp-content/uploads/2020/09/esk1U.jpg" alt="">
+                    <div class="profile-avatar-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                </label>
+				<input type="file" id="upload-avatar" style="display: none;">
+            </div>
+            <div class="profile-editer profile-name">
+                <label for="exampleFormControlInput1" class="form-label profile-editer-title profile-name-title">Name</label>
+                <input type="text" class="form-control profile-editer-content marg profile-name-content" id="exampleFormControlInput1" placeholder="Thang Nguyen Example">
+            </div>
+            <div class="profile-editer profile-phone">
+                <label for="exampleFormControlInput1" class="form-label profile-editer-title profile-phone-title">Phone</label>
+                <input type="tel" class="form-control profile-editer-content marg profile-phone-content" id="exampleFormControlInput1" placeholder="+84 364XX XXXX">
+            </div>
+            <div class="profile-controls">
+                <button type="button" class="btn btn-light edit-profile-btn edit-profile-btn-close">Cancel</button>
+                <!-- disabled -->
+                <button type="submit" class="btn btn-primary edit-profile-btn edit-profile-btn-save">Save</button> 
+            </div>
+        </form>
+    </div>
     <!-- move top page -->
     <a href="#">
         <i class="ti-arrow-circle-up arrow-mobile-first-page hidden-on-tablet hidden-on-pc"></i>
@@ -96,7 +127,7 @@
                     <img class="log-img tn btn-secondary dropdown-toggle" src="">
                     <div class="log-modal"></div>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item drop-top-100-list" href="#">Edit Profile</a></li>
+                        <li><a class="dropdown-item drop-top-100-list edit-profile" href="#">Edit Profile</a></li>
                         <li class="log-out"><a class="dropdown-item">Log Out</a></li>
                     </ul>
                 </div>
@@ -307,12 +338,13 @@
             <div class="storage-wrap grid wide version content-end">
                 <div class="storage-item_header storage-item_header-content">
                     <h2>Nội dung dành riêng cho thành viên BeTiuPlay</h2> 
-                    <button class="next-list">Update New Film</button>
-                    <input class="input-list" type="text">
+                    <input class="input-list" type="text" placeholder="Nhập chính xác tên phim">
                     <button class="search-list">Search</button>
                 </div>
                 <div class="zero-end row"></div>
             </div>
+            <button class="next-list">Update New Film</button>
+
             <!-- Noi dung hay -->
             <!-- <div class="storage-wrap grid wide version content-end">
                 <div class="storage-item_header storage-item_header-content">

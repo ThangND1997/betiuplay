@@ -210,21 +210,40 @@ video {
 }
 
 .next-list {
-    padding: 6px;
-    background-color: #08b1c8;
-    color: rgb(233, 238, 241);
+    padding: 8px;
+    background-color: #cc9112;
+    color: #3e392d;
     cursor: pointer;
+    border-radius: 6px;
+    transition: 0.6s;
+    width: 40%;
+    align-self: center;
+    margin-top: 12px;
+}
+
+.next-list:hover {
+    background-color: #dc4a0c;
+    color: #eee1c4;
 }
 
 .input-list {
-    padding: 6px 8px 6px 8px;
+    padding: 8px 12px 8px 12px;
+    border-radius: 8px;
+    margin: 8px 0;
 }
 
 .search-list {
-    padding: 6px;
-    background-color: #0a636f;
+    padding: 8px;
+    background-color: #cc9112;
     color: #fff;
     cursor: pointer;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.storage-body {
+    display: flex;
+    flex-direction: column;
 }
 
 .description-item-film {
@@ -245,18 +264,21 @@ video {
 @media (max-width: 739px) {
 
     .slide.slide-first {
-        background-image: url("../img/logo/536124afaa0d6d53341c.jpeg");
+        background-image: url("https://wallpapercave.com/wp/wp4374108.jpg");
+        background-position: cover;
         transition: 0.6s;
+        z-index: 1;
+        /* object-fit: cover; */
     }
 
-    .slide-content.slide-content-first {
+    /* .slide-content.slide-content-first {
     background-image: url('https://us.simplerousercontent.net/uploads/theme_file_versions/71083/logo.png');
     transition: 0.6s;
     z-index: 1;
-    }
+    } */
 
     .slide-content {
-        display: block;
+        display: none;
         top: 63%;
         transform: translateX(-50%);
     }
@@ -307,6 +329,10 @@ video {
         margin-bottom: 7px;
         margin-top: 14px;
         cursor: pointer;
+    }
+
+    .menu-mobile_logo {
+        transform: unset;
     }
 }
 
@@ -399,3 +425,138 @@ video {
     height: 46px;
     object-fit: cover;
 }
+
+
+/* Css edit profile */
+#loading, #edit-modal {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 9999;
+    display: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #loading {
+    z-index: 99999;
+  }
+  
+  .loading-img {
+    width: 80px;
+    margin: auto;
+  }
+  @media (max-width: 786px) {
+    .edit-modal-profile {
+      width: 90% !important;
+    }
+  }
+  
+  .edit-modal-profile {
+    background-color: #e6e5f3;
+    width: 50%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    animation: modalIn ease 0.3s, modalOut ease 0.2s 3s forwards;
+  }
+  
+  .profile-avatar {
+    width: 100%;
+    height: 150%;
+  }
+  
+  .profile-name {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile-name-content, .profile-phone-content {
+    width: 68%;
+  }
+  
+  .profile-phone {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile-controls {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .edit-profile-btn {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 7px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  .profile-editer {
+    display: flex;
+    position: relative;
+  }
+
+  .edit-profile-btn-save {
+    background-color: #00bcd4;
+    color: white;
+  }
+  
+  .profile-editer-content {
+    margin: auto;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border-color: #cbd7e5;
+  }
+  
+  .profile-avatar-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  .profile-avatar-icon {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  .profile-avatar-content {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-editer-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    font-style: oblique;
+    font-weight: bold;
+  }
+  
+  .marg {
+    margin-top: 63px;
+  }
+  
+  .edit-profile {
+    cursor: pointer;
+  }
+  

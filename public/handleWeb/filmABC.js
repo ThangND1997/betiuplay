@@ -32,6 +32,9 @@ function start () {
     .then(res => res.json())
     .then(result => {
         logImg.src = result.avatar;
+        imgUploadAvatar.src = result.avatar;
+        profileNameContent.value = `${result.firstName} ${result.lastName}`;
+        profilePhoneContent.value = result.phone || "";
         logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
     })
 }
@@ -633,6 +636,22 @@ function toastAram (e) {
     }
 }
 
+function toastSuccess(e) {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if (toastMain) {
+        toast.classList.add('toast', 'toastSuccess')
+        toast.innerHTML = `
+            <i class="ti-check"></i>
+            <p class="toast-text">${e}</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function () {
+            toastMain.removeChild(toast);
+        }, 8000)
+    }
+}
+
 
 
 const filmSelect = document.querySelectorAll('.film-select');
@@ -734,3 +753,93 @@ searchList.onclick = () => {
     }
     inputListSearch.value = "";
 }
+
+// edit profile
+const loading = document.querySelector('#loading')
+const modalProfile = document.querySelector('#edit-modal');
+const loadingImg = document.querySelector('.loading-img')
+
+const btnSaveProfile = document.querySelector('.edit-profile-btn-save');
+const modalEditProfile = document.querySelector('.edit-modal-profile');
+var btnEditProfile = document.querySelector('.edit-profile');
+var btnCloseProfile = document.querySelector('.edit-profile-btn-close');
+var fileUploadAvatar = document.querySelector("#upload-avatar")
+var imgUploadAvatar = document.querySelector(".profile-avatar-img")
+var profileNameContent = document.querySelector('.profile-name-content');
+var profilePhoneContent = document.querySelector('.profile-phone-content');
+var editAvatarLink;
+
+btnEditProfile.onclick = () => {
+    modalProfile.style.display = 'flex'
+    modalEditProfile.style.transform = 'translateY(0)';
+    modalEditProfile.style.transition = '4s';
+    menuDrop.style.display = "none"
+}
+
+btnCloseProfile.onclick = () => {
+    modalProfile.style.display = 'none'
+}
+
+fileUploadAvatar.addEventListener("change", ev => {
+    loading.style.display = "flex"
+    const formdata = new FormData()
+    formdata.append("image", ev.target.files[0])
+    fetch("https://api.imgur.com/3/image/", {
+        method: "post",
+        headers: {
+            Authorization: "Client-ID eb9173f09f940b0"
+        },
+        body: formdata
+    }).then(data => data.json()).then(result => {
+        loading.style.display = "none"
+        imgUploadAvatar.src = result.data.link;
+        editAvatarLink = result.data.link;
+        toastSuccess("Upload success")
+    })
+    .catch((er) => {
+        loading.style.display = "none"
+        toastAram("Faild Upload")
+    })
+})
+
+function covertUserName(str) {
+    const array = [];
+    const strNew = str.split(' ');
+    const latestItem = strNew.pop()
+    array.push(strNew.join(' '))
+    array.push(latestItem)
+    return array;
+}
+
+modalEditProfile.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loading.style.display = "flex"
+    const userId = sessionStorage.getItem("id");
+    const data = {
+        firstName: covertUserName(profileNameContent.value)[0],
+        lastName: covertUserName(profileNameContent.value)[1],
+        phone: profilePhoneContent.value
+    }
+    if(editAvatarLink != null && editAvatarLink !== "") {
+        data.avatar = editAvatarLink;
+    }
+    fetch(`https://api-betiu.herokuapp.com/api/v1/update/${userId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(result => {
+        console.log(result);
+        toastSuccess("Update Success")
+        setTimeout(() => {
+            location.reload()
+        }, 1000)
+    })
+    .catch(e => {
+        toastAram("Update profile faild. Please try again")
+        loading.style.display = "none"
+    })
+})
