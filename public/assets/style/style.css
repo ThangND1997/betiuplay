@@ -322,12 +322,12 @@ header {
 
 /* start Body Content CSS */
 
-.containers {
+.container {
     background-color: var(--black-color);
     position: relative;
 }
 
-.containers::after {
+.container::after {
     position: absolute;
     content: "";
     width: 100%;

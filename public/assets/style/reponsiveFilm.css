@@ -145,7 +145,7 @@
         color: white;
     }
 
-    .containers::after {
+    .container::after {
         display: none;
     }
 

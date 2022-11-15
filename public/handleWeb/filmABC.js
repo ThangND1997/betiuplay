@@ -15,6 +15,8 @@ let logImg = document.querySelector(".log-img")
 let logName = document.querySelector(".log-name")
 let btnLoginMobile = document.querySelector(".btn-login_link")
 let menuDrop = document.querySelector(".dropdown-menu")
+const loading = document.querySelector('#loading')
+
 function start () {
     const isSuccess = sessionStorage.getItem("token");
     const userId = sessionStorage.getItem("id");
@@ -444,6 +446,7 @@ function renderContentFilmEnd(name) {
     const urlRenPage = `https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=${numPage}`;
     const urlSearchPage = `https://ophim1.com/phim/${name}`;
     if (!name) {
+        loading.style.display = "flex"
         fetch(urlRenPage)
         .then(res => res.json())
         .then(result => {
@@ -456,6 +459,8 @@ function renderContentFilmEnd(name) {
                 </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
+            loading.style.display = "none"
+            window.scrollTo(0, 650);
         })
     }else {
         fetch(urlSearchPage)
@@ -755,12 +760,11 @@ searchList.onclick = () => {
 }
 
 // edit profile
-const loading = document.querySelector('#loading')
-const modalProfile = document.querySelector('#edit-modal');
-const loadingImg = document.querySelector('.loading-img')
+var modalProfile = document.querySelector('#edit-modal');
+var loadingImg = document.querySelector('.loading-img')
 
-const btnSaveProfile = document.querySelector('.edit-profile-btn-save');
-const modalEditProfile = document.querySelector('.edit-modal-profile');
+var btnSaveProfile = document.querySelector('.edit-profile-btn-save');
+var modalEditProfile = document.querySelector('.edit-modal-profile');
 var btnEditProfile = document.querySelector('.edit-profile');
 var btnCloseProfile = document.querySelector('.edit-profile-btn-close');
 var fileUploadAvatar = document.querySelector("#upload-avatar")

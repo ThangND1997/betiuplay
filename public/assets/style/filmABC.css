@@ -131,7 +131,7 @@
     display: none;
 }
 
-.containers::after {
+.container::after {
     background-image: linear-gradient(180deg,transparent,#111111 80%);
 }
 
@@ -291,7 +291,7 @@ video {
         height: 75vh;
     }
 
-    .containers::after {
+    .container::after {
         display: block;
         background-image: linear-gradient(180deg,transparent,#000 80%);
     }
