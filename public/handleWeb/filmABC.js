@@ -9,6 +9,49 @@ const slideContentApp = $('.slide-content-app')
 const slidesPrev = $('.slides-prev');
 const slidesNext = $('.slides-next');
 const slideContentTextAll = $$('.slide-content-text');
+
+let logImg = document.querySelector(".log-img")
+let logName = document.querySelector(".log-name")
+let btnLoginMobile = document.querySelector(".btn-login_link")
+let menuDrop = document.querySelector(".dropdown-menu")
+function start () {
+    const isSuccess = sessionStorage.getItem("token");
+    const userId = sessionStorage.getItem("id");
+    if(isSuccess === "undefined" || isSuccess == null) {
+        window.location.href = './auth.html'
+    }
+    var obj = {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${isSuccess}`
+        }
+      }
+    fetch(`https://api-betiu.herokuapp.com/api/v1/read/${userId}`, obj)
+    .then(res => res.json())
+    .then(result => {
+        logImg.src = result.avatar;
+        logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
+    })
+}
+
+const doc = document.querySelector('.log-out')
+doc.addEventListener('click', button)
+function button () {
+    sessionStorage.clear()
+    start()
+}
+
+start()
+
+logImg.onclick = () => {
+    if (menuDrop.style.display === "flex") {
+        menuDrop.style.display = "none"
+    }else {
+        menuDrop.style.display = "flex"
+    }
+}
+
 // handle when onclick dot slide
 // slideNodes[0].onclick = () => {
 //     //Reset interval with indexSlideCurrent
@@ -401,7 +444,10 @@ function renderContentFilmEnd(name) {
         .then(res => res.json())
         .then(result => {
             const htmls = result.items.map(function(item, index) {
-                return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                return `<div class="col l-2-4 m-3 c-6 storage-content stoge-content-over" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                <div class="description-item-film">
+                    ${item.name}
+                </div>
                 <img src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                 </div>`;
             })
@@ -411,31 +457,35 @@ function renderContentFilmEnd(name) {
         fetch(urlSearchPage)
         .then(res => res.json())
         .then(result => {
+            console.log(result);
             if(result && result.status !== false) {
-                    const htmls = `<div class="col l-2-4 m-3 c-6 storage-content" data-index="0" onclick=zeroClick("${result.movie.slug}")>
+                    const htmls = `<div class="col l-2-4 m-3 c-6 storage-content stoge-content-over" data-index="0" onclick=zeroClick("${result.movie.slug}")>
+                    <div class="description-item-film">
+                    ${result.movie.name}
+                    </div>
                     <img src="${result.movie.poster_url != "" ? result.movie.poster_url : result.movie.thumb_url}" alt="">
                     </div>`;
                 zeroEnd.innerHTML = htmls;
+                console.log(htmls);
             }else {
                 toastAram("Film Not Found. Please confirm correct name film...thanks^^")
             }
         })
     }
 }
-function renderContentFilmUsUk() {
-    var htmls = appItemsFilm.filmUsUk.map(function(filmUsUk, index) {
-        return `<div class="col l-2-4 m-3 c-6 storage-content no-hidden-pc" data-index="${index}">
-        <img src="${filmUsUk.path}" alt="">
-        </div>`;
-    })
-    usUkEnd.innerHTML = htmls.join('');
-}
+// function renderContentFilmUsUk() {
+//     var htmls = appItemsFilm.filmUsUk.map(function(filmUsUk, index) {
+//         return `<div class="col l-2-4 m-3 c-6 storage-content no-hidden-pc" data-index="${index}">
+//         <img src="${filmUsUk.path}" alt="">
+//         </div>`;
+//     })
+//     usUkEnd.innerHTML = htmls.join('');
+// }
 renderContentFilmEnd();
-renderContentFilmUsUk();
+// renderContentFilmUsUk();
 const stoItems = document.querySelectorAll('.storage-item');
 const stoImg = document.querySelector('.storage-item > img');
 const stoOverlay = document.querySelectorAll('.storage-item-overlay');
-var hls = new Hls();
 // handle click on poster film
 var currentFilm;
 var listNumFilm = document.querySelector('.list-film-num');
@@ -468,12 +518,18 @@ function numbClick(index) {
     if (index === 'full') {
         index = 0;
     }
-    video.pause();
-    hls.loadSource("");
-    hls.loadSource(dataResource.episodes[0].server_data[index].link_m3u8);
-    hls.attachMedia(video);
-    video.play();
-    videoTitle.muted = true;
+    const hls1 = new Hls();
+    if (Hls.isSupported()) {
+        hls1.loadSource(dataResource.episodes[0].server_data[index].link_m3u8);
+        hls1.attachMedia(video);
+        hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+            video.play();
+        });
+    } else {
+        video.src = dataResource.episodes[0].server_data[index].link_m3u8;
+        video.play();
+    }
+    // videoTitle.muted = true;
 }
 
 var dataResource;
@@ -484,13 +540,19 @@ function zeroClick(slug) {
         .then(result => {
             dataResource = result;
             renderNumFilm(result.episodes[0].server_data);
-            const dataSrc = (result.episodes[0].server_data[0].link_m3u8);
-            storageDesHearder.textContent = slug;
+            storageDesHearder.textContent = result.movie.name;
             modalPlayFilm.style.display = 'flex'
-            hls.loadSource(dataSrc);
-            hls.attachMedia(video);
+            const hls1 = new Hls();
+    if (Hls.isSupported()) {
+        hls1.loadSource(dataResource.episodes[0].server_data[0].link_m3u8);
+        hls1.attachMedia(video);
+        hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
             video.play();
-            videoTitle.muted = true;
+        });
+    } else {
+        video.src = dataResource.episodes[0].server_data[0].link_m3u8;
+        video.play();
+    }
         })
     // if(filmNode) {
     //     currentFilm = Number(filmNode.dataset.index);
@@ -501,19 +563,20 @@ function zeroClick(slug) {
     //     videoTitle.pause();
     // }
 }
-usUkEnd.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-content');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.filmUsUk[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.filmUsUk[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        audio.pause();
-        videoTitle.pause();
-    }
-}
+//  -------remove usuk video----------
+// usUkEnd.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-content');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if(filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.filmUsUk[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.filmUsUk[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         audio.pause();
+//         videoTitle.pause();
+//     }
+// }
 video.onerror = ()=> {
     document.querySelector('#error-video').style.display = 'flex';
 }
@@ -527,14 +590,14 @@ const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
 // }
 function videoTitlePlay () {
     if(document.documentElement.clientWidth > 739) {
-        videoTitle.play();
+        // videoTitle.play();
     }
 }
 btnloseModalFilm.onclick = function () {
     video.pause();
     // audioPlay();
-    videoTitlePlay();
-    videoTitle.muted = false;
+    // videoTitlePlay();
+    // videoTitle.muted = false;
     modalPlayFilm.style.display = 'none'
     document.querySelector('#error-video').style.display = 'none';
 }
@@ -542,7 +605,7 @@ overlayModalFilm.onclick = function () {
     video.pause();
     // audioPlay();
     videoTitlePlay();
-    videoTitle.muted = false;
+    // videoTitle.muted = false;
     modalPlayFilm.style.display = 'none'
     document.querySelector('#error-video').style.display = 'none';
 }
@@ -597,33 +660,33 @@ const navPassInput = $('.pass-input input')
 const btnPasss = $('.btn-pass')
 const passsOverlay = $('.pass-overlay')
 const audio = $('audio')
-btnPasss.onclick = function () {
-    if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
-        videoTitlePlay();
-        $('.pass-input').style.transform = 'translateY(60%)';
-        setTimeout(function(){
-            navPass.style.transform = 'translateY(-100%)';
-        }, 1000)
-        // audio.play();
-    }else {
-        setTimeout(function(){
-            alert('Sai rồi! Hãy thử lại')
-            navPassInput.value = '';
-        }, 500)
-    }
-}
-window.onkeyup = function (e) {
-    if(e.which === 13) {
-        btnPasss.onclick();
-    }
-    if(e.which === 27) {
-        video.pause();
-        // audioPlay();
-        videoTitlePlay();
-        modalPlayFilm.style.display = 'none'
-        document.querySelector('#error-video').style.display = 'none';
-    }
-}
+// btnPasss.onclick = function () {
+//     if(navPassInput.value === 'thangdeptrai' || navPassInput.value === '0') {
+//         videoTitlePlay();
+//         $('.pass-input').style.transform = 'translateY(60%)';
+//         setTimeout(function(){
+//             navPass.style.transform = 'translateY(-100%)';
+//         }, 1000)
+//         // audio.play();
+//     }else {
+//         setTimeout(function(){
+//             alert('Sai rồi! Hãy thử lại')
+//             navPassInput.value = '';
+//         }, 500)
+//     }
+// }
+// window.onkeyup = function (e) {
+//     if(e.which === 13) {
+//         btnPasss.onclick();
+//     }
+//     if(e.which === 27) {
+//         video.pause();
+//         // audioPlay();
+//         videoTitlePlay();
+//         modalPlayFilm.style.display = 'none'
+//         document.querySelector('#error-video').style.display = 'none';
+//     }
+// }
 var numPage = 1;
 const nextListBtn = document.querySelector('.next-list');
 nextListBtn.onclick = () => {
@@ -632,9 +695,9 @@ nextListBtn.onclick = () => {
 }
 
 // audio.loop = true;
-videoTitle.loop = true;
+// videoTitle.loop = true;
 // videoTitle.muted = true;
-videoTitle.controls = false;
+// videoTitle.controls = false;
 // audio.volume = 0.4;
 
 
@@ -650,8 +713,15 @@ inputListSearch.onchange = (e) => {
 }
 
 function formatCheckName(keyName) {
+    keyName = removeAccents(keyName);
     const keySplit = keyName.trim().toLowerCase().split(" ");
     return keySplit.join("-");
+}
+
+function removeAccents(keyname) {
+    return keyname.normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/đ/g, 'd').replace(/Đ/g, 'D');
 }
 
 

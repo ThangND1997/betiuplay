@@ -29,6 +29,9 @@
             <img src="./assets/img/logo/BeTiu-Logo-Vip.png" alt="" class="nav-logo menu-mobile_logo form-header_img">
         </a>
     </div>
+    <div id="loading">
+        <img class="loading-img" src="https://jchen23-stf.github.io/img/loading.gif" alt="">
+    </div>
     <div class="form-container">
         <!-- start form data main -->
         <div class="form-main on-form">
@@ -40,7 +43,7 @@
                 </button>
                 <span class="form-container_or">Hoặc</span>
                 <button class="btn btn-form btn-form-phone">
-                    Dùng số điện thoại của bạn
+                    Dùng email của bạn
                 </button>
                 <div class="form-container_note">
                     <p class="form-container_note-text">Khi tiếp tục, bạn đã đồng ý <a href="" style="color:rgb(0, 122, 252); text-decoration:none">Quy chế sử dụng dịch vụ</a> của
@@ -55,8 +58,8 @@
             <h2 class="form-container_heading">Đăng Nhập</h2>
             <div class="form-container_data">
                 <div class="form-data-phone_app">
-                    <label class="form-data-phone_lable" for="form-data-phone">Nhập số điện thoại</label>
-                    <input type="tel" name="" class="form-data-phone_input value-login-phone" placeholder="Số điện thoại">
+                    <label class="form-data-phone_lable" for="form-data-phone">Nhập địa chỉ email của bạn</label>
+                    <input type="text" name="" class="form-data-phone_input value-login-phone" placeholder="Nhập địa chỉ email tại đây">
                 </div>
                 <div class="form-container_note">
                     <p class="form-container_note-text">Khi tiếp tục, bạn đã đồng ý <a href="" style="color:rgb(0, 122, 252); text-decoration:none">Quy chế sử dụng dịch vụ</a> của
@@ -68,7 +71,7 @@
         </div>
         <!-- end form login phone -->
         <!-- start form login phone password -->
-        <div class="form-phone-password">
+        <form class="form-phone-password">
             <h2 class="form-container_heading">Chào mừng bạn trở lại với <br>BeTiu Play</h2>
             <div class="form-container_data">
                 <div class="form-data-phone_app">
@@ -76,22 +79,22 @@
                     <input type="password" name="" class="form-data-phone_input value-login-pass" placeholder="Nhập mật khẩu của bạn">
                 </div>
                 <a style="width: 100%;">
-                    <button class="btn btn-form_data js-login-go">Đăng Nhập</button>
+                    <button class="btn btn-form_data js-login-go" type="submit">Đăng Nhập</button>
                 </a>
                 <div class="form-container_note">
-                    <p class="form-container_note-text js-swap-phone">Đổi số điện thoại</p>
+                    <p class="form-container_note-text js-swap-phone">Đổi email đây nè</p>
                     <p class="form-container_note-text form-phone-password_note js-forget-password">Quên mật khẩu</p>
                 </div>
             </div>
-        </div>
+        </form>
         <!-- end form login phone password -->
         <!-- start form register phone -->
         <div class="form-register-phone">
             <h2 class="form-container_heading">Đăng ký</h2>
             <div class="form-container_data">
                 <div class="form-data-phone_app">
-                    <label class="form-data-phone_lable margin-lable" for="form-data-phone">Nhập số điện thoại</label>
-                    <input type="tel" name="" class="form-data-phone_input value-register-phone" placeholder="Nhập số điện thoại đăng ký">
+                    <label class="form-data-phone_lable margin-lable" for="form-data-phone">Nhập địa chỉ email</label>
+                    <input type="text" name="" class="form-data-phone_input value-register-phone" placeholder="Nhập email đăng ký tại đây">
                 </div>
                 <div class="form-data-phone_app">
                     <label class="form-data-phone_lable margin-lable" for="form-data-phone">Mật khẩu</label>
@@ -133,6 +136,7 @@
     <button class="preseul-btn"></button>
     <div id="music">
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src='./handleWeb/auth.js'></script>
 </body>
 </html>

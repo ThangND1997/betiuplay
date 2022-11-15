@@ -40,8 +40,7 @@ btnLogin.onclick = () => {
 }
 // button login countinus when import phone
 btnFormCounti.onclick = () => {
-    const isNaN = Number(valueLoginPhone.value) - 0;
-    if(valueLoginPhone.value === '' || !isNaN) {
+    if(valueLoginPhone.value === '') {
         toastError();
     }else{
         loginPhone.classList.remove('on-form');
@@ -101,22 +100,22 @@ btnRegisterGo.onclick = () => {
 // handle button login
 const login = document.querySelector('.form-phone-password a')
 const formLoginGoogle = document.querySelector('.btn-form-first')
-btnLoginGo.onclick = () => {
-    if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '1' && valueLoginPass.value === '1') {
-        login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
-    }else if(valueLoginPass.value === ''){
-        setTimeout(() =>{
-            alert('Bạn chưa nhập mật khẩu...')
-        },1000)
-    }else{
-        setTimeout(() => {
-        alert('Số điện thoại hoặc mật khẩu không đúng !')
-        valueLoginPass.value = '';
-        loginMain.classList.add('on-form');
-        loginPhonePass.classList.remove('on-form');
-        }, 1000)
-        }
-    }
+// btnLoginGo.onclick = () => {
+//     if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '1' && valueLoginPass.value === '1') {
+//         login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
+//     }else if(valueLoginPass.value === ''){
+//         setTimeout(() =>{
+//             alert('Bạn chưa nhập mật khẩu...')
+//         },1000)
+//     }else{
+//         setTimeout(() => {
+//         alert('Số điện thoại hoặc mật khẩu không đúng !')
+//         valueLoginPass.value = '';
+//         loginMain.classList.add('on-form');
+//         loginPhonePass.classList.remove('on-form');
+//         }, 1000)
+//         }
+//     }
 formLoginGoogle.onclick = function () {
     toastAram();
 }
@@ -205,4 +204,87 @@ function showSound () {
             },3000)
         }
     }, 1000)
+}
+
+
+
+
+const loading = document.querySelector('#loading')
+const apiPostUsers = 'https://api-betiu.herokuapp.com/api/v1/login'
+
+const email = sessionStorage.getItem("email")
+if(email) {
+    console.log(email);
+    formEmail.value = email;
+    if(formEmail.value.length > 2) {
+        formPassword.focus();
+    }
+    else {
+        formLogin.focus();
+    }
+}
+email ? valueLoginPhone.value = email : valueLoginPhone.value = "";
+
+async function loginNow(email, password) {
+
+    loading.style.display = "flex";
+    axios({
+        method: 'post',
+        url: apiPostUsers,
+        data: {
+            email,
+            password
+        }
+    })
+        .then(data => {
+            let token = data.data.token;
+            let id = data.data.id;
+            sessionStorage.setItem("token", token)
+            sessionStorage.setItem("id", id)
+        })
+        .then(() => {
+            let token = sessionStorage.getItem("token");
+            if (token != "undefined") {
+                window.location.href = './filmABC.html'
+                console.log(123);
+            }
+        })
+        .catch((e) => {
+            const textError = "Ôi không ! Email hoặc mật khẩu không chính xác. Thử lại nhé"
+            // console.log(e);
+            // const start = e.response.data.search('<pre>')
+            // const end = e.response.data.search('</pre>')
+            // let message = e.response.data.slice(start + 5, end);
+            toastAram(textError);
+            loading.style.display = "none";
+        })
+}
+let emailValue = "";
+loginPhonePass.addEventListener('submit', e => {
+    e.preventDefault()
+    emailValue = valueLoginPhone.value !== "" ?  valueLoginPhone.value : emailValue;
+    const password = valueLoginPass.value
+    loginNow(emailValue, password)
+    valueLoginPhone.value = "";
+    valueLoginPass.value = "";
+})
+
+// tx2.onclick = () => {
+//     toastAram("Tính năng đang được bảo trì, thông cảm nhé")
+// }
+
+function toastAram (e) {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if(toastMain) {
+        toast.classList.add('toast')
+        toast.innerHTML = `
+            <i class="fa fa-solid fa-bug error"></i>
+            <p class="toast-text">${e}</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function(){
+            toastMain.removeChild(toast);
+        },8000)
+    }
 }

@@ -12,6 +12,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <title>BeTiu Play - Phim Hay, Xem Ngay !! </title>
     <link rel="shortcut icon" href="https://assets.glxplay.io/web/images/fav_icon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="./assets/style/grid.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/style.css">
@@ -55,9 +56,7 @@
                 <a href="./index.html">
                     <img src="./assets/img/logo/BeTiu-Logo-Vip.png" alt="" class="nav-logo menu-mobile_logo">
                 </a>
-                <a class="btn-login_link" href="./auth.html">
-                    <p class="menu-mobile_login">Đăng Nhập</p>
-                </a>
+                <div></div>
             </div>
             <!-- end menu-mobile -->
             <div class="header_navigation">
@@ -69,9 +68,12 @@
                         <a href="./index.html" class="nav-item_link">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./storage.html" class="nav-item_link">Kho Phim</a>
+                        <a href="#" class="nav-item_link nav-item-active js-nav-filmABC">Phim Bom Tấn</a>
                     </li>
                     <li class="nav-item">
+                        <a href="./storage.html" class="nav-item_link">Kho Phim</a>
+                    </li>
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-item_link js-update-before">Phim Điện Ảnh</a>
                     </li>
                     <li class="nav-item">
@@ -79,10 +81,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-item_link js-update-before">Phim Thuê</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-item_link nav-item-active js-nav-filmABC">Phim 19+</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="#" class="nav-item_link js-update-before">Khuyến Mãi</a>
                     </li>
@@ -91,9 +90,18 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn-login_link" href="./auth.html">
-                <button class="btn btn-login">Đăng Nhập</button>
-            </a>
+            <div class="btn-login_link btn-login_link_pc">
+                <div class="account dropdown">
+                    <p class="log-name">Error</p>
+                    <img class="log-img tn btn-secondary dropdown-toggle" src="" alt="" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    <div class="log-modal"></div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item drop-top-100-list" href="#">Edit Profile</a></li>
+                        <li><a class="dropdown-item log-out">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
     <!-- end header -->
@@ -102,8 +110,8 @@
     <div class="slideshow">
         <div class="slides">
             <div class="slide slide-first">
-                <video src="./assets/filmABBC/l1.mp4" id="video-title">
-                </video>
+                <!-- <video src="./assets/filmABBC/l1.mp4" id="video-title">
+                </video> -->
             </div>
             <div class="slide-content slide-content-first"></div>
             <!-- <div class="slide-content-app">
@@ -146,7 +154,7 @@
         <div class="trailer"></div>
     </div>
     <!-- start Body Content -->
-    <div class="container">
+    <div class="containers">
         <div class="row grid wide version mobile-padding storage-film">
             <div class="col l-6 c-12 m-12 center">
                 <div class="content-decription content-decription-first">
@@ -307,12 +315,12 @@
                 <div class="zero-end row"></div>
             </div>
             <!-- Noi dung hay -->
-            <div class="storage-wrap grid wide version content-end">
+            <!-- <div class="storage-wrap grid wide version content-end">
                 <div class="storage-item_header storage-item_header-content">
                     <h2>Thể loại US/Uk</h2> 
                 </div>
                 <div class="us-uk-end row"></div>
-            </div>
+            </div> -->
         </div>
         <!-- footer -->
         <div class="footer">
@@ -414,7 +422,7 @@
                         <a href="" class="mobile-menu-item_sub-link">Phim Lãng mạn</a>
                     </li>
                     <li class="mobile-menu-subnav-item">
-                        <a href="#" class="mobile-menu-item_sub-link js-nav-filmABC">Phim development</a>
+                        <a href="#" class="mobile-menu-item_sub-link js-nav-filmABC">Phim Mới</a>
                     </li>
                 </ul>
             </li>
@@ -436,7 +444,7 @@
         </ul>
     </div>
     <div id="toast"></div>
-    <div id="pass">
+    <!-- <div id="pass">
         <div class="pass-overlay"></div>
         <div class="pass-input">
             <input type="password" placeholder="Nhập Pass">
@@ -444,9 +452,11 @@
                 <button class="btn btn-pass">Tiếp Tục</button>
             </a>
         </div>
-    </div>
+    </div> -->
     <!-- <audio src="./assets/music/Anak Ft IT Song 2021 - Leang Mashup Remix - Hot TikTok 2021 - DVT Muzik.mp3"></audio> -->
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script> -->
     <script type="text/javascript" src="./handleWeb/filmABC.js"></script>
 </body>
 </html>

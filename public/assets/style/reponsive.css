@@ -438,4 +438,8 @@
     .video {
         width: 100%;
     }
+
+    .log-name {
+        display: none;
+    }
 }

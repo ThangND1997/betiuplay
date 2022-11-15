@@ -545,7 +545,7 @@ video {
 }
 
 .btn-trailer {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .btn-trailer, .btn-film-play {
@@ -580,9 +580,9 @@ video {
     border-radius: 6px;
 }
 
-.storage-content:last-child{
+/* .storage-content:last-child{
     display: none;
-}
+} */
 
 .zero-end {
     width: 100%;

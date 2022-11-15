@@ -145,7 +145,7 @@
         color: white;
     }
 
-    .container::after {
+    .containers::after {
         display: none;
     }
 
@@ -238,7 +238,7 @@
     }
 
     .storage-desciption_logo {
-        margin: 40px 0 150px;
+        margin: 67px 0 150px;
         width: 82px;
         height: 40px;
         top: -21px;
@@ -247,12 +247,14 @@
     }
 
     .storage-modal_container_see {
-        padding: 80px 6px 100% 6px;
+        /* padding: 80px 6px 100% 6px; */
+        height: 100vh;
+        overflow: auto;
         
     }
 
     .storage-body-modal_overlay i {
-        top: 18px;
+        top: 52px;
         z-index: 1;
         right: 18px;
         font-size: 1.2rem;
