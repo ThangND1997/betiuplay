@@ -545,7 +545,7 @@ function numbClick(index) {
 var dataResource;
 function zeroClick(slug) {
     const storageDesHearder = document.querySelector('.storage-desciption_header');
-        fetch(`https://ophim1.com/phim/${slug}`)
+        fetch(`https://api-betiu.herokuapp.com/api/v1/search-film?name=${slug}`)
         .then(res => res.json())
         .then(result => {
             dataResource = result;
