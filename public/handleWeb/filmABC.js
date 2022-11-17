@@ -443,13 +443,14 @@ const appItemsFilm = {
 const zeroEnd = document.querySelector('.zero-end');
 const usUkEnd = document.querySelector('.us-uk-end');
 function renderContentFilmEnd(name) {
-    const urlRenPage = `https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=${numPage}`;
-    const urlSearchPage = `https://ophim1.com/phim/${name}`;
+    const urlRenPage = `https://api-betiu.herokuapp.com/api/v1/list-film?page=${numPage}`;
+    const urlSearchPage = `https://api-betiu.herokuapp.com/api/v1/search-film?name=${name}`;
     if (!name) {
         loading.style.display = "flex"
         fetch(urlRenPage)
         .then(res => res.json())
         .then(result => {
+            console.log(result);
             const htmls = result.items.map(function(item, index) {
                 return `<div class="col l-2-4 m-3 c-6 storage-content stoge-content-over" data-index="${index}" onclick=zeroClick("${item.slug}")>
                 <div class="description-item-film">
@@ -727,7 +728,7 @@ nextListBtn.onclick = () => {
 
 
 const inputListSearch = document.querySelector('.input-list');
-const searchList = document.querySelector('.search-list');
+const searchList = document.querySelector('.storage-item_header-content');
 var valueSearch;
 inputListSearch.onchange = (e) => {
     const varis = e.target.value;
@@ -750,14 +751,15 @@ function removeAccents(keyname) {
 }
 
 
-searchList.onclick = () => {
+searchList.addEventListener("submit", (e) => {
+    e.preventDefault();
     if (valueSearch !== "" && valueSearch != null) {
         renderContentFilmEnd(valueSearch)
     }else {
         toastAram("Recheck name film..Haizz")
     }
     inputListSearch.value = "";
-}
+})
 
 // edit profile
 var modalProfile = document.querySelector('#edit-modal');
