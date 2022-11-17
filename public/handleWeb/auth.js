@@ -240,8 +240,8 @@ async function loginNow(email, password) {
         .then(() => {
             let token = sessionStorage.getItem("token");
             if (token != "undefined") {
+                loading.style.display = "none";
                 window.location.href = './filmABC.html'
-                console.log(123);
             }
         })
         .catch((e) => {
