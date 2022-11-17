@@ -463,7 +463,12 @@ function renderContentFilmEnd(name) {
             loading.style.display = "none"
             window.scrollTo(0, 650);
         })
+        .catch((e) => {
+            toastAram("Có vẻ đã gặp vẫn đề, retry lại page nhé.")
+            loading.style.display = "none"
+        })
     }else {
+        loading.style.display = "flex"
         fetch(urlSearchPage)
         .then(res => res.json())
         .then(result => {
@@ -476,10 +481,16 @@ function renderContentFilmEnd(name) {
                     <img src="${result.movie.poster_url != "" ? result.movie.poster_url : result.movie.thumb_url}" alt="">
                     </div>`;
                 zeroEnd.innerHTML = htmls;
-                console.log(htmls);
+                loading.style.display = "none"
+
             }else {
-                toastAram("Film Not Found. Please confirm correct name film...thanks^^")
+                toastAram("Không tìm thấy phim, hãy nhập chính xác tên phim và thử lại..")
+                loading.style.display = "none"
             }
+        })
+        .catch(e => {
+            toastAram("Có vẻ đã gặp vẫn đề, retry lại page nhé.")
+            loading.style.display = "none"
         })
     }
 }
@@ -756,7 +767,7 @@ searchList.addEventListener("submit", (e) => {
     if (valueSearch !== "" && valueSearch != null) {
         renderContentFilmEnd(valueSearch)
     }else {
-        toastAram("Recheck name film..Haizz")
+        toastAram("Chưa nhập tên phim mà kiếm cái gì gì?")
     }
     inputListSearch.value = "";
 })
