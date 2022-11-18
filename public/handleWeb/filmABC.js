@@ -18,8 +18,8 @@ let menuDrop = document.querySelector(".dropdown-menu")
 const loading = document.querySelector('#loading')
 
 function start () {
-    const isSuccess = sessionStorage.getItem("token");
-    const userId = sessionStorage.getItem("id");
+    const isSuccess = localStorage.getItem("token");
+    const userId = localStorage.getItem("id");
     if(isSuccess === "undefined" || isSuccess == null) {
         window.location.href = './auth.html'
     }
@@ -44,7 +44,7 @@ function start () {
 const doc = document.querySelector('.log-out')
 doc.addEventListener('click', button)
 function button () {
-    sessionStorage.clear()
+    localStorage.clear()
     start()
 }
 
@@ -831,7 +831,7 @@ function covertUserName(str) {
 modalEditProfile.addEventListener('submit', async (e) => {
     e.preventDefault();
     loading.style.display = "flex"
-    const userId = sessionStorage.getItem("id");
+    const userId = localStorage.getItem("id");
     const data = {
         firstName: covertUserName(profileNameContent.value)[0],
         lastName: covertUserName(profileNameContent.value)[1],

@@ -37,7 +37,7 @@ btnLogin.onclick = () => {
     loginMain.classList.remove('on-form');
     registerPhoneVldate.classList.remove('on-form');
     loginPhone.classList.add('on-form');
-    const email = sessionStorage.getItem("email")
+    const email = localStorage.getItem("email")
     if (email) {
         valueLoginPhone.value = email;
     }
@@ -216,7 +216,7 @@ function showSound() {
 const loading = document.querySelector('#loading')
 const apiPostUsers = 'https://api-betiu.herokuapp.com/api/v1/login'
 
-const email = sessionStorage.getItem("email")
+const email = localStorage.getItem("email")
 
 email ? valueLoginPhone.value = email : valueLoginPhone.value = "";
 
@@ -234,11 +234,11 @@ async function loginNow(email, password) {
         .then(data => {
             let token = data.data.token;
             let id = data.data.id;
-            sessionStorage.setItem("token", token)
-            sessionStorage.setItem("id", id)
+            localStorage.setItem("token", token)
+            localStorage.setItem("id", id)
         })
         .then(() => {
-            let token = sessionStorage.getItem("token");
+            let token = localStorage.getItem("token");
             if (token != "undefined") {
                 loading.style.display = "none";
                 window.location.href = './filmABC.html'
@@ -302,7 +302,7 @@ const alertInput = document.querySelector("#alert input")
 const apiVerifyMail = 'https://api-betiu.herokuapp.com/api/v1/verify/send-mail'
 // const apiPostUsers = 'http://127.0.0.1:3001/api/v1/create'
 // const apiVerifyMail = 'http://127.0.0.1:3001/api/v1/verify/send-mail'
-sessionStorage.clear();
+localStorage.clear();
 
 async function verifySendMail(email) {
     loading.style.display = "flex";
@@ -411,7 +411,7 @@ function register(body) {
                 setTimeout(() => {
                     loading.style.display = "none";
                     btnLogin.onclick();
-                    sessionStorage.setItem("email", body.email)
+                    localStorage.setItem("email", body.email)
 
                 }, 1000)
             }
