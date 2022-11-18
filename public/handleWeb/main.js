@@ -11,6 +11,39 @@ const slideContent = $('.slide-content')
 const slideContentApp = $('.slide-content-app')
 const slidesPrev = $('.slides-prev');
 const slidesNext = $('.slides-next');
+
+function start () {
+    const isSuccess = localStorage.getItem("token");
+    const userId = localStorage.getItem("id");
+    if(isSuccess === "undefined" || isSuccess == null) {
+        // window.location.href = './auth.html'
+    }
+    var obj = {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${isSuccess}`
+        }
+      }
+    fetch(`https://api-betiu.herokuapp.com/api/v1/read/${userId}`, obj)
+    .then(res => res.json())
+    .then(result => {
+        logImg.src = result.avatar;
+        imgUploadAvatar.src = result.avatar;
+        profileNameContent.value = `${result.firstName} ${result.lastName}`;
+        profilePhoneContent.value = result.phone || "";
+        logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
+    })
+}
+
+const doc = document.querySelector('.log-out')
+doc.addEventListener('click', button)
+function button () {
+    localStorage.clear()
+    start()
+}
+
+start()
 // handle when onclick dot slide
 slideNodes[0].onclick = () => {
     //Reset interval with indexSlideCurrent

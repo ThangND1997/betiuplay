@@ -23,22 +23,27 @@ function start () {
     if(isSuccess === "undefined" || isSuccess == null) {
         window.location.href = './auth.html'
     }
-    var obj = {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json',
-            'Authorization': `Bearer ${isSuccess}`
-        }
-      }
-    fetch(`https://api-betiu.herokuapp.com/api/v1/read/${userId}`, obj)
-    .then(res => res.json())
-    .then(result => {
-        logImg.src = result.avatar;
-        imgUploadAvatar.src = result.avatar;
-        profileNameContent.value = `${result.firstName} ${result.lastName}`;
-        profilePhoneContent.value = result.phone || "";
-        logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
-    })
+    else {
+        var obj = {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': `Bearer ${isSuccess}`
+            }
+          }
+        fetch(`https://api-betiu.herokuapp.com/api/v1/read/${userId}`, obj)
+        .then(res => res.json())
+        .then(result => {
+            logImg.src = result.avatar;
+            imgUploadAvatar.src = result.avatar;
+            profileNameContent.value = `${result.firstName} ${result.lastName}`;
+            profilePhoneContent.value = result.phone || "";
+            logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
+        })
+        .catch(e => {
+            toastError("Có lỗi xảy ra, thử lại")
+        })
+    }
 }
 
 const doc = document.querySelector('.log-out')

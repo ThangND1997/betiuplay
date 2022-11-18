@@ -346,11 +346,6 @@ video {
     user-select: none;
 }
 
-.loading-img {
-    width: 80px;
-    margin: auto;
-}
-
 .log-out {
     cursor: pointer;
     color: #666;
@@ -448,9 +443,10 @@ video {
   }
   
   .loading-img {
-    width: 80px;
+    width: 110px;
     margin: auto;
   }
+  
   @media (max-width: 786px) {
     .edit-modal-profile {
       width: 90% !important;

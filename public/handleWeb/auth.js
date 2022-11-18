@@ -32,6 +32,17 @@ forgetPass.onclick = function () {
     toastAram();
 }
 
+// reset
+function start () {
+    const isSuccess = localStorage.getItem("token");
+    // const userId = localStorage.getItem("id");
+    if(isSuccess !== "undefined" && isSuccess != null) {
+        window.location.href = './filmABC.html'
+    }
+}
+
+start()
+
 // button login used phone
 btnLogin.onclick = () => {
     loginMain.classList.remove('on-form');
@@ -302,7 +313,7 @@ const alertInput = document.querySelector("#alert input")
 const apiVerifyMail = 'https://api-betiu.herokuapp.com/api/v1/verify/send-mail'
 // const apiPostUsers = 'http://127.0.0.1:3001/api/v1/create'
 // const apiVerifyMail = 'http://127.0.0.1:3001/api/v1/verify/send-mail'
-localStorage.clear();
+// localStorage.clear();
 
 async function verifySendMail(email) {
     loading.style.display = "flex";
