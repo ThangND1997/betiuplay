@@ -25,7 +25,7 @@ function start () {
             'Authorization': `Bearer ${isSuccess}`
         }
       }
-    fetch(`https://api-betiu.herokuapp.com/api/v1/read/${userId}`, obj)
+    fetch(`https://service-betiu.onrender.com/api/v1/read/${userId}`, obj)
     .then(res => res.json())
     .then(result => {
         logImg.src = result.avatar;
@@ -36,14 +36,18 @@ function start () {
     })
 }
 
-const doc = document.querySelector('.log-out')
-doc.addEventListener('click', button)
-function button () {
-    localStorage.clear()
-    start()
-}
+// Remove
+// const doc = document.querySelector('.log-out')
+// if (doc != null) {
+//     console.log(doc);
+//     doc.addEventListener('click', button)
+//     function button () {
+//         localStorage.clear()
+//         start()
+//     }
+// }
 
-start()
+// start()
 // handle when onclick dot slide
 slideNodes[0].onclick = () => {
     //Reset interval with indexSlideCurrent

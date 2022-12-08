@@ -225,7 +225,7 @@ function showSound() {
 
 
 const loading = document.querySelector('#loading')
-const apiPostUsers = 'https://api-betiu.herokuapp.com/api/v1/login'
+const apiPostUsers = 'https://service-betiu.onrender.com/api/v1/login'
 
 const email = localStorage.getItem("email")
 
@@ -310,7 +310,7 @@ const formPassword = document.querySelector('.value-register-pass')
 const formRestriesPassword = document.querySelector('.value-register-repass')
 
 const alertInput = document.querySelector("#alert input")
-const apiVerifyMail = 'https://api-betiu.herokuapp.com/api/v1/verify/send-mail'
+const apiVerifyMail = 'https://service-betiu.onrender.com/api/v1/verify/send-mail'
 // const apiPostUsers = 'http://127.0.0.1:3001/api/v1/create'
 // const apiVerifyMail = 'http://127.0.0.1:3001/api/v1/verify/send-mail'
 // localStorage.clear();
@@ -408,7 +408,7 @@ function covertUserName(str) {
     array.push(latestItem)
     return array;
 }
-var apiCreateuser = "https://api-betiu.herokuapp.com/api/v1/create"
+var apiCreateuser = "https://service-betiu.onrender.com/api/v1/create"
 function register(body) {
     loading.style.display = "flex";
     axios({

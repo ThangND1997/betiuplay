@@ -31,7 +31,7 @@ function start () {
                 'Authorization': `Bearer ${isSuccess}`
             }
           }
-        fetch(`https://api-betiu.herokuapp.com/api/v1/read/${userId}`, obj)
+        fetch(`https://service-betiu.onrender.com/api/v1/read/${userId}`, obj)
         .then(res => res.json())
         .then(result => {
             logImg.src = result.avatar;
@@ -448,25 +448,40 @@ const appItemsFilm = {
 const zeroEnd = document.querySelector('.zero-end');
 const usUkEnd = document.querySelector('.us-uk-end');
 function renderContentFilmEnd(name) {
-    const urlRenPage = `https://api-betiu.herokuapp.com/api/v1/list-film?page=${numPage}`;
-    const urlSearchPage = `https://api-betiu.herokuapp.com/api/v1/search-film?name=${name}`;
+    const urlRenPage = `https://service-betiu.onrender.com/api/v1/list-film?page=${numPage}`;
+    // const urlSearchPage = `https://service-betiu.onrender.com/api/v1/search-film?name=${name}`;
+    const urlSearchPage = `https://service-betiu.onrender.com/api/v1/search-film-tes?name=${name}`;
     if (!name) {
         loading.style.display = "flex"
         fetch(urlRenPage)
         .then(res => res.json())
         .then(result => {
-            console.log(result);
             const htmls = result.items.map(function(item, index) {
-                return `<div class="col l-2-4 m-3 c-6 storage-content stoge-content-over" data-index="${index}" onclick=zeroClick("${item.slug}")>
-                <div class="description-item-film">
-                    ${item.name}
+                return `<div class="col l-2-4 m-4 c-6 storage-content stoge-content-over" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                <div class="wrap-item-film">
+                    <p class="description-item-film">
+                        ${item.name}
+                    </p>
+                    <div class="item-film-shadow"></div>
+                    <img class="img-item-film-${index}" data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                 </div>
-                <img src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                 </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
             loading.style.display = "none"
             window.scrollTo(0, 650);
+            let i = 0;
+            const loop = setInterval(() => {
+                    const loadingItem = document.querySelector(`.img-item-film-${i}`);
+                    if (loadingItem != null) {
+                        const srcData = loadingItem.getAttribute("data-src")
+                        loadingItem.src = srcData;
+                    }
+                    i += 1;
+                    if ( i >= result.items.length ) {
+                        clearInterval(loop)
+                    }
+            }, 300)
         })
         .catch((e) => {
             toastAram("Có vẻ đã gặp vẫn đề, retry lại page nhé.")
@@ -477,16 +492,33 @@ function renderContentFilmEnd(name) {
         fetch(urlSearchPage)
         .then(res => res.json())
         .then(result => {
-            console.log(result);
-            if(result && result.status !== false) {
-                    const htmls = `<div class="col l-2-4 m-3 c-6 storage-content stoge-content-over" data-index="0" onclick=zeroClick("${result.movie.slug}")>
-                    <div class="description-item-film">
-                    ${result.movie.name}
-                    </div>
-                    <img src="${result.movie.poster_url != "" ? result.movie.poster_url : result.movie.thumb_url}" alt="">
-                    </div>`;
-                zeroEnd.innerHTML = htmls;
+            if(result && result.pageProps.data.items != null && result.pageProps.data.items.length > 0) {
+                const htmls = result.pageProps.data.items.map(function (item, index) {
+                    return `<div class="col l-2-4 m-4 c-6 storage-content stoge-content-over" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                <div class="wrap-item-film">
+                    <p class="description-item-film">
+                        ${item.name}
+                    </p>
+                    <div class="item-film-shadow"></div>
+                    <img class="img-item-film-${index}" data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                </div>
+                </div>`;
+            })
+                zeroEnd.innerHTML = htmls.join('');
                 loading.style.display = "none"
+                window.scrollTo(0, 650);
+                let i = 0;
+                const loop = setInterval(() => {
+                        const loadingItem = document.querySelector(`.img-item-film-${i}`);
+                        if (loadingItem != null) {
+                            const srcData = loadingItem.getAttribute("data-src")
+                            loadingItem.src = srcData;
+                        }
+                        i += 1;
+                        if ( i >= result.pageProps.data.items.length ) {
+                            clearInterval(loop)
+                        }
+                }, 300)
 
             }else {
                 toastAram("Không tìm thấy phim, hãy nhập chính xác tên phim và thử lại..")
@@ -561,9 +593,10 @@ function numbClick(index) {
 var dataResource;
 function zeroClick(slug) {
     const storageDesHearder = document.querySelector('.storage-desciption_header');
-        fetch(`https://api-betiu.herokuapp.com/api/v1/search-film?name=${slug}`)
+        fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
         .then(res => res.json())
         .then(result => {
+            console.log(result);
             dataResource = result;
             renderNumFilm(result.episodes[0].server_data);
             storageDesHearder.textContent = result.movie.name;
@@ -845,7 +878,7 @@ modalEditProfile.addEventListener('submit', async (e) => {
     if(editAvatarLink != null && editAvatarLink !== "") {
         data.avatar = editAvatarLink;
     }
-    fetch(`https://api-betiu.herokuapp.com/api/v1/update/${userId}`, {
+    fetch(`https://service-betiu.onrender.com/api/v1/update/${userId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
