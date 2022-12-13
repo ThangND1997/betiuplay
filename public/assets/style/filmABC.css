@@ -141,10 +141,15 @@
 
 .wrap-video {
     width: 80%;
-    height: 500px;
+    height: 100%;
     border-radius: 4px;
     background-color: black;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
 }
 
 video {
@@ -401,6 +406,7 @@ video {
     border-radius: 50%;
     cursor: pointer;
     background-color: #261d0a;
+    background-size: cover;
 }
 
 .dropdown-menu {

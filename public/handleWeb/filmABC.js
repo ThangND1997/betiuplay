@@ -596,7 +596,6 @@ function zeroClick(slug) {
         fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
         .then(res => res.json())
         .then(result => {
-            console.log(result);
             dataResource = result;
             renderNumFilm(result.episodes[0].server_data);
             storageDesHearder.textContent = result.movie.name;
@@ -898,3 +897,6 @@ modalEditProfile.addEventListener('submit', async (e) => {
         loading.style.display = "none"
     })
 })
+
+
+const player = new Plyr(video);

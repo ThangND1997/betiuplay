@@ -14,6 +14,7 @@
     <link rel="shortcut icon" href="https://assets.glxplay.io/web/images/fav_icon.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
     <link rel="stylesheet" href="./assets/style/grid.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/style.css">
@@ -411,7 +412,8 @@
                         <span>Ôi không! Phim không thể khởi chạy. Hãy liên hệ với DEV hoặc chọn phim khác</span>
                         <div class="error-video-overlay"></div>
                     </div>
-                    <video src="" controls id="video"></video>
+                    <video controls crossorigin playsinline
+                    poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="video"></video>
                 </div>
                 <div class="storage-modal_container_see-descriptio">
                     <img src="./assets/img/logo/BeTiu-Logo-Vip.png" alt="" class="nav-logo menu-mobile_logo storage-desciption_logo">
@@ -488,6 +490,8 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script> -->
+    <script src="https://cdn.plyr.io/3.7.3/plyr.polyfilled.js"></script>
+
     <script type="text/javascript" src="./handleWeb/filmABC.js"></script>
 </body>
 </html>
