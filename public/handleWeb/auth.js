@@ -114,26 +114,26 @@ function registerLatest () {
 
 // handle button login
 const login = document.querySelector('.form-phone-password a')
-const formLoginGoogle = document.querySelector('.btn-form-first')
-// btnLoginGo.onclick = () => {
-//     if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '1' && valueLoginPass.value === '1') {
-//         login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
-//     }else if(valueLoginPass.value === ''){
-//         setTimeout(() =>{
-//             alert('Bạn chưa nhập mật khẩu...')
-//         },1000)
-//     }else{
-//         setTimeout(() => {
-//         alert('Số điện thoại hoặc mật khẩu không đúng !')
-//         valueLoginPass.value = '';
-//         loginMain.classList.add('on-form');
-//         loginPhonePass.classList.remove('on-form');
-//         }, 1000)
-//         }
-//     }
-formLoginGoogle.onclick = function () {
-    toastAram();
-}
+// const formLoginGoogle = document.querySelector('.btn-form-first')
+// // btnLoginGo.onclick = () => {
+// //     if(valueLoginPass.value !== '' && valueLoginPass.value === valueRegisterPass.value && valueLoginPhone.value === valueRegisterPhone.value || valueLoginPhone.value === '1' && valueLoginPass.value === '1') {
+// //         login.setAttribute('href', 'https://dev-thangnguyen.github.io/betiuplay/index.html')
+// //     }else if(valueLoginPass.value === ''){
+// //         setTimeout(() =>{
+// //             alert('Bạn chưa nhập mật khẩu...')
+// //         },1000)
+// //     }else{
+// //         setTimeout(() => {
+// //         alert('Số điện thoại hoặc mật khẩu không đúng !')
+// //         valueLoginPass.value = '';
+// //         loginMain.classList.add('on-form');
+// //         loginPhonePass.classList.remove('on-form');
+// //         }, 1000)
+// //         }
+// //     }
+// formLoginGoogle.onclick = function () {
+//     toastAram("Hệ Thống Đang Nâng Cấp")
+// }
 
 // Handle function toast message
 function toastSuccess() {
@@ -167,21 +167,7 @@ function toastError() {
         }, 4000)
     }
 }
-function toastAram() {
-    const toastMain = document.getElementById('toast');
-    const toast = document.createElement('div');
-    if (toastMain) {
-        toast.classList.add('toast', 'toastAram')
-        toast.innerHTML = `
-            <i class="ti-settings aram"></i>
-            <p class="toast-text">Hệ thống đang bảo trì.</p>
-        `;
-        toastMain.appendChild(toast);
-        setTimeout(function () {
-            toastMain.removeChild(toast);
-        }, 4000)
-    }
-}
+
 //handle music 
 const audio = document.querySelector('audio');
 const PreseulAudio = document.querySelector('.preseul-btn');
@@ -409,6 +395,7 @@ function covertUserName(str) {
     return array;
 }
 var apiCreateuser = "https://service-betiu.onrender.com/api/v1/create"
+var apiCreateGGuser = "https://service-betiu.onrender.com/api/v1/create-google"
 function register(body) {
     loading.style.display = "flex";
     axios({
@@ -441,5 +428,139 @@ function register(body) {
             formAvatar.value = "";
             alertInput.value = "";
             formPhoneName.value = "";
+        })
+}
+
+
+(function() {
+    console.log('Start file login with firebase');
+    // Initialize Firebase
+    
+    const config = {
+        apiKey: "AIzaSyDFKvDZ_bePgsor3SOZBUvOVI3Z8wqsgYQ",
+        authDomain: "chatbox-firebase-d0c5d.firebaseapp.com",
+        databaseURL: "https://chatbox-firebase-d0c5d-default-rtdb.firebaseio.com",
+        projectId: "chatbox-firebase-d0c5d",
+        storageBucket: "chatbox-firebase-d0c5d.appspot.com",
+        messagingSenderId: "575706021600",
+        appId: "1:575706021600:web:e0e7fa9100b3db4d7b9a85",
+        measurementId: "G-GXX1W2NWN3"
+      };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+
+    //Google singin provider
+    var ggProvider = new firebase.auth.GoogleAuthProvider();
+    //Facebook singin provider
+    var fbProvider = new firebase.auth.FacebookAuthProvider();
+    //Login in variables
+    // const btnGoogle = document.getElementById('btnGoogle');
+    // const btnFaceBook = document.getElementById('btnFacebook');
+    const btnGoogle = document.querySelector('.btn-form-first')
+
+        //Sing in with Google
+        btnGoogle.addEventListener('click',  e => {
+            firebase.auth().signInWithPopup(ggProvider).then(async function(result) {
+                const token = result.credential.accessToken;
+                const user = result.user.providerData[0];
+                console.log(user);
+                const body = {
+                    id: user.uid,
+                    email: user.email,
+                    firstName: covertUserName(user.displayName)[0],
+                    lastName: covertUserName(user.displayName)[1],
+                    avatar: user.photoURL,
+                    providerId: user.providerId
+                }
+                find_account_google(user.uid, token, body);
+            }).catch(function(error) {
+                console.error('Error: hande error here>>>', error.code)
+            })
+        }, false)
+
+        //Sing in with Facebook
+        btnFaceBook.addEventListener('click', e => {
+            firebase.auth().signInWithPopup(fbProvider).then(function(result) {
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                console.log('User>>Facebook>', user);
+                // ...
+                userId = user.uid;
+            
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+                console.error('Error: hande error here>Facebook>>', error.code)
+            });
+        }, false)
+        //jquery 
+}())
+
+function login_google(body, tokens, id) {
+    loading.style.display = "flex";
+    axios({
+        method: 'POST',
+        url: apiCreateGGuser,
+        data: body
+    })
+        .then((data) => {
+            if (data.status === 200 && data.data.message === "created success") {
+                toastSuccess("Đang thiết lập cấu hình. Vui lòng chờ giây lát..");
+                localStorage.setItem("token", tokens);
+                localStorage.setItem("id", id);
+                let token = localStorage.getItem("token");
+                setTimeout(() => {
+                    if (token != "undefined") {
+                        loading.style.display = "none";
+                        window.location.href = './filmABC.html'
+                    }
+                }, 1000)
+            }
+        })
+        .catch((e) => {
+            toastAram("Đã có lỗi xảy ra, vui lòng thử lại nhé");
+            console.log(123);
+            loading.style.display = "none";
+        })
+}
+
+function find_account_google(userId, token, body) {
+    loading.style.display = "flex";
+    var obj = {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+      }
+    fetch(`https://service-betiu.onrender.com/api/v1/read/${userId}`, obj)
+        .then(res => res.json())
+        .then(result => {
+            if (result != null) {
+                toastSuccess("Đang thiết lập cấu hình. Vui lòng chờ giây lát..");
+                localStorage.setItem("token", token);
+                localStorage.setItem("id", userId);
+                let tokendd = localStorage.getItem("token");
+                setTimeout(() => {
+                    if (tokendd != "undefined") {
+                        loading.style.display = "none";
+                        window.location.href = './filmABC.html'
+                    }
+                }, 1000)
+            }else {
+                login_google(body, tokenReq, userId);
+            }
+        })
+        .catch(e => {
+            loading.style.display = "none";
+            return false;
         })
 }

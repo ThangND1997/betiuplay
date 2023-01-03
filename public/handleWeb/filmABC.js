@@ -716,11 +716,11 @@ filmSelect.forEach((filmSelect)=>{
         toastAram();
     }
 })
-subFilm.forEach((subFilm) => {
-    subFilm.onclick = () => {
-        toastAram();
-    }
-})
+// subFilm.forEach((subFilm) => {
+//     subFilm.onclick = () => {
+//         toastAram();
+//     }
+// })
 updateBefore.forEach((updateBefore)=>{
     updateBefore.onclick = function(){
         toastAram();
