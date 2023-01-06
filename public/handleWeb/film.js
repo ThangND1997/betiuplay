@@ -1471,18 +1471,18 @@ const modalPlayFilm = document.querySelector('.storage-body-modal');
 //         btnModalTrailer.onclick();
 //     }
 // }
-// storContainer3.onclick = function (e) {
-//     const filmNode = e.target.closest('.storage-item');
-//     const storageDesHearder = document.querySelector('.storage-desciption_header');
-//     if(filmNode) {
-//         currentFilm = Number(filmNode.dataset.index);
-//         video.src = appItemsFilm.actFilm[currentFilm].src;
-//         storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
-//         modalPlayFilm.style.display = 'flex'
-//         video.play();
-//         btnModalTrailer.onclick();
-//     }
-// }
+storContainer3.onclick = function (e) {
+    const filmNode = e.target.closest('.storage-item');
+    const storageDesHearder = document.querySelector('.storage-desciption_header');
+    if(filmNode) {
+        currentFilm = Number(filmNode.dataset.index);
+        video.src = appItemsFilm.actFilm[currentFilm].src;
+        storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
+        modalPlayFilm.style.display = 'flex'
+        video.play();
+        btnModalTrailer.onclick();
+    }
+}
 zeroEnd.onclick = function (e) {
     const filmNode = e.target.closest('.storage-content');
     const storageDesHearder = document.querySelector('.storage-desciption_header');
