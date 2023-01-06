@@ -1167,105 +1167,252 @@ const storContainer = document.querySelector('.storage-items');
 const storContainer1 = document.querySelector('.storage-items-1');
 const storContainer2 = document.querySelector('.storage-items-2');
 const storContainer3 = document.querySelector('.storage-items-3');
+const loading = document.querySelector('#loading')
+loading.style.display = "flex"
+setTimeout(() => {
+    toastSuccess("Đang tải một số cấu hình. Vui lòng đợi giây lát.")
+}, 2000)
 function renderFilm () {
-    var htmls = appItemsFilm.newFilm.map(function (item, index) {
-        return `<div class="storage-item" data-index="${index}">
-        <img src="${item.path}" alt="">
-        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-        <div class="storage-item-icon">
-        <i class="far fa-play-circle"></i>
-        </div>
-        <div class="storage-item-description">
-        <h3 class="storage-item-description_header">${item.name}</h3>
-        <div class="storage-item-description_body">
-        <span>${item.category}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.duration}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.age}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.premidum}</span>
-        </div>
-        </div>
-        </div>
-        </div>`;
+    loading.style.display = "flex"
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=khoa-hoc&country&year`)
+        .then(res => res.json())
+        .then((result) => {
+            var htmls = result.pageProps.data.items.map(function (item, index) {
+                return `<div class="storage-item" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                <div class="storage-item-icon">
+                <i class="far fa-play-circle"></i>
+                </div>
+                <div class="storage-item-description">
+                <h3 class="storage-item-description_header">${item.name}</h3>
+                <div class="storage-item-description_body">
+                <span>${item.origin_name}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.time}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.lang}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.year}</span>
+                </div>
+                </div>
+                </div>
+                </div>`;
+            })
+            storContainer.innerHTML = htmls.join('');
+            const stoItems = document.querySelectorAll('.storage-item');
+            const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+
+            stoItems.forEach(function(stoItems, index) {
+                stoItems.onmouseover = function () {
+                    stoItems.classList.add('storage-item-change')
+                    stoOverlay[index].classList.add('onOverlayFilm')
+                }
+                stoItems.onmouseout = function () {
+                    stoItems.classList.remove('storage-item-change')
+                    stoOverlay[index].classList.remove('onOverlayFilm')
+                }
+            })
+            lazyLoadImgs()
+    loading.style.display = "none"
+
     })
-    storContainer.innerHTML = htmls.join('');
 }
 function renderFilm1 () {
-    var htmls = appItemsFilm.horrorFilm.map(function (item, index) {
-        return `<div class="storage-item" data-index="${index}">
-        <img src="${item.path}" alt="">
-        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-        <div class="storage-item-icon">
-        <i class="far fa-play-circle"></i>
-        </div>
-        <div class="storage-item-description">
-        <h3 class="storage-item-description_header">${item.name}</h3>
-        <div class="storage-item-description_body">
-        <span>${item.category}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.duration}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.age}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.premidum}</span>
-        </div>
-        </div>
-        </div>
-        </div>`;
+    loading.style.display = "flex"
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=hanh-dong&country&year`)
+        .then(res => res.json())
+        .then((result) => {
+            var htmls = result.pageProps.data.items.map(function (item, index) {
+                return `<div class="storage-item" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                <div class="storage-item-icon">
+                <i class="far fa-play-circle"></i>
+                </div>
+                <div class="storage-item-description">
+                <h3 class="storage-item-description_header">${item.name}</h3>
+                <div class="storage-item-description_body">
+                <span>${item.origin_name}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.time}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.lang}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.year}</span>
+                </div>
+                </div>
+                </div>
+                </div>`;
+            })
+            storContainer1.innerHTML = htmls.join('');
+            const stoItems = document.querySelectorAll('.storage-item');
+            const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+
+            stoItems.forEach(function(stoItems, index) {
+                stoItems.onmouseover = function () {
+                    stoItems.classList.add('storage-item-change')
+                    stoOverlay[index].classList.add('onOverlayFilm')
+                }
+                stoItems.onmouseout = function () {
+                    stoItems.classList.remove('storage-item-change')
+                    stoOverlay[index].classList.remove('onOverlayFilm')
+                }
+        })
+        lazyLoadImgs()
+    loading.style.display = "none"
     })
-    storContainer1.innerHTML = htmls.join('');
 }
-function renderFilm2 () {
-    var htmls = appItemsFilm.blockbusterFilm.map(function (item, index) {
-        return `<div class="storage-item" data-index="${index}">
-        <img src="${item.path}" alt="">
-        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-        <div class="storage-item-icon">
-        <i class="far fa-play-circle"></i>
-        </div>
-        <div class="storage-item-description">
-        <h3 class="storage-item-description_header">${item.name}</h3>
-        <div class="storage-item-description_body">
-        <span>${item.category}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.duration}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.age}</span>
-        <i class="fas fa-circle"></i>
-        <span>${item.premidum}</span>
-        </div>
-        </div>
-        </div>
-        </div>`;
+
+// handle click on poster film
+var currentFilm;
+var listNumFilm = document.querySelector('.list-film-num');
+
+function renderNumFilm(items) {
+    console.log(items);
+    const htmls = items.map((item, index) => {
+        let indexNumb = index + 1;
+        if (items.length == 1) {
+            indexNumb = 'full'
+        }
+        if (index == 0) {
+            return `
+            <button class="nummb numberClickList-${index} active" onclick=numbClick("${item.slug}")>${indexNumb}</button>
+        `
+        }
+        return `
+            <button class="nummb numberClickList-${index}" onclick=numbClick("${item.slug}")>${indexNumb}</button>
+        `;
     })
-    storContainer2.innerHTML = htmls.join('');
+    listNumFilm.innerHTML = htmls.join("");
+}
+
+function numbClick(index) {
+    const numb = document.querySelector(`.numberClickList-${index - 1}`);
+    const allBtnNumb = document.querySelectorAll(`.nummb`);
+    allBtnNumb.forEach(a => a.classList.remove('active'));
+    numb.classList.add('active');
+    modalPlayFilm.style.display = 'flex'
+    if (index === 'full') {
+        index = 0;
+    }
+    const hls1 = new Hls();
+    if (Hls.isSupported()) {
+        hls1.loadSource(dataResource.episodes[0].server_data[index].link_m3u8);
+        hls1.attachMedia(video);
+        hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+            video.play();
+        });
+    } else {
+        video.src = dataResource.episodes[0].server_data[index].link_m3u8;
+        video.play();
+    }
+    // videoTitle.muted = true;
+}
+
+var dataResource;
+function zeroClick(slug) {
+    const storageDesHearder = document.querySelector('.storage-desciption_header');
+    console.log('click');
+        fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
+        .then(res => res.json())
+        .then(result => {
+            dataResource = result;
+            console.log(result);
+            renderNumFilm(result.episodes[0].server_data);
+            storageDesHearder.textContent = result.movie.name;
+            modalPlayFilm.style.display = 'flex'
+            const hls1 = new Hls();
+    if (Hls.isSupported()) {
+        hls1.loadSource(dataResource.episodes[0].server_data[0].link_m3u8);
+        hls1.attachMedia(video);
+        hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+            video.play();
+        });
+    } else {
+        video.src = dataResource.episodes[0].server_data[0].link_m3u8;
+        video.play();
+    }
+        })
+    // if(filmNode) {
+    //     currentFilm = Number(filmNode.dataset.index);
+    //     video.src = appItemsFilm.filmContent[currentFilm].src;
+    //     storageDesHearder.textContent = appItemsFilm.filmContent[currentFilm].name;
+    //     modalPlayFilm.style.display = 'flex'
+    //     audio.pause();
+    //     videoTitle.pause();
+    // }
+}
+
+function renderFilm2 () {
+    loading.style.display = "flex"
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=vien-tuong&country&year`)
+        .then(res => res.json())
+        .then((result) => {
+            var htmls = result.pageProps.data.items.map(function (item, index) {
+                return `<div class="storage-item" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                <div class="storage-item-icon">
+                <i class="far fa-play-circle"></i>
+                </div>
+                <div class="storage-item-description">
+                <h3 class="storage-item-description_header">${item.name}</h3>
+                <div class="storage-item-description_body">
+                <span>${item.origin_name}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.time}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.lang}</span>
+                <i class="fas fa-circle"></i>
+                <span>${item.year}</span>
+                </div>
+                </div>
+                </div>
+                </div>`;
+            })
+            storContainer2.innerHTML = htmls.join('');
+            const stoItems = document.querySelectorAll('.storage-item');
+            const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+
+            stoItems.forEach(function(stoItems, index) {
+                stoItems.onmouseover = function () {
+                    stoItems.classList.add('storage-item-change')
+                    stoOverlay[index].classList.add('onOverlayFilm')
+                }
+                stoItems.onmouseout = function () {
+                    stoItems.classList.remove('storage-item-change')
+                    stoOverlay[index].classList.remove('onOverlayFilm')
+                }
+        })
+        lazyLoadImgs()
+        loading.style.display = "none"
+    })
 }
 function renderFilm3 () {
     var htmls = appItemsFilm.actFilm.map(function (item, index) {
         return `<div class="storage-item" data-index="${index}">
         <img src="${item.path}" alt="">
-        <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-        <div class="storage-item-icon">
-        <i class="far fa-play-circle"></i>
-        </div>
-        <div class="storage-item-description">
-        <h3 class="storage-item-description_header">${item.name}</h3>
-        <div class="storage-item-description_body">
+                <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                <div class="storage-item-icon">
+                <i class="far fa-play-circle"></i>
+                </div>
+                <div class="storage-item-description">
+                <h3 class="storage-item-description_header">${item.name}</h3>
+                <div class="storage-item-description_body">
         <span>${item.category}</span>
-        <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
         <span>${item.duration}</span>
-        <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
         <span>${item.age}</span>
-        <i class="fas fa-circle"></i>
+                <i class="fas fa-circle"></i>
         <span>${item.premidum}</span>
-        </div>
-        </div>
-        </div>
-        </div>`;
-    })
-    storContainer3.innerHTML = htmls.join('');
+                </div>
+                </div>
+                </div>
+                </div>`;
+            })
+            storContainer3.innerHTML = htmls.join('');
 }
 renderFilm();
 renderFilm1();
@@ -1288,54 +1435,54 @@ stoItems.forEach(function(stoItems, index) {
 // handle click on poster film
 var currentFilm;
 const modalPlayFilm = document.querySelector('.storage-body-modal');
-storContainer.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-item');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.newFilm[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.newFilm[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        btnModalTrailer.onclick();
-    }
-}
-storContainer1.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-item');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.horrorFilm[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.horrorFilm[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        btnModalTrailer.onclick();
-    }
-}
-storContainer2.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-item');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.blockbusterFilm[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.blockbusterFilm[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        btnModalTrailer.onclick();
-    }
-}
-storContainer3.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-item');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.actFilm[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        btnModalTrailer.onclick();
-    }
-}
+// storContainer.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-item');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if(filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.newFilm[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.newFilm[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         btnModalTrailer.onclick();
+//     }
+// }
+// storContainer1.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-item');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if(filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.horrorFilm[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.horrorFilm[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         btnModalTrailer.onclick();
+//     }
+// }
+// storContainer2.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-item');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if(filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.blockbusterFilm[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.blockbusterFilm[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         btnModalTrailer.onclick();
+//     }
+// }
+// storContainer3.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-item');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if(filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.actFilm[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         btnModalTrailer.onclick();
+//     }
+// }
 zeroEnd.onclick = function (e) {
     const filmNode = e.target.closest('.storage-content');
     const storageDesHearder = document.querySelector('.storage-desciption_header');
@@ -1528,29 +1675,29 @@ const iconPrev = document.querySelectorAll('.storage-items-prev i');
     }}
 
 // handle click btn film modal
-const btnModalTrailer = document.querySelector('.btn-trailer')
-const btnModalFilm = document.querySelector('.btn-film-play')
-const notiFilm = document.querySelector('.notiFilm')
-btnModalTrailer.onclick = () => {
-        if(btnModalFilm.closest('.btn-film-play.active-play')) {
-        console.log(123)
-        video.load();
-        video.play();
-        video.style.display = 'block';
-        notiFilm.style.display = 'none';
-        btnModalTrailer.classList.add('active-play');
-        btnModalFilm.classList.remove('active-play');
-    }
-}
-btnModalFilm.onclick = () => {
-        if(btnModalTrailer.closest('.btn-trailer.active-play')) {
-        video.pause();
-        video.style.display = 'none';
-        notiFilm.style.display = 'flex';
-        btnModalTrailer.classList.remove('active-play');
-        btnModalFilm.classList.add('active-play');
-    }
-}
+// const btnModalTrailer = document.querySelector('.btn-trailer')
+// const btnModalFilm = document.querySelector('.btn-film-play')
+// const notiFilm = document.querySelector('.notiFilm')
+// btnModalTrailer.onclick = () => {
+//         if(btnModalFilm.closest('.btn-film-play.active-play')) {
+//         console.log(123)
+//         video.load();
+//         video.play();
+//         video.style.display = 'block';
+//         notiFilm.style.display = 'none';
+//         btnModalTrailer.classList.add('active-play');
+//         btnModalFilm.classList.remove('active-play');
+//     }
+// }
+// btnModalFilm.onclick = () => {
+//         if(btnModalTrailer.closest('.btn-trailer.active-play')) {
+//         video.pause();
+//         video.style.display = 'none';
+//         notiFilm.style.display = 'flex';
+//         btnModalTrailer.classList.remove('active-play');
+//         btnModalFilm.classList.add('active-play');
+//     }
+// }
 
 function toastAram () {
     const toastMain = document.getElementById('toast');
@@ -1581,3 +1728,70 @@ updateBefore.forEach((updateBefore)=>{
     }
 })
 
+function lazyLoadImgs () {
+// duyệt tất cả tấm ảnh cần lazy-load
+const lazyImages = document.querySelectorAll('[lazy]');
+
+// chờ các tấm ảnh này xuất hiện trên màn hình
+const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    // tấm ảnh này đã xuất hiện trên màn hình
+    if (entry.isIntersecting) {
+      const lazyImage = entry.target;
+      const src = lazyImage.dataset.src;
+
+      lazyImage.tagName.toLowerCase() === 'img'
+      // <img>: copy data-src sang src
+        ? lazyImage.src = src
+
+      // <div>: copy data-src sang background-image
+      : lazyImage.style.backgroundImage = "url(\'" + src + "\')";
+
+      // copy xong rồi thì bỏ attribute lazy đi
+      lazyImage.removeAttribute('lazy');
+
+      // job done, không cần observe nó nữa
+      observer.unobserve(lazyImage);
+    }
+  });
+});
+
+// Observe từng tấm ảnh và chờ nó xuất hiện trên màn hình
+lazyImages.forEach((lazyImage) => {
+  lazyImageObserver.observe(lazyImage);
+});
+}
+
+function checkOverMouse() {
+    const stoItems = document.querySelectorAll('.storage-item');
+    const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+
+    stoItems.forEach(function (stoItems, index) {
+        stoItems.onmouseover = function () {
+            stoItems.classList.add('storage-item-change')
+            stoOverlay[index].classList.add('onOverlayFilm')
+        }
+        stoItems.onmouseout = function () {
+            stoItems.classList.remove('storage-item-change')
+            stoOverlay[index].classList.remove('onOverlayFilm')
+        }
+    })
+}
+
+function toastSuccess(e) {
+    const toastMain = document.getElementById('toast');
+    const toast = document.createElement('div');
+    if (toastMain) {
+        toast.classList.add('toast', 'toastSuccess')
+        toast.innerHTML = `
+            <i class="ti-check"></i>
+            <p class="toast-text">${e}</p>
+        `;
+        toastMain.appendChild(toast);
+        setTimeout(function () {
+            toastMain.removeChild(toast);
+        }, 8000)
+    }
+}
+
+const player = new Plyr(video);
