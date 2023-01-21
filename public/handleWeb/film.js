@@ -39,7 +39,7 @@ slideNodes[1].onclick = () => {
     slideContent.classList.remove('active-5')
     slideContent.classList.remove('active-7')
     slideContent.classList.remove('active-8')
-    
+
     document.querySelector('.slide-content-text.visi-slide-film').classList.remove('visi-slide-film')
     slideContentTextAll[1].classList.add('visi-slide-film')
 }
@@ -74,81 +74,121 @@ slideNodes[3].onclick = () => {
     slideContentTextAll[3].classList.add('visi-slide-film')
 }
 
+function startt () {
+    const isSuccess = localStorage.getItem("token");
+    const userId = localStorage.getItem("id");
+    if(isSuccess === "undefined" || isSuccess == null) {
+        window.location.href = './auth.html'
+    }
+    else {
+        var obj = {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': `Bearer ${isSuccess}`
+            }
+          }
+        fetch(`https://service-betiu.onrender.com/api/v1/read/${userId}`, obj)
+        .then(res => res.json())
+        .then(result => {
+            logImg.src = result.avatar;
+            imgUploadAvatar.src = result.avatar;
+            profileNameContent.value = `${result.firstName} ${result.lastName}`;
+            profilePhoneContent.value = result.phone || "";
+            logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
+        })
+        .catch(e => {
+            toastError("Có lỗi xảy ra, thử lại")
+        })
+    }
+}
+
+const doc = document.querySelector('.log-out')
+doc.addEventListener('click', button)
+function button () {
+    localStorage.clear()
+    startt()
+}
+
+startt()
+
+
+
 // Set Interval for slides
 // var loopSlider = setInterval(loopSlide, 6000);
 var indexSlideCurrent = 0;
 // function loopSlide() {
-    //     indexSlideCurrent > 2 ? indexSlideCurrent = 0 : indexSlideCurrent ++;
-    //     autoSlide(indexSlideCurrent);
-    // }
-    
-    // function autoSlide(indexSlideCurrent) {
-        //     slideNodes[indexSlideCurrent].onclick();
-        // }
-        
-        // Handle prev/next slide changes
-        // slide previous slide
-        slidesPrev.onclick = function() {
-            indexSlideCurrent --;
-            if(indexSlideCurrent < 0) {
-                indexSlideCurrent = slideNodes.length - 1;
-            }
-            slideNodes[indexSlideCurrent].onclick()
-        }
-        //slide next slide
-        slidesNext.onclick = function() {
-            indexSlideCurrent ++;
-            if(indexSlideCurrent >= slideNodes.length) {
-                indexSlideCurrent = 0;
-            }
-            slideNodes[indexSlideCurrent].onclick()
-        }
-        // mouse move event
-        var startClient;
-        var endClient;
-        slides.onmousedown = function(e) {
-            startClient = e.clientX;
-        }
-        slides.onmouseup = function(e) {
-            endClient = e.clientX;
-            if(startClient - endClient > 50) {
-                slidesNext.onclick();
-            }
-            else if(startClient - endClient <= -50) {
-                slidesPrev.onclick();
-            }
-        }
-        
-        // touch mobile move event
-        slides.ontouchstart = function(e) {
-            startClient = e.touches[0].clientX;
-        }
-        slides.ontouchend = function(e) {
-            endClient = e.changedTouches[0].clientX;
-            const aboutClient = startClient - endClient;
-            if(aboutClient > 50) {
-                slidesNext.onclick();
-            }
-            else if(aboutClient < -50) {
-                slidesPrev.onclick();
-            }
-        }
-        
-        
-        // Handle scroll window scroll event on visibility
-        const header = $('header')
+//     indexSlideCurrent > 2 ? indexSlideCurrent = 0 : indexSlideCurrent ++;
+//     autoSlide(indexSlideCurrent);
+// }
+
+// function autoSlide(indexSlideCurrent) {
+//     slideNodes[indexSlideCurrent].onclick();
+// }
+
+// Handle prev/next slide changes
+// slide previous slide
+slidesPrev.onclick = function () {
+    indexSlideCurrent--;
+    if (indexSlideCurrent < 0) {
+        indexSlideCurrent = slideNodes.length - 1;
+    }
+    slideNodes[indexSlideCurrent].onclick()
+}
+//slide next slide
+slidesNext.onclick = function () {
+    indexSlideCurrent++;
+    if (indexSlideCurrent >= slideNodes.length) {
+        indexSlideCurrent = 0;
+    }
+    slideNodes[indexSlideCurrent].onclick()
+}
+// mouse move event
+var startClient;
+var endClient;
+slides.onmousedown = function (e) {
+    startClient = e.clientX;
+}
+slides.onmouseup = function (e) {
+    endClient = e.clientX;
+    if (startClient - endClient > 50) {
+        slidesNext.onclick();
+    }
+    else if (startClient - endClient <= -50) {
+        slidesPrev.onclick();
+    }
+}
+
+// touch mobile move event
+slides.ontouchstart = function (e) {
+    startClient = e.touches[0].clientX;
+}
+slides.ontouchend = function (e) {
+    endClient = e.changedTouches[0].clientX;
+    const aboutClient = startClient - endClient;
+    if (aboutClient > 50) {
+        slidesNext.onclick();
+    }
+    else if (aboutClient < -50) {
+        slidesPrev.onclick();
+    }
+}
+
+
+// Handle scroll window scroll event on visibility
+const header = $('header')
 const scrollFirstPage = $('.arrow-mobile-first-page')
 window.addEventListener('scroll', changeStatus)
 function changeStatus() {
     var scrollBrowser = window.scrollY;
-    if(scrollBrowser >= 15) {
+    if (scrollBrowser >= 15) {
         header.classList.add('change-header')
-    }else {
+    } else {
         header.classList.remove('change-header')
     }
-    if(scrollBrowser >= 6700) {
+    if (scrollBrowser >= 6700) {
         scrollFirstPage.style.visibility = 'visible'
-    }else {
+    } else {
         scrollFirstPage.style.visibility = 'hidden'
     }
 }
@@ -165,7 +205,7 @@ btnMenu.onclick = () => {
     btnMenu.classList.toggle('ti-menu')
     var testBtnMenu = btnMenu.closest('.ti-menu')
     var testArrowBtn = arrowBtn.closest('.ti-minus')
-    if(testBtnMenu && testArrowBtn) {
+    if (testBtnMenu && testArrowBtn) {
         subnavMobile.forEach(function (subnavMobile) {
             subnavMobile.classList.remove('change-height')
         })
@@ -1048,117 +1088,214 @@ const appItemsFilm = {
             src: './assets/trailer/Scream - Official Trailer (2022 Movie).mp4',
             path: './assets/img/poster-film/end1.jpg',
             name: 'Scream II'
-            
+
         }
         ,
         {
             src: './assets/trailer/Khách Sạn Huyền Bí - Official Trailer - DKKC tại CGV-  27.08.2021.mp4',
             path: './assets/img/poster-film/end2.jpg',
             name: 'Khách sạn huyền bí'
-            
+
         }
         ,
         {
             src: './assets/trailer/LARVA - SEASON 4 TRAILER - NEW LARVA - LARVA Official.mp4',
             path: './assets/img/poster-film/end3.jpg',
             name: 'Lavar Đảo Hoang'
-            
+
         }
         ,
         {
             src: './assets/trailer/DORAEMON ĐÔI BẠN THÂN [STAND BY ME] (TRAILER) - ĐÔRÊMON THÁI NGUYÊN.mp4',
             path: './assets/img/poster-film/end4.jpg',
             name: 'DORAEMON ĐÔI BẠN THÂN'
-            
+
         }
         ,
         {
             src: './assets/trailer/Demon Slayer - Kimetsu no Yaiba - The Movie- Mugen Train Official Trailer.mp4',
             path: './assets/img/poster-film/end5.jpg',
             name: 'Kimetsu no Yaiba - The Movie'
-            
+
         }
         ,
         {
             src: './assets/trailer/Phim hoạt hình -RICHARD THE STORK _ VẸT CÒ PHIÊU LƯU KÝ- trailer.mp4',
             path: './assets/img/poster-film/end6.jpg',
             name: 'Vẹt Cò phiêu lưu ký'
-            
+
         }
         ,
         {
             src: './assets/trailer/Annabelle- Tạo Vật Quỷ Dữ - Official Trailer.mp4',
             path: './assets/img/poster-film/end7.jpg',
             name: 'Annabelle- Tạo Vật Quỷ Dữ'
-            
+
         }
         ,
         {
             src: './assets/trailer/Duck Duck Goose - Ngỗng Vịt Phiêu Lưu Ký - Trailer.mp4',
             path: './assets/img/poster-film/end8.jpg',
             name: 'Ngỗng Vịt Phiêu Lưu Ký'
-            
+
         }
         ,
         {
             src: './assets/trailer/Phim -Cậu Vàng- Teaser Trailer - KC 08.01.2021.mp4',
             path: './assets/img/poster-film/end9.jpg',
             name: 'Cậu Vàng'
-            
+
         }
         ,
         {
             src: './assets/trailer/Chú Khủng Long Tốt Bụng - Trailer Chính Thức.mp4',
             path: './assets/img/poster-film/end10.jpg',
             name: 'Chú Khủng Long Tốt Bụng'
-            
+
         }
         ,
         {
             src: './assets/trailer/A DOG NAMED PALMA ★ Russian movie trailer 2021.mp4',
             path: './assets/img/poster-film/end11.jpg',
             name: 'Chú Chó PalMa'
-            
+
         }
         ,
         {
             src: './assets/trailer/The Call Of The Wild- Tiếng Gọi Nơi Hoang Dã - Legend.mp4',
             path: './assets/img/poster-film/end15.jpg',
             name: 'Tiếng Gọi Nơi Hoang Dã'
-            
+
         }
         ,
         {
             src: './assets/trailer/The Call Of The Wild- Tiếng Gọi Nơi Hoang Dã - Legend.mp4',
             path: './assets/img/poster-film/end13.jpg',
             name: 'Tiếng Gọi Nơi Hoang Dã'
-            
+
         }
         ,
         {
             src: './assets/trailer/Walking With Dinosaurs - Dạo Bước Cùng Khủng Long - Trailer E.mp4',
             path: './assets/img/poster-film/end14.jpg',
             name: 'Dạo Bước Khủng Long'
-            
+
         }
         ,
         {
             src: './assets/trailer/The Lion King Official Trailer.mp4',
             path: './assets/img/poster-film/end16.jpg',
             name: 'Lion King'
-            
+
         }
     ]
 
 };
 const zeroEnd = document.querySelector('.zero-end');
-function renderContentFilmEnd() {
-    var htmls = appItemsFilm.filmContent.map(function(filmContent, index) {
-        return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}">
-        <img src="${filmContent.path}" alt="">
-        </div>`;
-    })
-    zeroEnd.innerHTML = htmls.join('');
+function renderContentFilmEnd(name) {
+    const urlSearchPage = `https://service-betiu.onrender.com/api/v1/search-film-tes?name=${name}`;
+    if (!name) {
+        fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-thuyet-minh&subCategoryId=kinh-di&country&year`)
+            .then(res => res.json())
+            .then((result) => {
+                var htmls = result.pageProps.data.items.map(function (item, index) {
+                    return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                            <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                            <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                        <div class="storage-item-icon">
+                            <i class="far fa-play-circle"></i>
+                        </div>
+                        <div class="storage-item-description">
+                            <h3 class="storage-item-description_header">${item.name}</h3>
+                            <div class="storage-item-description_body">
+                                <span>${item.origin_name}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.time}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.lang}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.year}</span>
+                            </div>
+                        </div>
+                    </div>
+                            </div>`;
+                })
+                zeroEnd.innerHTML = htmls.join('');
+                const stoItems = document.querySelectorAll('.storage-item');
+                const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+    
+                stoItems.forEach(function (stoItems, index) {
+                    stoItems.onmouseover = function () {
+                        stoItems.classList.add('storage-item-change')
+                        stoOverlay[index].classList.add('onOverlayFilm')
+                    }
+                    stoItems.onmouseout = function () {
+                        stoItems.classList.remove('storage-item-change')
+                        stoOverlay[index].classList.remove('onOverlayFilm')
+                    }
+                })
+                lazyLoadImgs()
+                loading.style.display = "none"
+            })
+    }else {
+        loading.style.display = "flex"
+        fetch(urlSearchPage)
+        .then(res => res.json())
+        .then(result => {
+            if(result && result.pageProps.data.items != null && result.pageProps.data.items.length > 0) {
+                const htmls = result.pageProps.data.items.map(function (item, index) {
+                    return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                            <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                            <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                        <div class="storage-item-icon">
+                            <i class="far fa-play-circle"></i>
+                        </div>
+                        <div class="storage-item-description">
+                            <h3 class="storage-item-description_header">${item.name}</h3>
+                            <div class="storage-item-description_body">
+                                <span>${item.origin_name}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.time}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.lang}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.year}</span>
+                            </div>
+                        </div>
+                    </div>
+                            </div>`;
+            })
+            zeroEnd.innerHTML = htmls.join('');
+            const stoItems = document.querySelectorAll('.storage-item');
+            const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+
+            stoItems.forEach(function (stoItems, index) {
+                stoItems.onmouseover = function () {
+                    stoItems.classList.add('storage-item-change')
+                    stoOverlay[index].classList.add('onOverlayFilm')
+                }
+                stoItems.onmouseout = function () {
+                    stoItems.classList.remove('storage-item-change')
+                    stoOverlay[index].classList.remove('onOverlayFilm')
+                }
+            })
+            lazyLoadImgs()
+            v.style.display = "none"
+            v1.style.display = "none"
+            v2.style.display = "none"
+            v3.style.display = "none"
+            loading.style.display = "none"
+
+            }else {
+                toastAram("Không tìm thấy phim, hãy nhập chính xác tên phim và thử lại..")
+                loading.style.display = "none"
+            }
+        })
+        .catch(e => {
+            toastAram("Có vẻ đã gặp vẫn đề, retry lại page nhé.")
+            loading.style.display = "none"
+        })
+    }
 }
 renderContentFilmEnd();
 
@@ -1172,30 +1309,30 @@ loading.style.display = "flex"
 setTimeout(() => {
     toastSuccess("Đang tải một số cấu hình. Vui lòng đợi giây lát.")
 }, 2000)
-function renderFilm () {
+function renderFilm() {
     loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=khoa-hoc&country&year`)
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-vietsub&subCategoryId=hai-huoc&country&year`)
         .then(res => res.json())
         .then((result) => {
             var htmls = result.pageProps.data.items.map(function (item, index) {
                 return `<div class="storage-item" data-index="${index}" onclick=zeroClick("${item.slug}")>
                 <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                 <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-                <div class="storage-item-icon">
-                <i class="far fa-play-circle"></i>
-                </div>
-                <div class="storage-item-description">
-                <h3 class="storage-item-description_header">${item.name}</h3>
-                <div class="storage-item-description_body">
-                <span>${item.origin_name}</span>
-                <i class="fas fa-circle"></i>
-                <span>${item.time}</span>
-                <i class="fas fa-circle"></i>
-                <span>${item.lang}</span>
-                <i class="fas fa-circle"></i>
-                <span>${item.year}</span>
-                </div>
-                </div>
+                    <div class="storage-item-icon">
+                        <i class="far fa-play-circle"></i>
+                    </div>
+                    <div class="storage-item-description">
+                        <h3 class="storage-item-description_header">${item.name}</h3>
+                        <div class="storage-item-description_body">
+                            <span>${item.origin_name}</span>
+                            <i class="fas fa-circle"></i>
+                            <span>${item.time}</span>
+                            <i class="fas fa-circle"></i>
+                            <span>${item.lang}</span>
+                            <i class="fas fa-circle"></i>
+                            <span>${item.year}</span>
+                        </div>
+                    </div>
                 </div>
                 </div>`;
             })
@@ -1203,7 +1340,7 @@ function renderFilm () {
             const stoItems = document.querySelectorAll('.storage-item');
             const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 
-            stoItems.forEach(function(stoItems, index) {
+            stoItems.forEach(function (stoItems, index) {
                 stoItems.onmouseover = function () {
                     stoItems.classList.add('storage-item-change')
                     stoOverlay[index].classList.add('onOverlayFilm')
@@ -1214,13 +1351,13 @@ function renderFilm () {
                 }
             })
             lazyLoadImgs()
-    loading.style.display = "none"
+            loading.style.display = "none"
 
-    })
+        })
 }
-function renderFilm1 () {
+function renderFilm1() {
     loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=hanh-dong&country&year`)
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-sap-chieu&subCategoryId=&country&year`)
         .then(res => res.json())
         .then((result) => {
             var htmls = result.pageProps.data.items.map(function (item, index) {
@@ -1249,7 +1386,7 @@ function renderFilm1 () {
             const stoItems = document.querySelectorAll('.storage-item');
             const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 
-            stoItems.forEach(function(stoItems, index) {
+            stoItems.forEach(function (stoItems, index) {
                 stoItems.onmouseover = function () {
                     stoItems.classList.add('storage-item-change')
                     stoOverlay[index].classList.add('onOverlayFilm')
@@ -1258,10 +1395,10 @@ function renderFilm1 () {
                     stoItems.classList.remove('storage-item-change')
                     stoOverlay[index].classList.remove('onOverlayFilm')
                 }
+            })
+            lazyLoadImgs()
+            loading.style.display = "none"
         })
-        lazyLoadImgs()
-    loading.style.display = "none"
-    })
 }
 
 // handle click on poster film
@@ -1269,7 +1406,6 @@ var currentFilm;
 var listNumFilm = document.querySelector('.list-film-num');
 
 function renderNumFilm(items) {
-    console.log(items);
     const htmls = items.map((item, index) => {
         let indexNumb = index + 1;
         if (items.length == 1) {
@@ -1312,27 +1448,27 @@ function numbClick(index) {
 
 var dataResource;
 function zeroClick(slug) {
+    loading.style.display = "flex"
     const storageDesHearder = document.querySelector('.storage-desciption_header');
-    console.log('click');
-        fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
+    fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
         .then(res => res.json())
         .then(result => {
             dataResource = result;
-            console.log(result);
             renderNumFilm(result.episodes[0].server_data);
             storageDesHearder.textContent = result.movie.name;
             modalPlayFilm.style.display = 'flex'
             const hls1 = new Hls();
-    if (Hls.isSupported()) {
-        hls1.loadSource(dataResource.episodes[0].server_data[0].link_m3u8);
-        hls1.attachMedia(video);
-        hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
-            video.play();
-        });
-    } else {
-        video.src = dataResource.episodes[0].server_data[0].link_m3u8;
-        video.play();
-    }
+            loading.style.display = "none"
+            if (Hls.isSupported()) {
+                hls1.loadSource(dataResource.episodes[0].server_data[0].link_m3u8);
+                hls1.attachMedia(video);
+                hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+                    video.play();
+                });
+            } else {
+                video.src = dataResource.episodes[0].server_data[0].link_m3u8;
+                video.play();
+            }
         })
     // if(filmNode) {
     //     currentFilm = Number(filmNode.dataset.index);
@@ -1344,7 +1480,7 @@ function zeroClick(slug) {
     // }
 }
 
-function renderFilm2 () {
+function renderFilm2() {
     loading.style.display = "flex"
     fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=vien-tuong&country&year`)
         .then(res => res.json())
@@ -1375,7 +1511,7 @@ function renderFilm2 () {
             const stoItems = document.querySelectorAll('.storage-item');
             const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 
-            stoItems.forEach(function(stoItems, index) {
+            stoItems.forEach(function (stoItems, index) {
                 stoItems.onmouseover = function () {
                     stoItems.classList.add('storage-item-change')
                     stoOverlay[index].classList.add('onOverlayFilm')
@@ -1384,12 +1520,12 @@ function renderFilm2 () {
                     stoItems.classList.remove('storage-item-change')
                     stoOverlay[index].classList.remove('onOverlayFilm')
                 }
+            })
+            lazyLoadImgs()
+            loading.style.display = "none"
         })
-        lazyLoadImgs()
-        loading.style.display = "none"
-    })
 }
-function renderFilm3 () {
+function renderFilm3() {
     var htmls = appItemsFilm.actFilm.map(function (item, index) {
         return `<div class="storage-item" data-index="${index}">
         <img src="${item.path}" alt="">
@@ -1411,8 +1547,8 @@ function renderFilm3 () {
                 </div>
                 </div>
                 </div>`;
-            })
-            storContainer3.innerHTML = htmls.join('');
+    })
+    storContainer3.innerHTML = htmls.join('');
 }
 renderFilm();
 renderFilm1();
@@ -1422,7 +1558,7 @@ const stoItems = document.querySelectorAll('.storage-item');
 const stoImg = document.querySelector('.storage-item > img');
 const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 // handle items poster film
-stoItems.forEach(function(stoItems, index) {
+stoItems.forEach(function (stoItems, index) {
     stoItems.onmouseover = function () {
         stoItems.classList.add('storage-item-change')
         stoOverlay[index].classList.add('onOverlayFilm')
@@ -1474,7 +1610,7 @@ const modalPlayFilm = document.querySelector('.storage-body-modal');
 storContainer3.onclick = function (e) {
     const filmNode = e.target.closest('.storage-item');
     const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
+    if (filmNode) {
         currentFilm = Number(filmNode.dataset.index);
         video.src = appItemsFilm.actFilm[currentFilm].src;
         storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
@@ -1483,18 +1619,18 @@ storContainer3.onclick = function (e) {
         btnModalTrailer.onclick();
     }
 }
-zeroEnd.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-content');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if(filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.filmContent[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.filmContent[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        btnModalTrailer.onclick();
-    }
-}
+// zeroEnd.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-content');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if (filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.filmContent[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.filmContent[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         btnModalTrailer.onclick();
+//     }
+// }
 // handle click close modal film
 const btnloseModalFilm = document.querySelector('.storage-body-modal_overlay i');
 const overlayModalFilm = document.querySelector('.storage-body-modal_overlay');
@@ -1507,7 +1643,7 @@ overlayModalFilm.onclick = function () {
     modalPlayFilm.style.display = 'none'
 }
 window.onkeyup = function (e) {
-    if(e.which == 27) {
+    if (e.which == 27) {
         video.pause();
         modalPlayFilm.style.display = 'none'
     }
@@ -1519,160 +1655,168 @@ const btnNextFilm = document.querySelectorAll('.storage-items-next');
 const iconNext = document.querySelectorAll('.storage-items-next i');
 const btnPrevFilm = document.querySelectorAll('.storage-items-prev');
 const iconPrev = document.querySelectorAll('.storage-items-prev i');
-    var index = 0;
-    var index1 = 0;
-    var index2 = 0;
-    var index3 = 0;
-    var offset = stoImg.offsetWidth + 14;
-    // css for node move slide film
-    // newFilm
-    btnPrevFilm[0].onmouseover = function() {
-        iconPrev[0].style.fontSize = '3rem'
+var index = 0;
+var index1 = 0;
+var index2 = 0;
+var index3 = 0;
+var offset = stoImg.offsetWidth + 14;
+// css for node move slide film
+// newFilm
+btnPrevFilm[0].onmouseover = function () {
+    iconPrev[0].style.fontSize = '3rem'
+}
+btnPrevFilm[0].onmouseout = function () {
+    iconPrev[0].style.fontSize = '2rem'
+}
+btnNextFilm[0].onmouseover = function () {
+    iconNext[0].style.fontSize = '3rem'
+}
+btnNextFilm[0].onmouseout = function () {
+    iconNext[0].style.fontSize = '2rem'
+}
+// horrorFilm
+btnPrevFilm[1].onmouseover = function () {
+    iconPrev[1].style.fontSize = '3rem'
+}
+btnPrevFilm[1].onmouseout = function () {
+    iconPrev[1].style.fontSize = '2rem'
+}
+btnNextFilm[1].onmouseover = function () {
+    iconNext[1].style.fontSize = '3rem'
+}
+btnNextFilm[1].onmouseout = function () {
+    iconNext[1].style.fontSize = '2rem'
+}
+// blockBusketFilm
+btnPrevFilm[2].onmouseover = function () {
+    iconPrev[2].style.fontSize = '3rem'
+}
+btnPrevFilm[2].onmouseout = function () {
+    iconPrev[2].style.fontSize = '2rem'
+}
+btnNextFilm[2].onmouseover = function () {
+    iconNext[2].style.fontSize = '3rem'
+}
+btnNextFilm[2].onmouseout = function () {
+    iconNext[2].style.fontSize = '2rem'
+}
+// actFilm
+btnPrevFilm[3].onmouseover = function () {
+    iconPrev[3].style.fontSize = '3rem'
+}
+btnPrevFilm[3].onmouseout = function () {
+    iconPrev[3].style.fontSize = '2rem'
+}
+btnNextFilm[3].onmouseover = function () {
+    iconNext[3].style.fontSize = '3rem'
+}
+btnNextFilm[3].onmouseout = function () {
+    iconNext[3].style.fontSize = '2rem'
+}
+// newFilm  click prev-next
+btnNextFilm[0].onclick = function () {
+    if (index < (3.94)) {
+        index++;
+        if (index == 4) {
+            index = 3.94
+            btnNextFilm[0].style.display = 'none';
+        }
+        storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
+        btnPrevFilm[0].style.display = 'block';
     }
-    btnPrevFilm[0].onmouseout = function() {
-        iconPrev[0].style.fontSize = '2rem'
-    }
-    btnNextFilm[0].onmouseover = function() {
-        iconNext[0].style.fontSize = '3rem'
-    }
-    btnNextFilm[0].onmouseout = function() {
-        iconNext[0].style.fontSize = '2rem'
-    }
-    // horrorFilm
-    btnPrevFilm[1].onmouseover = function() {
-        iconPrev[1].style.fontSize = '3rem'
-    }
-    btnPrevFilm[1].onmouseout = function() {
-        iconPrev[1].style.fontSize = '2rem'
-    }
-    btnNextFilm[1].onmouseover = function() {
-        iconNext[1].style.fontSize = '3rem'
-    }
-    btnNextFilm[1].onmouseout = function() {
-        iconNext[1].style.fontSize = '2rem'
-    }
-    // blockBusketFilm
-    btnPrevFilm[2].onmouseover = function() {
-        iconPrev[2].style.fontSize = '3rem'
-    }
-    btnPrevFilm[2].onmouseout = function() {
-        iconPrev[2].style.fontSize = '2rem'
-    }
-    btnNextFilm[2].onmouseover = function() {
-        iconNext[2].style.fontSize = '3rem'
-    }
-    btnNextFilm[2].onmouseout = function() {
-        iconNext[2].style.fontSize = '2rem'
-    }
-    // actFilm
-    btnPrevFilm[3].onmouseover = function() {
-        iconPrev[3].style.fontSize = '3rem'
-    }
-    btnPrevFilm[3].onmouseout = function() {
-        iconPrev[3].style.fontSize = '2rem'
-    }
-    btnNextFilm[3].onmouseover = function() {
-        iconNext[3].style.fontSize = '3rem'
-    }
-    btnNextFilm[3].onmouseout = function() {
-        iconNext[3].style.fontSize = '2rem'
-    }
-    // newFilm  click prev-next
-    btnNextFilm[0].onclick = function () {
-        if(index < (3.94)) {
-            index++;
-            if(index == 4) {
-                index = 3.94
-                btnNextFilm[0].style.display = 'none';
-            }
-            storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
-            btnPrevFilm[0].style.display = 'block';
-    }}
+}
 
-    btnPrevFilm[0].onclick = function () {
-        if(index > (0)) {
-            if(index === 3.94) {
-                index = 4
-            }
-            index--;
-            if(index == 0) {
-                btnPrevFilm[0].style.display = 'none';
-            }
-            storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
-            btnNextFilm[0].style.display = 'block';
-    }}
-    // horrorFilm click prev-next
-    btnNextFilm[1].onclick = function () {
-        if(index1 < (3.94)) {
-            index1++;
-            if(index1 == 4) {
-                index1 = 3.94
-                btnNextFilm[1].style.display = 'none';
-            }
-            storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
-            btnPrevFilm[1].style.display = 'block';
-    }}
+btnPrevFilm[0].onclick = function () {
+    if (index > (0)) {
+        if (index === 3.94) {
+            index = 4
+        }
+        index--;
+        if (index == 0) {
+            btnPrevFilm[0].style.display = 'none';
+        }
+        storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
+        btnNextFilm[0].style.display = 'block';
+    }
+}
+// horrorFilm click prev-next
+btnNextFilm[1].onclick = function () {
+    if (index1 < (3.94)) {
+        index1++;
+        if (index1 == 4) {
+            index1 = 3.94
+            btnNextFilm[1].style.display = 'none';
+        }
+        storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
+        btnPrevFilm[1].style.display = 'block';
+    }
+}
 
-    btnPrevFilm[1].onclick = function () {
-        if(index1 > (0)) {
-            if(index1 === 3.94) {
-                index1 = 4
-            }
-            index1--;
-            if(index1 == 0) {
-                btnPrevFilm[1].style.display = 'none';
-            }
-            storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
-            btnNextFilm[1].style.display = 'block';
-    }}
-    // blockbusterFilm click prev-next
-    btnNextFilm[2].onclick = function () {
-        if(index2 < (3.94)) {
-            index2++;
-            if(index2 == 4) {
-                index2 = 3.94
-                btnNextFilm[2].style.display = 'none';
-            }
-            storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
-            btnPrevFilm[2].style.display = 'block';
-    }}
+btnPrevFilm[1].onclick = function () {
+    if (index1 > (0)) {
+        if (index1 === 3.94) {
+            index1 = 4
+        }
+        index1--;
+        if (index1 == 0) {
+            btnPrevFilm[1].style.display = 'none';
+        }
+        storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
+        btnNextFilm[1].style.display = 'block';
+    }
+}
+// blockbusterFilm click prev-next
+btnNextFilm[2].onclick = function () {
+    if (index2 < (3.94)) {
+        index2++;
+        if (index2 == 4) {
+            index2 = 3.94
+            btnNextFilm[2].style.display = 'none';
+        }
+        storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
+        btnPrevFilm[2].style.display = 'block';
+    }
+}
 
-    btnPrevFilm[2].onclick = function () {
-        if(index2 > (0)) {
-            if(index2 === 3.94) {
-                index2 = 4
-            }
-            index2--;
-            if(index2 == 0) {
-                btnPrevFilm[2].style.display = 'none';
-            }
-            storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
-            btnNextFilm[2].style.display = 'block';
-    }}
-    // actFilm click prev-next
-    btnNextFilm[3].onclick = function () {
-        if(index3 < (3.94)) {
-            index3++;
-            if(index3 == 4) {
-                index3 = 3.94
-                btnNextFilm[3].style.display = 'none';
-            }
-            storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
-            btnPrevFilm[3].style.display = 'block';
-    }}
+btnPrevFilm[2].onclick = function () {
+    if (index2 > (0)) {
+        if (index2 === 3.94) {
+            index2 = 4
+        }
+        index2--;
+        if (index2 == 0) {
+            btnPrevFilm[2].style.display = 'none';
+        }
+        storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
+        btnNextFilm[2].style.display = 'block';
+    }
+}
+// actFilm click prev-next
+btnNextFilm[3].onclick = function () {
+    if (index3 < (3.94)) {
+        index3++;
+        if (index3 == 4) {
+            index3 = 3.94
+            btnNextFilm[3].style.display = 'none';
+        }
+        storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
+        btnPrevFilm[3].style.display = 'block';
+    }
+}
 
-    btnPrevFilm[3].onclick = function () {
-        if(index3 > (0)) {
-            if(index3 === 3.94) {
-                index3 = 4
-            }
-            index3--;
-            if(index3 == 0) {
-                btnPrevFilm[3].style.display = 'none';
-            }
-            storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
-            btnNextFilm[3].style.display = 'block';
-    }}
+btnPrevFilm[3].onclick = function () {
+    if (index3 > (0)) {
+        if (index3 === 3.94) {
+            index3 = 4
+        }
+        index3--;
+        if (index3 == 0) {
+            btnPrevFilm[3].style.display = 'none';
+        }
+        storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
+        btnNextFilm[3].style.display = 'block';
+    }
+}
 
 // handle click btn film modal
 // const btnModalTrailer = document.querySelector('.btn-trailer')
@@ -1699,67 +1843,67 @@ const iconPrev = document.querySelectorAll('.storage-items-prev i');
 //     }
 // }
 
-function toastAram () {
+function toastAram() {
     const toastMain = document.getElementById('toast');
     const toast = document.createElement('div');
-    if(toastMain) {
+    if (toastMain) {
         toast.classList.add('toast', 'toastAram')
         toast.innerHTML = `
             <i class="ti-settings aram"></i>
             <p class="toast-text">Chức năng đang được cập nhật</p>
         `;
         toastMain.appendChild(toast);
-        setTimeout(function(){
+        setTimeout(function () {
             toastMain.removeChild(toast);
-        },4000)
+        }, 4000)
     }
 }
 
 const filmSelect = document.querySelectorAll('.film-select');
 const updateBefore = document.querySelectorAll('.js-update-before');
-filmSelect.forEach((filmSelect)=>{
-    filmSelect.onclick = function(){
+filmSelect.forEach((filmSelect) => {
+    filmSelect.onclick = function () {
         toastAram();
     }
 })
-updateBefore.forEach((updateBefore)=>{
-    updateBefore.onclick = function(){
+updateBefore.forEach((updateBefore) => {
+    updateBefore.onclick = function () {
         toastAram();
     }
 })
 
-function lazyLoadImgs () {
-// duyệt tất cả tấm ảnh cần lazy-load
-const lazyImages = document.querySelectorAll('[lazy]');
+function lazyLoadImgs() {
+    // duyệt tất cả tấm ảnh cần lazy-load
+    const lazyImages = document.querySelectorAll('[lazy]');
 
-// chờ các tấm ảnh này xuất hiện trên màn hình
-const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    // tấm ảnh này đã xuất hiện trên màn hình
-    if (entry.isIntersecting) {
-      const lazyImage = entry.target;
-      const src = lazyImage.dataset.src;
+    // chờ các tấm ảnh này xuất hiện trên màn hình
+    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            // tấm ảnh này đã xuất hiện trên màn hình
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target;
+                const src = lazyImage.dataset.src;
 
-      lazyImage.tagName.toLowerCase() === 'img'
-      // <img>: copy data-src sang src
-        ? lazyImage.src = src
+                lazyImage.tagName.toLowerCase() === 'img'
+                    // <img>: copy data-src sang src
+                    ? lazyImage.src = src
 
-      // <div>: copy data-src sang background-image
-      : lazyImage.style.backgroundImage = "url(\'" + src + "\')";
+                    // <div>: copy data-src sang background-image
+                    : lazyImage.style.backgroundImage = "url(\'" + src + "\')";
 
-      // copy xong rồi thì bỏ attribute lazy đi
-      lazyImage.removeAttribute('lazy');
+                // copy xong rồi thì bỏ attribute lazy đi
+                lazyImage.removeAttribute('lazy');
 
-      // job done, không cần observe nó nữa
-      observer.unobserve(lazyImage);
-    }
-  });
-});
+                // job done, không cần observe nó nữa
+                observer.unobserve(lazyImage);
+            }
+        });
+    });
 
-// Observe từng tấm ảnh và chờ nó xuất hiện trên màn hình
-lazyImages.forEach((lazyImage) => {
-  lazyImageObserver.observe(lazyImage);
-});
+    // Observe từng tấm ảnh và chờ nó xuất hiện trên màn hình
+    lazyImages.forEach((lazyImage) => {
+        lazyImageObserver.observe(lazyImage);
+    });
 }
 
 function checkOverMouse() {
@@ -1795,3 +1939,73 @@ function toastSuccess(e) {
 }
 
 const player = new Plyr(video);
+
+const inputListSearch = document.querySelector('.input-list');
+const searchList = document.querySelector('.storage-item_header-content');
+var valueSearch;
+inputListSearch.onchange = (e) => {
+    const varis = e.target.value;
+    if (varis !== "" && varis != null ) {
+        valueSearch = varis;
+    }
+}
+
+searchList.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (valueSearch !== "" && valueSearch != null) {
+        renderContentFilmEnd(valueSearch)
+    }else {
+        toastAram("Chưa nhập tên phim mà kiếm cái gì gì?")
+    }
+    inputListSearch.value = "";
+})
+
+const v = document.querySelector(".v")
+const v1 = document.querySelector(".v1")
+const v2 = document.querySelector(".v2")
+const v3 = document.querySelector(".v3")
+
+// handle click on poster film
+var currentFilm;
+var listNumFilm = document.querySelector('.list-film-num');
+
+function renderNumFilm(items) {
+    const htmls = items.map((item, index) => {
+        let indexNumb = index + 1;
+        if (items.length == 1) {
+            indexNumb = 'full'
+        }
+        if (index == 0) {
+            return `
+            <button class="nummb numberClickList-${index} active" onclick=numbClick("${item.slug}")>${indexNumb}</button>
+        `
+        }
+        return `
+            <button class="nummb numberClickList-${index}" onclick=numbClick("${item.slug}")>${indexNumb}</button>
+        `;
+    })
+    listNumFilm.innerHTML = htmls.join("");
+}
+
+function numbClick(index) {
+    const numb = document.querySelector(`.numberClickList-${index - 1}`);
+    const allBtnNumb = document.querySelectorAll(`.nummb`);
+    allBtnNumb.forEach(a => a.classList.remove('active'));
+    numb.classList.add('active');
+    modalPlayFilm.style.display = 'flex'
+    if (index === 'full') {
+        index = 0;
+    }
+    const hls1 = new Hls();
+    if (Hls.isSupported()) {
+        hls1.loadSource(dataResource.episodes[0].server_data[index].link_m3u8);
+        hls1.attachMedia(video);
+        hls1.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+            video.play();
+        });
+    } else {
+        video.src = dataResource.episodes[0].server_data[index].link_m3u8;
+        video.play();
+    }
+    // videoTitle.muted = true;
+}

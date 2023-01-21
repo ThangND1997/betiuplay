@@ -233,6 +233,7 @@ async function loginNow(email, password) {
             let id = data.data.id;
             localStorage.setItem("token", token)
             localStorage.setItem("id", id)
+            localStorage.setItem("email", email)
         })
         .then(() => {
             let token = localStorage.getItem("token");
@@ -520,7 +521,7 @@ function login_google(body, tokens, id) {
                 setTimeout(() => {
                     if (token != "undefined") {
                         loading.style.display = "none";
-                        window.location.href = './filmABC.html'
+                        window.location.href = './storage.html'
                     }
                 }, 1000)
             }
@@ -552,7 +553,7 @@ function find_account_google(userId, token, body) {
                 setTimeout(() => {
                     if (tokendd != "undefined") {
                         loading.style.display = "none";
-                        window.location.href = './filmABC.html'
+                        window.location.href = './storage.html'
                     }
                 }, 1000)
             }else {

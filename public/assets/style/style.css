@@ -325,6 +325,7 @@ header {
 .container {
     background-color: var(--black-color);
     position: relative;
+    z-index: 99;
 }
 
 .container::after {
@@ -694,3 +695,113 @@ header {
     margin: auto;
 }
 
+
+.no-hidden-pc.storage-content:last-child {
+    display: block;
+}
+
+.active {
+    background-color: #0b9583;
+    color: #fff;
+}
+
+.nummb {
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.list-film-num {
+    height: 100px;
+    overflow: auto;
+}
+.list-film-num::-webkit-scrollbar {
+    display: none;
+}
+
+.next-list {
+    padding: 8px;
+    background-color: #cc9112;
+    color: rgb(232, 220, 182);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.6s;
+    width: 40%;
+    align-self: center;
+    margin-top: 12px;
+}
+
+.next-list:hover {
+    background-color: #dc4a0c;
+    color: #eee1c4;
+}
+
+.input-list {
+    padding: 8px 12px 8px 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.search-list {
+    padding: 8px;
+    background-color: #cc9112;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.storage-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.description-item-film {
+    position: absolute;
+    width: 60%;
+    height: 20%;
+    left: 20%;
+    bottom: 0;
+    color: rgb(206, 167, 13);
+    font-weight: bold;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    bottom: 8px;
+}
+
+.item-film-shadow {
+    position: absolute;
+    z-index: 1;
+    background-image: linear-gradient(to top, #000000 40%, transparent);
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.wrap-item-film {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.wrap-item-film:hover {
+    transform: translateY(-6px);
+}
+
+.wrap-item-film img {
+    height: 100%;
+}
+
+.stoge-content-over {
+    position: relative;
+}

@@ -94,9 +94,20 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn-login_link" href="./auth.html">
+            <!-- <a class="btn-login_link" href="./auth.html">
                 <button class="btn btn-login">Đăng Nhập</button>
-            </a>
+            </a> -->
+            <div class="btn-login_link btn-login_link_pc">
+                <div class="account dropdown">
+                    <p class="log-name">Error</p>
+                    <img class="log-img tn btn-secondary dropdown-toggle">
+                    <div class="log-modal"></div>
+                    <ul class="dropdown-menu">
+                        <li class="edit-profile"><a class="dropdown-item drop-top-100-list" href="#">Edit Profile</a></li>
+                        <li class="log-out"><a class="dropdown-item">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
     <!-- end header -->
@@ -310,8 +321,14 @@
         </div>
         <!-- storage body -->
         <div class="storage-body">
+            <div class="storage-wrap grid wide version v0" style="z-index: 100;">
+                <form class="storage-item_header storage-item_header-content">
+                    <input class="input-list" type="text" placeholder="Nhập phim bạn muốn tìm..">
+                    <button class="search-list" type="submit">Tìm Kiếm</button>
+                </form>
+            </div>
             <!-- top phim -->
-            <div class="storage-wrap grid wide version">
+            <div class="storage-wrap grid wide version v">
                 <div class="storage-item_header">
                     <h2>Top phim hôm nay</h2> 
                     <div class="storage-items-next">
@@ -327,7 +344,7 @@
                 </div>
             </div>
             <!-- loat phim kinh di -->
-            <div class="storage-wrap grid wide version">
+            <div class="storage-wrap grid wide version v1">
                 <div class="storage-item_header">
                     <h2>Loạt phim hành động</h2> 
                     <div class="storage-items-next">
@@ -343,7 +360,7 @@
                 </div>
             </div>
             <!-- Bom tan chi co tren betiuplay -->
-            <div class="storage-wrap grid wide version">
+            <div class="storage-wrap grid wide version v2">
                 <div class="storage-item_header">
                     <h2>Bom tấn chỉ có trên betiuplay</h2> 
                     <div class="storage-items-next">
@@ -359,7 +376,7 @@
                 </div>
             </div>
             <!-- Hanh dong HollyWood -->
-            <div class="storage-wrap grid wide version">
+            <div class="storage-wrap grid wide version v3">
                 <div class="storage-item_header">
                     <h2>Hành động Hollywood</h2> 
                     <div class="storage-items-next">
@@ -375,7 +392,7 @@
                 </div>
             </div>
             <!-- Noi dung dac sac -->
-            <div class="storage-wrap grid wide version content-end">
+            <div class="storage-wrap grid wide version content-end v4">
                 <div class="storage-item_header storage-item_header-content">
                     <h2>Một số nội dung đặc sắc vui nhộn</h2> 
                 </div>
