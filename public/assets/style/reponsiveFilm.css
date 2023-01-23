@@ -25,7 +25,7 @@
         display: none;  
     }
 
-    .slide.active-1 {
+    .slide.slide-first {
         background-image: url('https://i.bbcosplay.com/10474/Annabelle.jpg.webp');
         transition: 0.6s;
     }

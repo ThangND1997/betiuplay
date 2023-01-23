@@ -37,7 +37,7 @@ function start () {
     const isSuccess = localStorage.getItem("token");
     // const userId = localStorage.getItem("id");
     if(isSuccess !== "undefined" && isSuccess != null) {
-        window.location.href = './filmABC.html'
+        window.location.href = './storage.html'
     }
 }
 

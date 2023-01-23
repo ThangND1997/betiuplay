@@ -1300,25 +1300,12 @@ function renderContentFilmEnd(name, filter) {
             .then(res => res.json())
             .then((result) => {
                 var htmls = result.pageProps.data.items.map(function (item, index) {
-                    return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
-                            <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
-                            <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-                        <div class="storage-item-icon">
-                            <i class="far fa-play-circle"></i>
-                        </div>
-                        <div class="storage-item-description">
-                            <h3 class="storage-item-description_header">${item.name}</h3>
-                            <div class="storage-item-description_body">
-                                <span>${item.origin_name}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.time}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.lang}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.year}</span>
-                            </div>
-                        </div>
-                    </div>
+                    return `<div class="col l-2-4 m-3 c-6 storage-content storage-content-filter" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                                <p class="description-item-film">
+                                    ${item.name}
+                                </p>
+                                <div class="item-film-shadow"></div>
+                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                             </div>`;
                 })
                 zeroEnd.innerHTML = htmls.join('');
@@ -1346,29 +1333,16 @@ function renderContentFilmEnd(name, filter) {
         .then(result => {
             if(result && result.pageProps.data.items != null && result.pageProps.data.items.length > 0) {
                 const htmls = result.pageProps.data.items.map(function (item, index) {
-                    return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
-                            <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
-                            <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-                        <div class="storage-item-icon">
-                            <i class="far fa-play-circle"></i>
-                        </div>
-                        <div class="storage-item-description">
-                            <h3 class="storage-item-description_header">${item.name}</h3>
-                            <div class="storage-item-description_body">
-                                <span>${item.origin_name}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.time}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.lang}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.year}</span>
-                            </div>
-                        </div>
-                    </div>
+                    return `<div class="col l-2-4 m-3 c-6 storage-content storage-content-filter" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                                <p class="description-item-film">
+                                    ${item.name}
+                                </p>
+                                <div class="item-film-shadow"></div>
+                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                             </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
-            resultSearchFilm.textContent = "Kết quả tìm kiếm được.."
+            resultSearchFilm.textContent = "Kết quả lọc được.."
             const stoItems = document.querySelectorAll('.storage-item');
             const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 
@@ -1406,25 +1380,12 @@ function renderContentFilmEnd(name, filter) {
         .then(result => {
             if(result && result.pageProps.data.items != null && result.pageProps.data.items.length > 0) {
                 const htmls = result.pageProps.data.items.map(function (item, index) {
-                    return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
-                            <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
-                            <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-                        <div class="storage-item-icon">
-                            <i class="far fa-play-circle"></i>
-                        </div>
-                        <div class="storage-item-description">
-                            <h3 class="storage-item-description_header">${item.name}</h3>
-                            <div class="storage-item-description_body">
-                                <span>${item.origin_name}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.time}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.lang}</span>
-                                <i class="fas fa-circle"></i>
-                                <span>${item.year}</span>
-                            </div>
-                        </div>
-                    </div>
+                    return `<div class="col l-2-4 m-3 c-6 storage-content storage-content-filter" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                                <p class="description-item-film">
+                                    ${item.name}
+                                </p>
+                                <div class="item-film-shadow"></div>
+                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
                             </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
