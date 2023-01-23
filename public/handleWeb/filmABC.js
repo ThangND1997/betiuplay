@@ -593,7 +593,8 @@ function numbClick(index) {
 var dataResource;
 function zeroClick(slug) {
     const storageDesHearder = document.querySelector('.storage-desciption_header');
-        fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
+    const email = localStorage.getItem("email") || "";
+    fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}&email=${email}`)
         .then(res => res.json())
         .then(result => {
             dataResource = result;
@@ -611,6 +612,17 @@ function zeroClick(slug) {
         video.src = dataResource.episodes[0].server_data[0].link_m3u8;
         video.play();
     }
+        })
+        .then(() => {
+            fetch(`https://service-betiu.onrender.com/api/v1/notification-admin?email=${email}`, { method: "POST" })
+            .then(res => res.json())
+            .then(result => true)
+            .catch(() => {
+                return false;
+            })
+        })
+        .catch(e => {
+            return false;
         })
     // if(filmNode) {
     //     currentFilm = Number(filmNode.dataset.index);

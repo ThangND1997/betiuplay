@@ -12,12 +12,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <title>BeTiu Play - Phim Hay, Xem Ngay !! </title>
     <link rel="shortcut icon" href="https://assets.glxplay.io/web/images/fav_icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
     <link rel="stylesheet" href="./assets/style/grid.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="./assets/style/form.css">
     <link rel="stylesheet" href="./assets/style/reponsive.css">
+    <link rel="stylesheet" href="./assets/style/filmABC.css">
     <link rel="stylesheet" href="./assets/style/film.css">
     <link rel="stylesheet" href="./assets/style/reponsiveFilm.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -49,6 +51,33 @@
         <img class="loading-img" src="https://media0.giphy.com/media/rtRflhLVzbNWU/giphy.gif" alt="">
     </div>
     <!--end move top page -->
+    <div id="edit-modal">
+        <form class="edit-modal-profile">
+            <div class="profile-editer profile-avatar">
+                <p class="profile-editer-title profile-avatar-title">Avatar</p>
+                <label for="upload-avatar" class="profile-editer-content profile-avatar-content">
+                    <img class="profile-avatar-img" src="https://tpmobile.vn/wp-content/uploads/2020/09/esk1U.jpg" alt="">
+                    <div class="profile-avatar-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                </label>
+				<input type="file" id="upload-avatar" style="display: none;">
+            </div>
+            <div class="profile-editer profile-name">
+                <label for="exampleFormControlInput1" class="form-label profile-editer-title profile-name-title">Name</label>
+                <input type="text" class="form-control profile-editer-content marg profile-name-content" id="exampleFormControlInput1" placeholder="Thang Nguyen Example">
+            </div>
+            <div class="profile-editer profile-phone">
+                <label for="exampleFormControlInput1" class="form-label profile-editer-title profile-phone-title">Phone</label>
+                <input type="tel" class="form-control profile-editer-content marg profile-phone-content" id="exampleFormControlInput1" placeholder="+84 364XX XXXX">
+            </div>
+            <div class="profile-controls">
+                <button type="button" class="btn btn-light edit-profile-btn edit-profile-btn-close">Cancel</button>
+                <!-- disabled -->
+                <button type="submit" class="btn btn-primary edit-profile-btn edit-profile-btn-save">Save</button> 
+            </div>
+        </form>
+    </div>
     <!-- start header -->
     <header>
         <div class="header grid wide version">
@@ -58,9 +87,10 @@
                 <a href="./index.html">
                     <img src="./assets/img/logo/BeTiu-Logo-Vip.png" alt="" class="nav-logo menu-mobile_logo">
                 </a>
-                <a class="btn-login_link" href="./auth.html">
+                <div></div>
+                <!-- <a class="btn-login_link" href="./auth.html">
                     <p class="menu-mobile_login">Đăng Nhập</p>
-                </a>
+                </a> -->
             </div>
             <!-- end menu-mobile -->
             <div class="header_navigation">
@@ -322,11 +352,49 @@
         <!-- storage body -->
         <div class="storage-body">
             <div class="storage-wrap grid wide version v0" style="z-index: 100;">
-                <form class="storage-item_header storage-item_header-content">
-                    <input class="input-list" type="text" placeholder="Nhập phim bạn muốn tìm..">
+                <form class="storage-item_header storage-item_header-content ignore-margin">
+                    <input class="input-list" type="text" placeholder="Tìm kiếm tại đây...">
                     <button class="search-list" type="submit">Tìm Kiếm</button>
                 </form>
-            </div>
+                <!-- start filter film -->
+                <!-- Example split danger button -->
+<!-- Example single danger button -->
+                <!-- Example single danger button -->
+                    <form class="form-filter-film">
+                        <select name="" id="form-filter-film-1">
+                            <option value="phim-moi">Phim Mới</option>
+                            <option value="phim-vietsub">Phim Vietsub</option>
+                            <option value="phim-thuyet-minh">Phim Thuyết Minh</option>
+                            <option value="phim-long-tieng">Phim Lồng Tiếng</option>
+                            <option value="hoat-hinh">Phim Anime</option>
+                            <option value="phim-sap-chieu">Phim Sắp Chiếu</option>
+                        </select>
+                        <select name="" id="form-filter-film-2">
+                            <option value="">Toàn Bộ Thể Loại</option>
+                            <option value="vien-tuong">Viễn Tưởng</option>
+                            <option value="hanh-dong">Hành Động</option>
+                            <option value="tinh-cam">Tình Cảm</option>
+                            <option value="vo-thuat">Võ Thuật</option>
+                            <option value="co-trang">Cổ Trang</option>
+                            <option value="phieu-luu">Phiêu Lưu</option>
+                            <option value="hai-huoc">Hài Hước</option>
+                            <option value="khoa-hoc">Khoa Học</option>
+                            <option value="kinh-di">Kinh Dị</option>
+                            <option value="kinh-dien">Kinh Điển</option>
+                            <option value="hoc-duong">Học Đường</option>
+                            <option value="phim-18">Phim 18+</option>
+                        </select>
+                        <select name="" id="form-filter-film-3">
+                            <option value="">Toàn Bộ Quốc Gia</option>
+                            <option value="au-my">Âu Mỹ</option>
+                            <option value="dai-loan">Đài Loan</option>
+                            <option value="trung-quoc">Trung Quốc</option>
+                            <option value="han-quoc">Hàn Quốc</option>
+                            <option value="nhat-ban">Nhật Bản</option>
+                        </select>
+                        <button type="submit" class="form-filter-film-submit">Lọc Phim</button>
+                    </form>
+                </div>
             <!-- top phim -->
             <div class="storage-wrap grid wide version v">
                 <div class="storage-item_header">
@@ -394,7 +462,7 @@
             <!-- Noi dung dac sac -->
             <div class="storage-wrap grid wide version content-end v4">
                 <div class="storage-item_header storage-item_header-content">
-                    <h2>Một số nội dung đặc sắc vui nhộn</h2> 
+                    <h2 class="result">Một số nội dung đặc sắc vui nhộn</h2> 
                 </div>
                 <div class="zero-end row"></div>
                 </div>

@@ -74,6 +74,23 @@ slideNodes[3].onclick = () => {
     slideContentTextAll[3].classList.add('visi-slide-film')
 }
 
+let dropdownToggle = document.querySelector(".dropdown-toggle")
+let logImg = document.querySelector(".log-img")
+let logName = document.querySelector(".log-name")
+let btnLoginMobile = document.querySelector(".btn-login_link")
+let menuDrop = document.querySelector(".dropdown-menu")
+var btnSaveProfile = document.querySelector('.edit-profile-btn-save');
+var modalEditProfile = document.querySelector('.edit-modal-profile');
+var btnEditProfile = document.querySelector('.edit-profile');
+var btnCloseProfile = document.querySelector('.edit-profile-btn-close');
+var fileUploadAvatar = document.querySelector("#upload-avatar")
+var imgUploadAvatar = document.querySelector(".profile-avatar-img")
+var profileNameContent = document.querySelector('.profile-name-content');
+var profilePhoneContent = document.querySelector('.profile-phone-content');
+var modalProfile = document.querySelector('#edit-modal');
+
+var editAvatarLink;
+
 function startt () {
     const isSuccess = localStorage.getItem("token");
     const userId = localStorage.getItem("id");
@@ -98,8 +115,16 @@ function startt () {
             logName.textContent = `Hello, ${result.firstName} ${result.lastName}`;
         })
         .catch(e => {
-            toastError("Có lỗi xảy ra, thử lại")
+            toastAram("Có lỗi xảy ra, thử lại")
         })
+    }
+}
+
+dropdownToggle.onclick = () => {
+    if (menuDrop.style.display === "none" || menuDrop.style.display == "") {
+        menuDrop.style.display = "flex"
+    }else {
+        menuDrop.style.display = "none"
     }
 }
 
@@ -111,7 +136,82 @@ function button () {
 }
 
 startt()
+//profile
+btnEditProfile.onclick = () => {
+    modalProfile.style.display = 'flex'
+    modalEditProfile.style.transform = 'translateY(0)';
+    modalEditProfile.style.transition = '4s';
+    menuDrop.style.display = "none"
+}
 
+btnCloseProfile.onclick = () => {
+    modalProfile.style.display = 'none'
+}
+
+fileUploadAvatar.addEventListener("change", ev => {
+    loading.style.display = "flex"
+    const formdata = new FormData()
+    formdata.append("image", ev.target.files[0])
+    fetch("https://api.imgur.com/3/image/", {
+        method: "post",
+        headers: {
+            Authorization: "Client-ID eb9173f09f940b0"
+        },
+        body: formdata
+    }).then(data => data.json()).then(result => {
+        loading.style.display = "none"
+        imgUploadAvatar.src = result.data.link;
+        editAvatarLink = result.data.link;
+        toastSuccess("Upload success")
+    })
+    .catch((er) => {
+        loading.style.display = "none"
+        toastAram("Faild Upload")
+    })
+})
+
+function covertUserName(str) {
+    const array = [];
+    const strNew = str.split(' ');
+    const latestItem = strNew.pop()
+    array.push(strNew.join(' '))
+    array.push(latestItem)
+    return array;
+}
+
+
+modalEditProfile.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loading.style.display = "flex"
+    const userId = localStorage.getItem("id");
+    const data = {
+        firstName: covertUserName(profileNameContent.value)[0],
+        lastName: covertUserName(profileNameContent.value)[1],
+        phone: profilePhoneContent.value
+    }
+    if(editAvatarLink != null && editAvatarLink !== "") {
+        data.avatar = editAvatarLink;
+    }
+    fetch(`https://service-betiu.onrender.com/api/v1/update/${userId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(result => {
+        console.log(result);
+        toastSuccess("Update Success")
+        setTimeout(() => {
+            location.reload()
+        }, 1000)
+    })
+    .catch(e => {
+        toastAram("Update profile faild. Please try again")
+        loading.style.display = "none"
+    })
+})
 
 
 // Set Interval for slides
@@ -1192,9 +1292,10 @@ const appItemsFilm = {
 
 };
 const zeroEnd = document.querySelector('.zero-end');
-function renderContentFilmEnd(name) {
+const resultSearchFilm = document.querySelector('.result')
+function renderContentFilmEnd(name, filter) {
     const urlSearchPage = `https://service-betiu.onrender.com/api/v1/search-film-tes?name=${name}`;
-    if (!name) {
+    if (!name && !filter) {
         fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-thuyet-minh&subCategoryId=kinh-di&country&year`)
             .then(res => res.json())
             .then((result) => {
@@ -1237,7 +1338,68 @@ function renderContentFilmEnd(name) {
                 lazyLoadImgs()
                 loading.style.display = "none"
             })
-    }else {
+    }
+    else if(filter) {
+        loading.style.display = "flex"
+        fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=${filter.categoryId}&subCategoryId=${filter.subCategoryId}&country=${filter.country}&year`)
+        .then(res => res.json())
+        .then(result => {
+            if(result && result.pageProps.data.items != null && result.pageProps.data.items.length > 0) {
+                const htmls = result.pageProps.data.items.map(function (item, index) {
+                    return `<div class="col l-2-4 m-3 c-6 storage-content" data-index="${index}" onclick=zeroClick("${item.slug}")>
+                            <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                            <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+                        <div class="storage-item-icon">
+                            <i class="far fa-play-circle"></i>
+                        </div>
+                        <div class="storage-item-description">
+                            <h3 class="storage-item-description_header">${item.name}</h3>
+                            <div class="storage-item-description_body">
+                                <span>${item.origin_name}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.time}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.lang}</span>
+                                <i class="fas fa-circle"></i>
+                                <span>${item.year}</span>
+                            </div>
+                        </div>
+                    </div>
+                            </div>`;
+            })
+            zeroEnd.innerHTML = htmls.join('');
+            resultSearchFilm.textContent = "Kết quả tìm kiếm được.."
+            const stoItems = document.querySelectorAll('.storage-item');
+            const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+
+            stoItems.forEach(function (stoItems, index) {
+                stoItems.onmouseover = function () {
+                    stoItems.classList.add('storage-item-change')
+                    stoOverlay[index].classList.add('onOverlayFilm')
+                }
+                stoItems.onmouseout = function () {
+                    stoItems.classList.remove('storage-item-change')
+                    stoOverlay[index].classList.remove('onOverlayFilm')
+                }
+            })
+            lazyLoadImgs()
+            v.style.display = "none"
+            v1.style.display = "none"
+            v2.style.display = "none"
+            v3.style.display = "none"
+            loading.style.display = "none"
+
+            }else {
+                toastAram("Không tìm thấy phim cho kết quả lọc của bạn, thử lại nhé..")
+                loading.style.display = "none"
+            }
+        })
+        .catch(e => {
+            toastAram("Có vẻ đã gặp vẫn đề, retry lại page nhé.")
+            loading.style.display = "none"
+        })
+    }
+    else {
         loading.style.display = "flex"
         fetch(urlSearchPage)
         .then(res => res.json())
@@ -1266,6 +1428,7 @@ function renderContentFilmEnd(name) {
                             </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
+            resultSearchFilm.textContent = "Kết quả tìm kiếm được.."
             const stoItems = document.querySelectorAll('.storage-item');
             const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 
@@ -1450,7 +1613,8 @@ var dataResource;
 function zeroClick(slug) {
     loading.style.display = "flex"
     const storageDesHearder = document.querySelector('.storage-desciption_header');
-    fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}`)
+    const email = localStorage.getItem("email") || "";
+    fetch(`https://service-betiu.onrender.com/api/v1/search-film?name=${slug}&email=${email}`)
         .then(res => res.json())
         .then(result => {
             dataResource = result;
@@ -1469,6 +1633,17 @@ function zeroClick(slug) {
                 video.src = dataResource.episodes[0].server_data[0].link_m3u8;
                 video.play();
             }
+        })
+        .then(() => {
+            fetch(`https://service-betiu.onrender.com/api/v1/notification-admin?email=${email}`, { method: "POST" })
+            .then(res => res.json())
+            .then(result => true)
+            .catch(() => {
+                return false;
+            })
+        })
+        .catch(e => {
+            return false;
         })
     // if(filmNode) {
     //     currentFilm = Number(filmNode.dataset.index);
@@ -1843,14 +2018,15 @@ btnPrevFilm[3].onclick = function () {
 //     }
 // }
 
-function toastAram() {
+function toastAram(e) {
     const toastMain = document.getElementById('toast');
     const toast = document.createElement('div');
     if (toastMain) {
         toast.classList.add('toast', 'toastAram')
+        const msg = e ? e : "Chức năng đang được cập nhật"
         toast.innerHTML = `
             <i class="ti-settings aram"></i>
-            <p class="toast-text">Chức năng đang được cập nhật</p>
+            <p class="toast-text">${msg}</p>
         `;
         toastMain.appendChild(toast);
         setTimeout(function () {
@@ -1958,6 +2134,21 @@ searchList.addEventListener("submit", (e) => {
         toastAram("Chưa nhập tên phim mà kiếm cái gì gì?")
     }
     inputListSearch.value = "";
+})
+
+//filter film
+const formFilterFilm = document.querySelector(".form-filter-film");
+const valueFilter1 = document.querySelector("#form-filter-film-1");
+const valueFilter2 = document.querySelector("#form-filter-film-2");
+const valueFilter3 = document.querySelector("#form-filter-film-3");
+formFilterFilm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const filter = {
+    categoryId: valueFilter1.options[valueFilter1.selectedIndex].value,
+    subCategoryId: valueFilter2.options[valueFilter2.selectedIndex].value,
+    country: valueFilter3.options[valueFilter3.selectedIndex].value
+  }
+  renderContentFilmEnd(null, filter)
 })
 
 const v = document.querySelector(".v")

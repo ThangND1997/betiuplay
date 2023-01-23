@@ -239,7 +239,7 @@ async function loginNow(email, password) {
             let token = localStorage.getItem("token");
             if (token != "undefined") {
                 loading.style.display = "none";
-                window.location.href = './filmABC.html'
+                window.location.href = './storage.html'
             }
         })
         .catch((e) => {
@@ -409,8 +409,8 @@ function register(body) {
                 toastSuccess("Bạn đã đang kí thành công. Đăng nhập và trải nghiệm nào");
                 setTimeout(() => {
                     loading.style.display = "none";
-                    btnLogin.onclick();
                     localStorage.setItem("email", body.email)
+                    btnLogin.onclick();
 
                 }, 1000)
             }
@@ -464,7 +464,6 @@ function register(body) {
             firebase.auth().signInWithPopup(ggProvider).then(async function(result) {
                 const token = result.credential.accessToken;
                 const user = result.user.providerData[0];
-                console.log(user);
                 const body = {
                     id: user.uid,
                     email: user.email,
@@ -517,6 +516,7 @@ function login_google(body, tokens, id) {
                 toastSuccess("Đang thiết lập cấu hình. Vui lòng chờ giây lát..");
                 localStorage.setItem("token", tokens);
                 localStorage.setItem("id", id);
+                localStorage.setItem("email", body.email);
                 let token = localStorage.getItem("token");
                 setTimeout(() => {
                     if (token != "undefined") {
@@ -549,6 +549,7 @@ function find_account_google(userId, token, body) {
                 toastSuccess("Đang thiết lập cấu hình. Vui lòng chờ giây lát..");
                 localStorage.setItem("token", token);
                 localStorage.setItem("id", userId);
+                localStorage.setItem("email", body.email);
                 let tokendd = localStorage.getItem("token");
                 setTimeout(() => {
                     if (tokendd != "undefined") {
