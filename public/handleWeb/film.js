@@ -1292,7 +1292,10 @@ const appItemsFilm = {
 
 };
 const zeroEnd = document.querySelector('.zero-end');
-const resultSearchFilm = document.querySelector('.result')
+const resultSearchFilm = document.querySelector('.result');
+const div1First = document.querySelector('.div1-chil-accept')
+const paginationFilter = document.querySelector('.container-paga')
+var simulatorFilter;
 function renderContentFilmEnd(name, filter) {
     const urlSearchPage = `https://service-betiu.onrender.com/api/v1/search-film-tes?name=${name}`;
     if (!name && !filter) {
@@ -1305,7 +1308,7 @@ function renderContentFilmEnd(name, filter) {
                                     ${item.name}
                                 </p>
                                 <div class="item-film-shadow"></div>
-                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.thumb_url != "" ? item.thumb_url : item.poster_url}" alt="">
                             </div>`;
                 })
                 zeroEnd.innerHTML = htmls.join('');
@@ -1327,18 +1330,25 @@ function renderContentFilmEnd(name, filter) {
             })
     }
     else if(filter) {
+        simulatorFilter = filter;
         loading.style.display = "flex"
-        fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=${filter.categoryId}&subCategoryId=${filter.subCategoryId}&country=${filter.country}&year`)
+        if (!filter.page) {
+            const allBtnNumb = document.querySelectorAll(`.div1-chil`);
+            allBtnNumb.forEach(a => a.classList.remove('active'));
+            div1First.classList.add("active");
+        }
+        fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=${filter.categoryId}&subCategoryId=${filter.subCategoryId}&country=${filter.country}&year=&page=${filter.page}`)
         .then(res => res.json())
         .then(result => {
             if(result && result.pageProps.data.items != null && result.pageProps.data.items.length > 0) {
+                const totalPageFilter = result.pageProps.data.params.pagination.totalItems;  
                 const htmls = result.pageProps.data.items.map(function (item, index) {
                     return `<div class="col l-2-4 m-3 c-6 storage-content storage-content-filter" data-index="${index}" onclick=zeroClick("${item.slug}")>
                                 <p class="description-item-film">
                                     ${item.name}
                                 </p>
                                 <div class="item-film-shadow"></div>
-                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.thumb_url != "" ? item.thumb_url : item.poster_url}" alt="">
                             </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
@@ -1356,6 +1366,8 @@ function renderContentFilmEnd(name, filter) {
                     stoOverlay[index].classList.remove('onOverlayFilm')
                 }
             })
+            window.scrollTo(0, 650);
+            paginationFilter.style.display = "flex";
             lazyLoadImgs()
             v.style.display = "none"
             v1.style.display = "none"
@@ -1385,7 +1397,7 @@ function renderContentFilmEnd(name, filter) {
                                     ${item.name}
                                 </p>
                                 <div class="item-film-shadow"></div>
-                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.thumb_url != "" ? item.thumb_url : item.poster_url}" alt="">
                             </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
@@ -2030,6 +2042,12 @@ function lazyLoadImgs() {
 
                 // copy xong rồi thì bỏ attribute lazy đi
                 lazyImage.removeAttribute('lazy');
+                // VERIFY IMG
+                lazyImage.addEventListener('error', function handleError() {
+                    // 👇️ if set to non-existent image, causes infinite loop
+                    // img.src = 'backup.webp'; // 👈️ must be a valid image
+                    lazyImage.src = "https://i.pinimg.com/originals/e8/01/09/e8010975536535128a49385e7979ff7e.jpg"
+                  });
 
                 // job done, không cần observe nó nữa
                 observer.unobserve(lazyImage);
@@ -2161,3 +2179,42 @@ function numbClick(index) {
     }
     // videoTitle.muted = true;
 }
+
+//paga
+const prevPaga = document.querySelector(".div00");
+const nextPaga = document.querySelector(".div11");
+const itemss = document.querySelector(".ct")
+let indexPaga = 1;
+const itemPagaNumber = 4;
+prevPaga.style.display = "none";
+nextPaga.style.display = "block";
+nextPaga.addEventListener('click', () => {
+    prevPaga.style.display = "block";
+    if (indexPaga == (itemPagaNumber - 1)) {
+        nextPaga.style.display = "none";
+
+    }
+    itemss.style.transform = `translateX(-${(itemss.offsetWidth / itemPagaNumber) * indexPaga}px)`;
+    indexPaga++;
+})
+prevPaga.addEventListener('click', () => {
+    nextPaga.style.display = "block";
+    if (indexPaga == 1) {
+        indexPaga = itemPagaNumber + 1;
+    }
+    if (indexPaga == 2) {
+        prevPaga.style.display = "none";
+    }
+    itemss.style.transform = `translateX(-${(itemss.offsetWidth / itemPagaNumber) * (indexPaga - 2)}px)`;
+    indexPaga--;
+})
+
+const ct = document.querySelector(".ct");
+ct.addEventListener("click", (e) => {
+    const optionNode = e.target.closest('.div1-chil');
+    const allBtnNumb = document.querySelectorAll(`.div1-chil`);
+    allBtnNumb.forEach(a => a.classList.remove('active'));
+    optionNode.classList.add("active")
+    simulatorFilter.page = optionNode.innerText;
+    renderContentFilmEnd(null, simulatorFilter)
+})

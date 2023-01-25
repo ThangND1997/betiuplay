@@ -700,3 +700,58 @@ video {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.storage-content, .storage-item {
+    background-color: #111;
+}
+
+/* paga */
+.wrap-page {
+    overflow: auto;
+    width: 150px;
+  }
+  
+  .div1 {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .ct {
+    display: flex;
+    width: 400%;
+  }
+  
+  .ct div {
+    width: calc(100%/4);
+  }
+  
+  .div1-chil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #767676;
+    color: white;
+  }
+
+  .div1-chil.div1-chil-first {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .div1-chil.div1-chil-last {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  
+  .active {
+    background-color: rgb(206 167 13);
+    color: black;
+  }
+  
+  .container-paga {
+    display: none;
+    justify-content: center;
+    background-color: transparent;
+  }
