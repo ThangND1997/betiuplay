@@ -1397,7 +1397,7 @@ function renderContentFilmEnd(name, filter) {
                                     ${item.name}
                                 </p>
                                 <div class="item-film-shadow"></div>
-                                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.thumb_url != "" ? item.thumb_url : item.poster_url}" alt="">
+                                <img lazy data-src="https://ophim1.cc/_next/image?url=http://img.ophim1.cc/uploads/movies/${item.thumb_url}&w=384&q=75" alt="">
                             </div>`;
             })
             zeroEnd.innerHTML = htmls.join('');
