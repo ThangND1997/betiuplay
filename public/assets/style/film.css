@@ -582,6 +582,7 @@ video {
     text-align: center;
     margin-bottom: 20px;
     border-radius: 6px;
+    overflow: hidden;
 }
 
 /* .storage-content:last-child{
@@ -754,4 +755,8 @@ video {
     display: none;
     justify-content: center;
     background-color: transparent;
+  }
+
+  .wrap-page::-webkit-scrollbar {
+    display: none;
   }
