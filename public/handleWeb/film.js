@@ -1448,7 +1448,7 @@ setTimeout(() => {
 }, 2000)
 function renderFilm() {
     loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-vietsub&subCategoryId=hai-huoc&country&year`)
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=vien-tuong&country=&year=&page=`)
         .then(res => res.json())
         .then((result) => {
             var htmls = result.pageProps.data.items.map(function (item, index) {
@@ -1494,7 +1494,7 @@ function renderFilm() {
 }
 function renderFilm1() {
     loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-sap-chieu&subCategoryId=&country&year`)
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=hanh-dong&country=&year=&page=`)
         .then(res => res.json())
         .then((result) => {
             var htmls = result.pageProps.data.items.map(function (item, index) {
@@ -1631,7 +1631,7 @@ function zeroClick(slug) {
 
 function renderFilm2() {
     loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=phim-le&subCategoryId=vien-tuong&country&year`)
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=khoa-hoc&country=&year=&page=`)
         .then(res => res.json())
         .then((result) => {
             var htmls = result.pageProps.data.items.map(function (item, index) {
