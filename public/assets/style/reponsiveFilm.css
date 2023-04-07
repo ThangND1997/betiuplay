@@ -167,7 +167,7 @@
     /* css item film */
     .storage-items, .storage-items-1, .storage-items-2, .storage-items-3 {
         width: 950%;
-        height: 150px;
+        /* height: 150px; */
     }
 
     .storage-item {
@@ -299,7 +299,7 @@
     }
 
     .storage-content {
-        height: 260px;
+        /* height: 260px; */
     }
 
     .storage-content:last-child{

@@ -1372,8 +1372,8 @@ function renderContentFilmEnd(name, filter) {
             lazyLoadImgs()
             v.style.display = "none"
             v1.style.display = "none"
-            v2.style.display = "none"
-            v3.style.display = "none"
+            // v2.style.display = "none"
+            // v3.style.display = "none"
             loading.style.display = "none"
 
             }else {
@@ -1419,8 +1419,8 @@ function renderContentFilmEnd(name, filter) {
             lazyLoadImgs()
             v.style.display = "none"
             v1.style.display = "none"
-            v2.style.display = "none"
-            v3.style.display = "none"
+            // v2.style.display = "none"
+            // v3.style.display = "none"
             loading.style.display = "none"
 
             }else {
@@ -1439,8 +1439,8 @@ renderContentFilmEnd();
 
 const storContainer = document.querySelector('.storage-items');
 const storContainer1 = document.querySelector('.storage-items-1');
-const storContainer2 = document.querySelector('.storage-items-2');
-const storContainer3 = document.querySelector('.storage-items-3');
+// const storContainer2 = document.querySelector('.storage-items-2');
+// const storContainer3 = document.querySelector('.storage-items-3');
 const loading = document.querySelector('#loading')
 loading.style.display = "flex"
 setTimeout(() => {
@@ -1448,7 +1448,7 @@ setTimeout(() => {
 }, 2000)
 function renderFilm() {
     loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=vien-tuong&country=&year=&page=`)
+    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=khoa-hoc&country=&year=&page=`)
         .then(res => res.json())
         .then((result) => {
             var htmls = result.pageProps.data.items.map(function (item, index) {
@@ -1629,82 +1629,82 @@ function zeroClick(slug) {
     // }
 }
 
-function renderFilm2() {
-    loading.style.display = "flex"
-    fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=khoa-hoc&country=&year=&page=`)
-        .then(res => res.json())
-        .then((result) => {
-            var htmls = result.pageProps.data.items.map(function (item, index) {
-                return `<div class="storage-item" data-index="${index}" onclick=zeroClick("${item.slug}")>
-                <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
-                <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-                <div class="storage-item-icon">
-                <i class="far fa-play-circle"></i>
-                </div>
-                <div class="storage-item-description">
-                <h3 class="storage-item-description_header">${item.name}</h3>
-                <div class="storage-item-description_body">
-                <span>${item.origin_name}</span>
-                <i class="fas fa-circle"></i>
-                <span>${item.time}</span>
-                <i class="fas fa-circle"></i>
-                <span>${item.lang}</span>
-                <i class="fas fa-circle"></i>
-                <span>${item.year}</span>
-                </div>
-                </div>
-                </div>
-                </div>`;
-            })
-            storContainer2.innerHTML = htmls.join('');
-            const stoItems = document.querySelectorAll('.storage-item');
-            const stoOverlay = document.querySelectorAll('.storage-item-overlay');
+// function renderFilm2() {
+//     loading.style.display = "flex"
+//     fetch(`https://service-betiu.onrender.com/api/v1/filter-film?categoryId=&subCategoryId=khoa-hoc&country=&year=&page=`)
+//         .then(res => res.json())
+//         .then((result) => {
+//             var htmls = result.pageProps.data.items.map(function (item, index) {
+//                 return `<div class="storage-item" data-index="${index}" onclick=zeroClick("${item.slug}")>
+//                 <img lazy data-src="https://img.ophim.cc/uploads/movies/${item.poster_url != "" ? item.poster_url : item.thumb_url}" alt="">
+//                 <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+//                 <div class="storage-item-icon">
+//                 <i class="far fa-play-circle"></i>
+//                 </div>
+//                 <div class="storage-item-description">
+//                 <h3 class="storage-item-description_header">${item.name}</h3>
+//                 <div class="storage-item-description_body">
+//                 <span>${item.origin_name}</span>
+//                 <i class="fas fa-circle"></i>
+//                 <span>${item.time}</span>
+//                 <i class="fas fa-circle"></i>
+//                 <span>${item.lang}</span>
+//                 <i class="fas fa-circle"></i>
+//                 <span>${item.year}</span>
+//                 </div>
+//                 </div>
+//                 </div>
+//                 </div>`;
+//             })
+//             storContainer2.innerHTML = htmls.join('');
+//             const stoItems = document.querySelectorAll('.storage-item');
+//             const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 
-            stoItems.forEach(function (stoItems, index) {
-                stoItems.onmouseover = function () {
-                    stoItems.classList.add('storage-item-change')
-                    stoOverlay[index].classList.add('onOverlayFilm')
-                }
-                stoItems.onmouseout = function () {
-                    stoItems.classList.remove('storage-item-change')
-                    stoOverlay[index].classList.remove('onOverlayFilm')
-                }
-            })
-            lazyLoadImgs()
-            loading.style.display = "none"
-        })
-}
-function renderFilm3() {
-    var htmls = appItemsFilm.actFilm.map(function (item, index) {
-        return `<div class="storage-item" data-index="${index}">
-        <img src="${item.path}" alt="">
-                <div class="storage-item-overlay hidden-on-mobile-tablet-film">
-                <div class="storage-item-icon">
-                <i class="far fa-play-circle"></i>
-                </div>
-                <div class="storage-item-description">
-                <h3 class="storage-item-description_header">${item.name}</h3>
-                <div class="storage-item-description_body">
-        <span>${item.category}</span>
-                <i class="fas fa-circle"></i>
-        <span>${item.duration}</span>
-                <i class="fas fa-circle"></i>
-        <span>${item.age}</span>
-                <i class="fas fa-circle"></i>
-        <span>${item.premidum}</span>
-                </div>
-                </div>
-                </div>
-                </div>`;
-    })
-    storContainer3.innerHTML = htmls.join('');
-}
+//             stoItems.forEach(function (stoItems, index) {
+//                 stoItems.onmouseover = function () {
+//                     stoItems.classList.add('storage-item-change')
+//                     stoOverlay[index].classList.add('onOverlayFilm')
+//                 }
+//                 stoItems.onmouseout = function () {
+//                     stoItems.classList.remove('storage-item-change')
+//                     stoOverlay[index].classList.remove('onOverlayFilm')
+//                 }
+//             })
+//             lazyLoadImgs()
+//             loading.style.display = "none"
+//         })
+// }
+// function renderFilm3() {
+//     var htmls = appItemsFilm.actFilm.map(function (item, index) {
+//         return `<div class="storage-item" data-index="${index}">
+//         <img src="${item.path}" alt="">
+//                 <div class="storage-item-overlay hidden-on-mobile-tablet-film">
+//                 <div class="storage-item-icon">
+//                 <i class="far fa-play-circle"></i>
+//                 </div>
+//                 <div class="storage-item-description">
+//                 <h3 class="storage-item-description_header">${item.name}</h3>
+//                 <div class="storage-item-description_body">
+//         <span>${item.category}</span>
+//                 <i class="fas fa-circle"></i>
+//         <span>${item.duration}</span>
+//                 <i class="fas fa-circle"></i>
+//         <span>${item.age}</span>
+//                 <i class="fas fa-circle"></i>
+//         <span>${item.premidum}</span>
+//                 </div>
+//                 </div>
+//                 </div>
+//                 </div>`;
+//     })
+//     storContainer3.innerHTML = htmls.join('');
+// }
 renderFilm();
 renderFilm1();
-renderFilm2();
-renderFilm3();
+// renderFilm2();
+// renderFilm3();
 const stoItems = document.querySelectorAll('.storage-item');
-const stoImg = document.querySelector('.storage-item > img');
+const stoImg = document.querySelector('img');
 const stoOverlay = document.querySelectorAll('.storage-item-overlay');
 // handle items poster film
 stoItems.forEach(function (stoItems, index) {
@@ -1756,18 +1756,18 @@ const modalPlayFilm = document.querySelector('.storage-body-modal');
 //         btnModalTrailer.onclick();
 //     }
 // }
-storContainer3.onclick = function (e) {
-    const filmNode = e.target.closest('.storage-item');
-    const storageDesHearder = document.querySelector('.storage-desciption_header');
-    if (filmNode) {
-        currentFilm = Number(filmNode.dataset.index);
-        video.src = appItemsFilm.actFilm[currentFilm].src;
-        storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
-        modalPlayFilm.style.display = 'flex'
-        video.play();
-        btnModalTrailer.onclick();
-    }
-}
+// storContainer3.onclick = function (e) {
+//     const filmNode = e.target.closest('.storage-item');
+//     const storageDesHearder = document.querySelector('.storage-desciption_header');
+//     if (filmNode) {
+//         currentFilm = Number(filmNode.dataset.index);
+//         video.src = appItemsFilm.actFilm[currentFilm].src;
+//         storageDesHearder.textContent = appItemsFilm.actFilm[currentFilm].name;
+//         modalPlayFilm.style.display = 'flex'
+//         video.play();
+//         btnModalTrailer.onclick();
+//     }
+// }
 // zeroEnd.onclick = function (e) {
 //     const filmNode = e.target.closest('.storage-content');
 //     const storageDesHearder = document.querySelector('.storage-desciption_header');
@@ -1837,31 +1837,31 @@ btnNextFilm[1].onmouseout = function () {
     iconNext[1].style.fontSize = '2rem'
 }
 // blockBusketFilm
-btnPrevFilm[2].onmouseover = function () {
-    iconPrev[2].style.fontSize = '3rem'
-}
-btnPrevFilm[2].onmouseout = function () {
-    iconPrev[2].style.fontSize = '2rem'
-}
-btnNextFilm[2].onmouseover = function () {
-    iconNext[2].style.fontSize = '3rem'
-}
-btnNextFilm[2].onmouseout = function () {
-    iconNext[2].style.fontSize = '2rem'
-}
+// btnPrevFilm[2].onmouseover = function () {
+//     iconPrev[2].style.fontSize = '3rem'
+// }
+// btnPrevFilm[2].onmouseout = function () {
+//     iconPrev[2].style.fontSize = '2rem'
+// }
+// btnNextFilm[2].onmouseover = function () {
+//     iconNext[2].style.fontSize = '3rem'
+// }
+// btnNextFilm[2].onmouseout = function () {
+//     iconNext[2].style.fontSize = '2rem'
+// }
 // actFilm
-btnPrevFilm[3].onmouseover = function () {
-    iconPrev[3].style.fontSize = '3rem'
-}
-btnPrevFilm[3].onmouseout = function () {
-    iconPrev[3].style.fontSize = '2rem'
-}
-btnNextFilm[3].onmouseover = function () {
-    iconNext[3].style.fontSize = '3rem'
-}
-btnNextFilm[3].onmouseout = function () {
-    iconNext[3].style.fontSize = '2rem'
-}
+// btnPrevFilm[3].onmouseover = function () {
+//     iconPrev[3].style.fontSize = '3rem'
+// }
+// btnPrevFilm[3].onmouseout = function () {
+//     iconPrev[3].style.fontSize = '2rem'
+// }
+// btnNextFilm[3].onmouseover = function () {
+//     iconNext[3].style.fontSize = '3rem'
+// }
+// btnNextFilm[3].onmouseout = function () {
+//     iconNext[3].style.fontSize = '2rem'
+// }
 // newFilm  click prev-next
 btnNextFilm[0].onclick = function () {
     if (index < (3.94)) {
@@ -1870,7 +1870,7 @@ btnNextFilm[0].onclick = function () {
             index = 3.94
             btnNextFilm[0].style.display = 'none';
         }
-        storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
+        storContainer.style.transform = `translateX(-${offset * 6 * index}px)`;
         btnPrevFilm[0].style.display = 'block';
     }
 }
@@ -1884,7 +1884,7 @@ btnPrevFilm[0].onclick = function () {
         if (index == 0) {
             btnPrevFilm[0].style.display = 'none';
         }
-        storContainer.style.transform = `translateX(-${offset * 4 * index}px)`;
+        storContainer.style.transform = `translateX(-${offset * 6 * index}px)`;
         btnNextFilm[0].style.display = 'block';
     }
 }
@@ -1896,7 +1896,7 @@ btnNextFilm[1].onclick = function () {
             index1 = 3.94
             btnNextFilm[1].style.display = 'none';
         }
-        storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
+        storContainer1.style.transform = `translateX(-${offset * 6 * index1}px)`;
         btnPrevFilm[1].style.display = 'block';
     }
 }
@@ -1910,62 +1910,62 @@ btnPrevFilm[1].onclick = function () {
         if (index1 == 0) {
             btnPrevFilm[1].style.display = 'none';
         }
-        storContainer1.style.transform = `translateX(-${offset * 4 * index1}px)`;
+        storContainer1.style.transform = `translateX(-${offset * 6 * index1}px)`;
         btnNextFilm[1].style.display = 'block';
     }
 }
 // blockbusterFilm click prev-next
-btnNextFilm[2].onclick = function () {
-    if (index2 < (3.94)) {
-        index2++;
-        if (index2 == 4) {
-            index2 = 3.94
-            btnNextFilm[2].style.display = 'none';
-        }
-        storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
-        btnPrevFilm[2].style.display = 'block';
-    }
-}
+// btnNextFilm[2].onclick = function () {
+//     if (index2 < (3.94)) {
+//         index2++;
+//         if (index2 == 4) {
+//             index2 = 3.94
+//             btnNextFilm[2].style.display = 'none';
+//         }
+//         storContainer2.style.transform = `translateX(-${offset * 3 * index2}px)`;
+//         btnPrevFilm[2].style.display = 'block';
+//     }
+// }
 
-btnPrevFilm[2].onclick = function () {
-    if (index2 > (0)) {
-        if (index2 === 3.94) {
-            index2 = 4
-        }
-        index2--;
-        if (index2 == 0) {
-            btnPrevFilm[2].style.display = 'none';
-        }
-        storContainer2.style.transform = `translateX(-${offset * 4 * index2}px)`;
-        btnNextFilm[2].style.display = 'block';
-    }
-}
+// btnPrevFilm[2].onclick = function () {
+//     if (index2 > (0)) {
+//         if (index2 === 3.94) {
+//             index2 = 4
+//         }
+//         index2--;
+//         if (index2 == 0) {
+//             btnPrevFilm[2].style.display = 'none';
+//         }
+//         storContainer2.style.transform = `translateX(-${offset * 3 * index2}px)`;
+//         btnNextFilm[2].style.display = 'block';
+//     }
+// }
 // actFilm click prev-next
-btnNextFilm[3].onclick = function () {
-    if (index3 < (3.94)) {
-        index3++;
-        if (index3 == 4) {
-            index3 = 3.94
-            btnNextFilm[3].style.display = 'none';
-        }
-        storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
-        btnPrevFilm[3].style.display = 'block';
-    }
-}
+// btnNextFilm[3].onclick = function () {
+//     if (index3 < (3.94)) {
+//         index3++;
+//         if (index3 == 4) {
+//             index3 = 3.94
+//             btnNextFilm[3].style.display = 'none';
+//         }
+//         storContainer3.style.transform = `translateX(-${offset * 3 * index3}px)`;
+//         btnPrevFilm[3].style.display = 'block';
+//     }
+// }
 
-btnPrevFilm[3].onclick = function () {
-    if (index3 > (0)) {
-        if (index3 === 3.94) {
-            index3 = 4
-        }
-        index3--;
-        if (index3 == 0) {
-            btnPrevFilm[3].style.display = 'none';
-        }
-        storContainer3.style.transform = `translateX(-${offset * 4 * index3}px)`;
-        btnNextFilm[3].style.display = 'block';
-    }
-}
+// btnPrevFilm[3].onclick = function () {
+//     if (index3 > (0)) {
+//         if (index3 === 3.94) {
+//             index3 = 4
+//         }
+//         index3--;
+//         if (index3 == 0) {
+//             btnPrevFilm[3].style.display = 'none';
+//         }
+//         storContainer3.style.transform = `translateX(-${offset * 3 * index3}px)`;
+//         btnNextFilm[3].style.display = 'block';
+//     }
+// }
 
 // handle click btn film modal
 // const btnModalTrailer = document.querySelector('.btn-trailer')
